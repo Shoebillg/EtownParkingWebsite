@@ -34,6 +34,8 @@ CREATE TABLE IF NOT EXISTS `etownparking`.`parkingLots` (
   `lotID` INT NOT NULL AUTO_INCREMENT,
   `lotName` VARCHAR(45) NULL,
   `image` VARCHAR(45) NULL,
+  `coords` VARCHAR(45) NULL,
+  `shape` VARCHAR(45) NULL,
 PRIMARY KEY (`lotID`));
 
 
