@@ -7,6 +7,7 @@
 <ul>
   <li class="etownLogo"><a href="../web_src"><img src="images/ETOWN_Footer_Logo.png" class="logo"></a></li>
   <li><a href="../web_src">Home</a></li>
+  <!--<li><a href="#">onclick=switchBadge('')-->
   <li><a href="https://www.etown.edu/offices/security/parkingregs.aspx" target="_blank">Existing parking rule website</a></li>
   <li><a href="#">Edit database</a></li>
   <li><a href="#">Contact</a></li>
