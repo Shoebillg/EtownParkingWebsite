@@ -74,7 +74,7 @@ li {
 }
 
 li:last-child {
-  border-right: none;
+  
 }
 
 body {
