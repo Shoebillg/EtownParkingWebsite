@@ -53,6 +53,11 @@ require_once "includes/header.php";
             alert(str);
         }
 </script>
+<?php
+require_once "includes/dropdown.php";
+?>
+
+<img src="images/CollegeMap.png">
 
 <?php
 require_once "includes/footer.php";

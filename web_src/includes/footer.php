@@ -5,6 +5,8 @@
 <div>
 <h><a href=#>Powered by Etown CS and Engineering</a></h>
 </body>
+
+<p><a href=# class="app">Download Android App</a></p>
 </div>
 
 </html>
@@ -33,6 +35,16 @@ h{
  div{
     height: 200px;
     background-color: #0A2240;
+ }
+
+ p{
+   color: #C8C8C8;
+   text-align: center;
+   font-size: 22px;
+ }
+
+ .app{
+   color: #C8C8C8;
  }
 
 </style>
