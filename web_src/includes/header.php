@@ -6,10 +6,11 @@
 
 <ul>
   <li class="etownLogo"><a href="../web_src"><img src="images/ETOWN_Footer_Logo.png" class="logo"></a></li>
-  <li><a href="../web_src">Home</a></li>
+  <li class="home"><a href="../web_src">Home</a></li>
   <!--<li><a href="#">onclick=switchBadge('')-->
   <li><a href="https://www.etown.edu/offices/security/parkingregs.aspx" target="_blank">Existing parking rule website</a></li>
   <li><a href="#">Edit database</a></li>
+  <li><a href="#">Setting</a></li>
   <li><a href="#">Contact</a></li>
   <li><a href="#">About</a></li>
 </ul>
@@ -22,7 +23,17 @@ h1, .logo{
     background-color:  #004B98;
 }
 .logo{
-    width: 150px;    
+    width: 150px;
+     
+}
+
+.etownLogo{
+  margin-right: 413px;
+
+}
+
+.home{
+  margin-left: 0px;
 }
 
 
@@ -32,7 +43,8 @@ ul {
   padding: 0;
   overflow: hidden;
   background-color: #004B98;
-  height: 80px;
+  height: 90px;
+  display: flex;
 }
 
 li {
@@ -44,15 +56,15 @@ li a {
   display: block;
   color: white;
   text-align: center;
-  padding: 25px 15px 0px;
+  padding: 30px 15px 0px;
   text-decoration: none;
   height: 80px;
 }
 
 .etownLogo a{
-  padding-top: 10px;
+  padding-top: 15px;
   padding-bottom: 10px;
-  padding-left: 10px;
+  padding-left: 20px;
   padding-right: 10px;
 }
 .etownLogo a:hover{
@@ -70,11 +82,15 @@ li a:hover {
 
 li {
   border-right: 2px solid #0A2240;
-  height: 80px;
+  height: 90px;
 }
 
 li:last-child {
-  
+  border-right: none;
+}
+li:first-child {
+  border-right: none;
+
 }
 
 body {
