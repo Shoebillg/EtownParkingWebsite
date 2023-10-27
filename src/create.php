@@ -39,13 +39,13 @@ $params = [":id" => $id, ":basket_id" => $basket_id];
 try {
     // Check if the product already exists in the cart
     $sqlCheck = "SELECT * FROM basketitem WHERE productID = :id AND BasketID = :basket_id";
-    $data = FoodDatabase::getDataFromSQL($sqlCheck, [":id" => $id, ":basket_id" => $basket_id]);
+    $data = etownparking::getDataFromSQL($sqlCheck, [":id" => $id, ":basket_id" => $basket_id]);
 
     for ($x=0; $x<$quantity; $x++){
         if ($data !== false) {
             // If the product doesn't exist in the cart, insert it as a new item
             $sqlInsert = "INSERT INTO basketitem (productID, BasketID) VALUES (:id, :basket_id)";
-            FoodDatabase::executeSQL($sqlInsert, $params);}
+            etownparking::executeSQL($sqlInsert, $params);}
         else {$message = ["message" => "Invalid value"];
             echo json_encode($message);}}
 
