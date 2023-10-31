@@ -2,6 +2,7 @@
 ?>
 
 <html>
+<LINK rel='stylesheet' href='css/dropdown.css'>
 
 <select class="eligibility">
     <option>Choose an option</option>
@@ -11,16 +12,14 @@
     <option value="Senior">Senior</option>
 </select>
 
+<select class="Day">
+<option>Please Choose Day!</option>
+</select>
+
+<select class="Time">
+<option>Please Choose Time!</option>
+</select>
+
 <!-- Onclick method and display pins and what user selected-->
 
 </html>
-
-<style>
-
-.eligibility{
-    font-size: 24px;
-    background-color: #C8C8C8;
-}
-
-
-</style>
