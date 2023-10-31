@@ -7,7 +7,7 @@ require_once "../../classes/FoodDatabase.php";
 $key = isset($_POST["APIKEY"]) ? $_POST["APIKEY"] : "";
 $id = isset($_POST["productID"]) ? intval($_POST["productID"]) : "";
 $quantity = isset($_POST["quantity"]) ? intval($_POST["quantity"]) : 1;
-$basket_id = isset($_POST["basketID"]) ? intval($_POST["basketID"]) : "";
+$basket_id = isset($_POST["lotID"]) ? intval($_POST["lotID"]) : "";
 
 // Check if the provided API key matches the global API key
 if ($key != $GLOBAL_API_KEY) {
