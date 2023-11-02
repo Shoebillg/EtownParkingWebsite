@@ -32,11 +32,20 @@ foreach($rules as $rule){
     <option value="Sophmore">Sophmore</option>
     <option value="Junior">Junior</option>
     <option value="Senior">Senior</option>
+    <option value="Visitor">Visitor</option>
+    <option value="Staff">Faculty/Staff</option>
+    <option value="Commuter">Commuter</option>
 </select>
 
-
 <select class="Day">
-<option>Please Choose Day!</option>
+    <option>Please Choose Day!</option>
+    <option value="Sunday">Sunday</option>
+    <option value="Monday">Monday</option>
+    <option value="Tuesday">Tuesday</option>
+    <option value="Wednesday">Wednesday</option>
+    <option value="Thursday">Thursday</option>
+    <option value="Friday">Friday</option>
+    <option value="Saturday">Saturday</option>
 </select>
 
 <select class="Time">
