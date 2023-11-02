@@ -58,4 +58,6 @@ try {
     // If there's a database error, respond with an error message and HTTP status code 500 (Internal Server Error)
     http_response_code(500);
     echo json_encode(["message" => "Database Error: " . $e->getMessage()]);}
+
 ?>
+
