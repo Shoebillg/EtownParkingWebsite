@@ -1,4 +1,26 @@
 <?php
+require_once "database_functions.php";
+
+$sql = "Select * from badgeType;";
+$badgeTypes = getDataFromSQL($sql);
+echo "<select class=\"type\"> <option>Choose an option</option>";
+foreach($badgeTypes as $badgeType){
+
+    echo "<option value=".$badgeType["name"].">".$badgeType["name"]."</option>";
+
+    echo $badgeType["name"]."<br>";
+}
+echo "</select>";
+/*
+$sqlRule = "Select * from parkingRules r join badgeType t ON r.typeID = t.typeID;";
+
+$rules = getDataFromSQL($sqlRule);
+
+foreach($rules as $rule){
+
+    echo $rule["name"].": ".$rule["day"].": ".$rule["description"]."<br>";
+
+}*/
 ?>
 
 <html>
@@ -12,6 +34,7 @@
     <option value="Senior">Senior</option>
 </select>
 
+
 <select class="Day">
 <option>Please Choose Day!</option>
 </select>
@@ -19,6 +42,13 @@
 <select class="Time">
 <option>Please Choose Time!</option>
 </select>
+
+<input type="radio" id="noneEV" name="EV" checked>
+<label for="noneEV">Nonde EV</label>
+
+<input type="radio" id="EV" name="EV">
+<label for="EV">EV</label><br>
+<!-- Add onclick to display EV charging station-->
 
 <!-- Onclick method and display pins and what user selected-->
 
