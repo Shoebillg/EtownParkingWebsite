@@ -1,26 +1,15 @@
 <?php
-require_once "database_functions.php";
+/*require_once "database_functions.php";
 
 $sql = "Select * from badgeType;";
 $badgeTypes = getDataFromSQL($sql);
 echo "<select class=\"type\"> <option>Choose an option</option>";
 foreach($badgeTypes as $badgeType){
-
     echo "<option value=".$badgeType["name"].">".$badgeType["name"]."</option>";
-
     echo $badgeType["name"]."<br>";
 }
 echo "</select>";
-/*
-$sqlRule = "Select * from parkingRules r join badgeType t ON r.typeID = t.typeID;";
-
-$rules = getDataFromSQL($sqlRule);
-
-foreach($rules as $rule){
-
-    echo $rule["name"].": ".$rule["day"].": ".$rule["description"]."<br>";
-
-}*/
+*/
 ?>
 
 <html>
