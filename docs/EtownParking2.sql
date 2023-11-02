@@ -15,11 +15,11 @@ CREATE DATABASE `etownparking`;
 USE `etownparking` ;
 
 -- -----------------------------------------------------
--- Table `etownparking`.`badgeType`
+-- Table `etownparking`.`badgeTypes`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `etownparking`.`badgeType` ;
+DROP TABLE IF EXISTS `etownparking`.`badgeTypes` ;
 
-CREATE TABLE IF NOT EXISTS `etownparking`.`badgeType` (
+CREATE TABLE IF NOT EXISTS `etownparking`.`badgeTypes` (
   `typeID` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NULL,
 PRIMARY KEY (`typeID`));
@@ -66,7 +66,7 @@ CREATE TABLE IF NOT EXISTS `etownparking`.`parkingRules` (
   PRIMARY KEY (`ruleID`),
   CONSTRAINT `typeID`
     FOREIGN KEY (`typeID`)
-    REFERENCES `etownparking`.`badgeType` (`typeID`),
+    REFERENCES `etownparking`.`badgeTypes` (`typeID`),
   CONSTRAINT `lotID`
     FOREIGN KEY (`lotID`)
     REFERENCES `etownparking`.`parkingLots` (`lotID`),

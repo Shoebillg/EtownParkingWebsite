@@ -1,6 +1,6 @@
 <?php
 
-class FoodDatabase{
+class ParkingDatabase{
     private static $conn = null;
 
     private static function connect() {
