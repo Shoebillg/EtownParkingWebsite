@@ -30,9 +30,6 @@ require_once "includes/dropdown.php";
  <img src="images/lots/CollegeMapBrownLot.png" id="brown" style="position: absolute; left: 1094px; top: 80px; display:none;">
 </p>
 
-
-
-
 <script>
     var imgOn = false;
         function showBrown() {
@@ -61,8 +58,6 @@ require_once "includes/dropdown.php";
 
 <?php
 require_once "includes/footer.php";
+
+// http://localhost/EtownParkingWebsite/web_src/index.php
 ?>
- 
-
-
-
