@@ -17,12 +17,25 @@ if($key!=$GLOBAL_API_KEY){
     exit;
 }
 
-$where = " ";
-$params = null;
+if($lotID != ""){
+    $where = " where lotID = :lotid ";
+    $params = [":lotid"=>$lotID];
 
-$sql = "Select lotID, lotName, image, coords, shape from parkingLots ".$where;
-$data = ParkingDatabase::getDataFromSQL($sql, $params);
+    $sql = "Select lotID, lotName, image, coords, shape from parkingLots ".$where;
+    $data = ParkingDatabase::getDataFromSQL($sql, $params);
 
-echo json_encode($data);
+    echo json_encode($data);
+
+}
+else {
+
+    $where = " ";
+    $params = null;
+
+    $sql = "Select * from parkingLots ".$where;
+    $data = ParkingDatabase::getDataFromSQL($sql, $params);
+
+    echo json_encode($data);
+}
 
 ?>
