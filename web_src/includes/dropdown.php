@@ -21,29 +21,26 @@ echo "</select>";
     <option value="Sophmore">Sophmore</option>
     <option value="Junior">Junior</option>
     <option value="Senior">Senior</option>
-    
-    <?php
-    //<option value="Visitor">Visitor</option>
-    //<option value="Staff">Faculty/Staff</option>
-    //<option value="Commuter">Commuter</option>
-    ?>
+    <option value="Visitor">Visitor</option>
+    <option value="Staff">Faculty/Staff</option>
+    <option value="Commuter">Commuter</option>
+
 </select>
 
 <select class="Day">
     <option>Please Choose Day!</option>
-    <?php
-    //<option value="Sunday">Sunday</option>
-    //<option value="Monday">Monday</option>
-    //<option value="Tuesday">Tuesday</option>
-    //<option value="Wednesday">Wednesday</option>
-    //<option value="Thursday">Thursday</option>
-    //<option value="Friday">Friday</option>
-    //<option value="Saturday">Saturday</option>
-    ?>
+    <option value="Sunday">Sunday</option>
+    <option value="Monday">Monday</option>
+    <option value="Tuesday">Tuesday</option>
+    <option value="Wednesday">Wednesday</option>
+    <option value="Thursday">Thursday</option>
+    <option value="Friday">Friday</option>
+    <option value="Saturday">Saturday</option>
+
 </select>
 
 <select class="Time">
-<option>Please Choose Time!</option>
+    <option>Please Choose Time!</option>
 </select>
 
 <input type="radio" id="noneEV" name="EV" checked>
