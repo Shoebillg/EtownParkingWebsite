@@ -45,35 +45,37 @@ echo "</select>";
     <option>Please Choose Time!</option>
 </select>
 
-<input type="radio" id="noneEV" name="EV" checked onclick="showEV();">
+<input type="radio" id="noneEV" name="EV" checked onclick="showEV(true);">
 <label for="noneEV">none EV</label>
 
-<input type="radio" id="EV" name="EV" onclick="showEV();>
+<input type="radio" id="EV" name="EV" onclick="showEV(false);">
 <label for="EV">EV</label><br>
 <!-- Add onclick to display EV charging station-->
- <img src="images/EVPinNew.png" id="evpin1" style="position: absolute; left: 429px; top: 228px; display:none;">
+ <img src="images/EVPinNew.png" id="evpin1" style="z-index:200; position: absolute; left: 415px; top: 238px; display:none;">
 
- <img src="images/EVPinNew.png" id="evpin2" style="position: absolute; left: 310px; top: 746px; display:none;">
+ <img src="images/EVPinNew.png" id="evpin2" style="z-index:200; position: absolute; left: 400px; top: 238px; display:none;">
 
- <img src="images/EVPinNew.png" id="evpin3" style="position: absolute; left: 330px; top: 473px; display:none;">
+ <img src="images/EVPinNew.png" id="evpin3" style="z-index:200; position: absolute; left: 330px; top: 428px; display:none;">
 
- <img src="images/EVPinNew.png" id="evpin4" style="position: absolute; left: 555px; top: 558px; display:none;">
+ <img src="images/EVPinNew.png" id="evpin4" style="z-index:200; position: absolute; left: 555px; top: 508px; display:none;">
 <script>
-    var imgOn = false;
-    function showEV() {
+    
+    function showEV(imgOn) {
         if (imgOn) {
+            console.log("off "+imgOn);
             document.getElementById("evpin1").style.display='none';
             document.getElementById("evpin2").style.display='none';
             document.getElementById("evpin3").style.display='none';
             document.getElementById("evpin4").style.display='none';
-            imgOn=false;
+            //imgOn=false;
         }
         else {
+            console.log("on "+imgOn);
             document.getElementById("evpin1").style.display='block';
             document.getElementById("evpin2").style.display='block';
             document.getElementById("evpin3").style.display='block';
             document.getElementById("evpin4").style.display='block';
-            imgOn=true;
+            //imgOn=true;
         }
     }
 </script>
