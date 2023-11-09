@@ -27,7 +27,7 @@ echo "</select>";
 
 </select>
 
-<select class="Day">
+<select class="eligibility">
     <option>Please Choose Day!</option>
     <option value="Sunday">Sunday</option>
     <option value="Monday">Monday</option>
