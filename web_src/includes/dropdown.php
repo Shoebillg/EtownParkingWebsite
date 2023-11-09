@@ -41,7 +41,7 @@ echo "</select>";*/
 
 </select>
 
-<select class="Time">
+<select class="eligibility">
     <option>Please Choose Time!</option>
 </select>
 
