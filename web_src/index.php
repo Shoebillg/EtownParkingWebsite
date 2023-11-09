@@ -18,58 +18,58 @@ require_once "includes/dropdown.php";
 </map>
 <!--all pin locations are stored here-->
 <p id="brownPin2">
- <img src="images/lotpin.png" usemap="#brownPinMap" id="brownPin" style="position: absolute; left: 429px; top: 248px; display:block;">
+ <img src="images/lotpin.png" usemap="#brownPinMap" id="brownPin" style="position: absolute; left: 429px; top: 268px; display:block;">
 </p>
 
 <p id="bretheranPin2">
- <img src="images/lotpin.png" usemap="#bretheranPinMap" id="bretheranPin" style="position: absolute; left: 310px; top: 706px; display:block;">
+ <img src="images/lotpin.png" usemap="#bretheranPinMap" id="bretheranPin" style="position: absolute; left: 310px; top: 726px; display:block;">
 </p>
 
 <p id="hooverPin2">
- <img src="images/lotpin.png" usemap="#hooverPinMap" id="hooverPin" style="position: absolute; left: 330px; top: 433px; display:block;">
+ <img src="images/lotpin.png" usemap="#hooverPinMap" id="hooverPin" style="position: absolute; left: 330px; top: 453px; display:block;">
 </p>
 
 <p id="bowersPin2">
- <img src="images/lotpin.png" usemap="#bowersPinMap" id="bowersPin" style="position: absolute; left: 555px; top: 518px; display:block;">
+ <img src="images/lotpin.png" usemap="#bowersPinMap" id="bowersPin" style="position: absolute; left: 555px; top: 538px; display:block;">
 </p>
 
 <p id="youngPin2">
- <img src="images/lotpin.png" usemap="#youngPinMap" id="youngPin" style="position: absolute; left: 576px; top: 344px; display:block;">
+ <img src="images/lotpin.png" usemap="#youngPinMap" id="youngPin" style="position: absolute; left: 576px; top: 364px; display:block;">
 </p>
 <!--All maps with images are stored here (basically the buttons)-->
 <map name="brownPinMap">
 <area shape="circle" coords="10,10,10" href="#brown" onclick="showBrown();" alt="BrownLot">
 </map>
 <p id="brown2">
- <img src="images/lots/CollegeMapBrownLot.png" id="brown" style="position: absolute; left: 1094px; top: 121px; display:none;">
+ <img src="images/lots/CollegeMapBrownLot.png" id="brown" style="position: absolute; left: 1094px; top: 141px; display:none;">
 </p>
 
 <map name="bretheranPinMap">
 <area shape="circle" coords="10,10,10" href="#Bretheran" onclick="showBretheran();" alt="BretheranChurch">
 </map>
 <p id="bretheran2">
- <img src="images/lots/CollegeMapBretheranChurch2.png" id="bretheran" style="position: absolute; left: 1094px; top: 121px; display:none;">
+ <img src="images/lots/CollegeMapBretheranChurch2.png" id="bretheran" style="position: absolute; left: 1094px; top: 141px; display:none;">
 </p>
 
 <map name="hooverPinMap">
 <area shape="circle" coords="10,10,10" href="#Hoover" onclick="showHoover();" alt="Hoover">
 </map>
 <p id="hoover2">
- <img src="images/lots/CollegeMapHoover.png" id="hoover" style="position: absolute; left: 1094px; top: 121px; display:none;">
+ <img src="images/lots/CollegeMapHoover.png" id="hoover" style="position: absolute; left: 1094px; top: 141px; display:none;">
 </p>
 
 <map name="bowersPinMap">
 <area shape="circle" coords="10,10,10" href="#Bowers" onclick="showBowers();" alt="Bowers">
 </map>
 <p id="bowers2">
- <img src="images/lots/CollegeMapBowers.png" id="bowers" style="position: absolute; left: 1094px; top: 121px; display:none;">
+ <img src="images/lots/CollegeMapBowers.png" id="bowers" style="position: absolute; left: 1094px; top: 141px; display:none;">
 </p>
 
 <map name="youngPinMap">
 <area shape="circle" coords="10,10,10" href="#YoungCenter" onclick="showYoung();" alt="YoungCenter">
 </map>
 <p id="bowers2">
- <img src="images/lots/CollegeMapYoungCenter.png" id="young" style="position: absolute; left: 1094px; top: 121px; display:none;">
+ <img src="images/lots/CollegeMapYoungCenter.png" id="young" style="position: absolute; left: 1094px; top: 141px; display:none;">
 </p>
 
 
@@ -80,6 +80,7 @@ require_once "includes/dropdown.php";
         function showBrown() {
             if ( imgOn ){
                 document.getElementById("brown").style.display='none';
+                document.getElementById("bretheran").style.display='none';
                 imgOn = false;
             }
             else {
@@ -93,6 +94,10 @@ require_once "includes/dropdown.php";
         function showBretheran() {
             if ( imgOn ){
                 document.getElementById("bretheran").style.display='none';
+                document.getElementById("brown").style.display='none';
+                document.getElementById("bowers").style.display='none';
+                document.getElementById("hoover").style.display='none';
+                document.getElementById("young").style.display='none';
                 imgOn = false;
             }
             else {
@@ -104,6 +109,10 @@ require_once "includes/dropdown.php";
         function showHoover() {
             if ( imgOn ){
                 document.getElementById("hoover").style.display='none';
+                document.getElementById("bretheran").style.display='none';
+                document.getElementById("brown").style.display='none';
+                document.getElementById("bowers").style.display='none';
+                document.getElementById("young").style.display='none';
                 imgOn = false;
             }
             else {
@@ -115,6 +124,10 @@ require_once "includes/dropdown.php";
         function showBowers() {
             if ( imgOn ){
                 document.getElementById("bowers").style.display='none';
+                document.getElementById("hoover").style.display='none';
+                document.getElementById("bretheran").style.display='none';
+                document.getElementById("brown").style.display='none';
+                document.getElementById("young").style.display='none';
                 imgOn = false;
             }
             else {
@@ -126,6 +139,10 @@ require_once "includes/dropdown.php";
         function showYoung() {
             if ( imgOn ){
                 document.getElementById("young").style.display='none';
+                document.getElementById("bowers").style.display='none';
+                document.getElementById("hoover").style.display='none';
+                document.getElementById("bretheran").style.display='none';
+                document.getElementById("brown").style.display='none';
                 imgOn = false;
             }
             else {
