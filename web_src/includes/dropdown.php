@@ -1,15 +1,17 @@
 <?php
-/*require_once "database_functions.php";
 
-$sql = "Select * from badgeType;";
-$badgeTypes = getDataFromSQL($sql);
-echo "<select class=\"type\"> <option>Choose an option</option>";
+/*
+$fullUrl = $url."data_src/api/badgeType/read.php";
+
+$vars = ["APIKEY"=>$api_key];
+$web_string = DatabaseAPIConnection::get($fullUrl, $vars);
+
+$badgeTypes = json_decode($web_string);
+echo "<select class=\"badgeType\"><option>Choose an option</option>";
 foreach($badgeTypes as $badgeType){
-    echo "<option value=".$badgeType["name"].">".$badgeType["name"]."</option>";
-    echo $badgeType["name"]."<br>";
+    echo "<option value=\"".$badgeType->name."\">".$badgeType->name."</option>";
 }
-echo "</select>";
-*/
+echo "</select>";*/
 ?>
 
 <html>
