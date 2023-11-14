@@ -1,15 +1,15 @@
 <?php
 
 
-$fullUrl = $url."data_src/api/badgeType/read.php";
+$fullUrl = $url . "data_src/api/badgeType/read.php";
 
-$vars = ["APIKEY"=>$api_key];
+$vars = ["APIKEY" => $api_key];
 $web_string = DatabaseAPIConnection::get($fullUrl, $vars);
 
 $badgeTypes = json_decode($web_string);
 echo "<select class=\"badgeType\"><option>Choose an option</option>";
-foreach($badgeTypes as $badgeType){
-    echo "<option value=\"".$badgeType->name."\">".$badgeType->name."</option>";
+foreach ($badgeTypes as $badgeType) {
+    echo "<option value=\"" . $badgeType->name . "\">" . $badgeType->name . "</option>";
 }
 echo "</select>";
 ?>
@@ -17,7 +17,7 @@ echo "</select>";
 <html>
 <LINK rel='stylesheet' href='css/dropdown.css'>
 
-<select class="eligibility">
+<select class="dropdown">
     <option>Choose an option</option>
     <option value="First">First Year</option>
     <option value="Sophmore">Sophmore</option>
@@ -29,7 +29,7 @@ echo "</select>";
 
 </select>
 
-<select class="eligibility">
+<select class="dropdown">
     <option>Please Choose Day!</option>
     <option value="Sunday">Sunday</option>
     <option value="Monday">Monday</option>
@@ -41,7 +41,7 @@ echo "</select>";
 
 </select>
 
-<select class="eligibility">
+<select class="dropdown">
     <option>Please Choose Time!</option>
 </select>
 
@@ -51,30 +51,34 @@ echo "</select>";
 <input type="radio" id="EV" name="EV" onclick="showEV(false);">
 <label for="EV">EV</label><br>
 <!-- Add onclick to display EV charging station-->
- <img src="images/EVPinNew.png" id="evpin1" style="z-index:200; position: absolute; left: 415px; top: 238px; display:none;">
+<img src="images/EVPinNew.png" id="evpin1"
+    style="z-index:200; position: absolute; left: 415px; top: 238px; display:none;">
 
- <img src="images/EVPinNew.png" id="evpin2" style="z-index:200; position: absolute; left: 400px; top: 238px; display:none;">
+<img src="images/EVPinNew.png" id="evpin2"
+    style="z-index:200; position: absolute; left: 400px; top: 238px; display:none;">
 
- <img src="images/EVPinNew.png" id="evpin3" style="z-index:200; position: absolute; left: 330px; top: 428px; display:none;">
+<img src="images/EVPinNew.png" id="evpin3"
+    style="z-index:200; position: absolute; left: 330px; top: 428px; display:none;">
 
- <img src="images/EVPinNew.png" id="evpin4" style="z-index:200; position: absolute; left: 555px; top: 508px; display:none;">
+<img src="images/EVPinNew.png" id="evpin4"
+    style="z-index:200; position: absolute; left: 555px; top: 508px; display:none;">
 <script>
-    
+
     function showEV(imgOn) {
         if (imgOn) {
-            console.log("off "+imgOn);
-            document.getElementById("evpin1").style.display='none';
-            document.getElementById("evpin2").style.display='none';
-            document.getElementById("evpin3").style.display='none';
-            document.getElementById("evpin4").style.display='none';
+            console.log("off " + imgOn);
+            document.getElementById("evpin1").style.display = 'none';
+            document.getElementById("evpin2").style.display = 'none';
+            document.getElementById("evpin3").style.display = 'none';
+            document.getElementById("evpin4").style.display = 'none';
             //imgOn=false;
         }
         else {
-            console.log("on "+imgOn);
-            document.getElementById("evpin1").style.display='block';
-            document.getElementById("evpin2").style.display='block';
-            document.getElementById("evpin3").style.display='block';
-            document.getElementById("evpin4").style.display='block';
+            console.log("on " + imgOn);
+            document.getElementById("evpin1").style.display = 'block';
+            document.getElementById("evpin2").style.display = 'block';
+            document.getElementById("evpin3").style.display = 'block';
+            document.getElementById("evpin4").style.display = 'block';
             //imgOn=true;
         }
     }
