@@ -2,6 +2,7 @@
 require_once "../includes/config.php";
 require_once "DatabaseAPIConnection.php";
 
+
 $fullUrl = $url."data_src/api/badgeType/read.php";
 
 $vars = ["APIKEY"=>$api_key];

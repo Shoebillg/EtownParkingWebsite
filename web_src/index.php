@@ -68,6 +68,35 @@ require_once "includes/dropdown.php";
     <img src="images/lotpin.png" usemap="#southFoundersPinMap" id="southFoundersPin"
         style="position: absolute; left: 545px; top: 681px; display:block;">
 </p>
+
+<p id="myerWestPin2">
+    <img src="images/lotpin.png" usemap="#myerWestPinMap" id="myerWestPin"
+        style="position: absolute; left: 287px; top: 667px; display:block;">
+</p>
+<p id="brinserPin2">
+    <img src="images/lotpin.png" usemap="#brinserPinMap" id="brinserPin"
+        style="position: absolute; left: 433px; top: 577px; display:block;">
+</p>
+<p id="admissionsPin2">
+    <img src="images/lotpin.png" usemap="#admissionsPinMap" id="admissionsPin"
+        style="position: absolute; left: 150px; top: 567px; display:block;">
+</p>
+<p id="alphaPin2">
+    <img src="images/lotpin.png" usemap="#alphaPinMap" id="alphaPin"
+        style="position: absolute; left: 307px; top: 576px; display:block;">
+</p>
+<p id="alphaDrivePin2">
+    <img src="images/lotpin.png" usemap="#alphaDrivePinMap" id="alphaDrivePin"
+        style="position: absolute; left: 343px; top: 604px; display:block;">
+</p>
+<p id="alphaVisitorPin2">
+    <img src="images/lotpin.png" usemap="#alphaVisitorPinMap" id="alphaVisitorPin"
+        style="position: absolute; left: 316px; top: 537px; display:block;">
+</p>
+<p id="campusSafetyPin2">
+    <img src="images/lotpin.png" usemap="#campusSafetyPinMap" id="campusSafetyPin"
+        style="position: absolute; left: 232px; top: 649px; display:block;">
+</p>
 <!--All maps with images are stored here (basically the buttons)-->
 <map name="brownPinMap">
     <area shape="circle" coords="10,10,10" href="#brown" onclick="showBrown();" alt="BrownLot">
@@ -154,6 +183,55 @@ require_once "includes/dropdown.php";
 </map>
 <p id="southFounders2">
     <img src="images/lots/CollegeMapSouthFounders.png" id="southfounders"
+        style="position: absolute; left: 1094px; top: 141px; display:none;">
+</p>
+<map name="myerWestPinMap">
+    <area shape="circle" coords="10,10,10" href="#MyerWest" onclick="showMyerWest();" alt="MyerWest">
+</map>
+<p id="myerWest2">
+    <img src="images/lots/CollegeMapMyerWest.png" id="myerwest"
+        style="position: absolute; left: 1094px; top: 141px; display:none;">
+</p>
+<map name="brinserPinMap">
+    <area shape="circle" coords="10,10,10" href="#Brinser" onclick="showBrinser();" alt="Brinser">
+</map>
+<p id="brinser2">
+    <img src="images/lots/CollegeMapBrinser.png" id="brinser"
+        style="position: absolute; left: 1094px; top: 141px; display:none;">
+</p>
+<map name="admissionsPinMap">
+    <area shape="circle" coords="10,10,10" href="#Admissions" onclick="showAdmissions();" alt="Admissions">
+</map>
+<p id="admissions2">
+    <img src="images/lots/CollegeMapAdmissions.png" id="admissions"
+        style="position: absolute; left: 1094px; top: 141px; display:none;">
+</p>
+<map name="alphaPinMap">
+    <area shape="circle" coords="10,10,10" href="#Alpha" onclick="showAlpha();" alt="Alpha">
+</map>
+<p id="alpha2">
+    <img src="images/lots/CollegeMapAlpha.png" id="alpha"
+        style="position: absolute; left: 1094px; top: 141px; display:none;">
+</p>
+<map name="alphaDrivePinMap">
+    <area shape="circle" coords="10,10,10" href="#AlphaDrive" onclick="showAlphaDrive();" alt="AlphaDrive">
+</map>
+<p id="alphaDrive2">
+    <img src="images/lots/CollegeMapAlphaDrive.png" id="alphadrive"
+        style="position: absolute; left: 1094px; top: 141px; display:none;">
+</p>
+<map name="alphaVisitorPinMap">
+    <area shape="circle" coords="10,10,10" href="#AlphaVisitor" onclick="showAlphaVisitor();" alt="AlphaVisitor">
+</map>
+<p id="alphaVisitor2">
+    <img src="images/lots/CollegeMapAlphaVisitor.png" id="alphavisitor"
+        style="position: absolute; left: 1094px; top: 141px; display:none;">
+</p>
+<map name="campusSafetyPinMap">
+    <area shape="circle" coords="10,10,10" href="#CampusSafety" onclick="showCampusSafety();" alt="CampusSafety">
+</map>
+<p id="campusSafety2">
+    <img src="images/lots/CollegeMapCampusSafety.png" id="campussafety"
         style="position: absolute; left: 1094px; top: 141px; display:none;">
 </p>
 <!--All functions are stored here-->
@@ -388,6 +466,171 @@ require_once "includes/dropdown.php";
         }
         else {
             document.getElementById("southfounders").style.display = 'block';
+            imgOn = true;
+        }
+    }
+
+    function showMyerWest() {
+        if (imgOn) {
+            document.getElementById("young").style.display = 'none';
+            document.getElementById("bowers").style.display = 'none';
+            document.getElementById("hoover").style.display = 'none';
+            document.getElementById("bretheran").style.display = 'none';
+            document.getElementById("brown").style.display = 'none';
+            document.getElementById("chapeleast").style.display = 'none';
+            document.getElementById("esbenshade").style.display = 'none';
+            document.getElementById("chapelwest").style.display = 'none';
+            document.getElementById("hackmansouth").style.display = 'none';
+            document.getElementById("southfounders").style.display = 'none';
+            document.getElementById("hackman").style.display = 'none';
+            document.getElementById("myerwest").style.display = 'none';
+            imgOn = false;
+        }
+        else {
+            document.getElementById("myerwest").style.display = 'block';
+            imgOn = true;
+        }
+    }
+
+    function showBrinser() {
+        if (imgOn) {
+            document.getElementById("young").style.display = 'none';
+            document.getElementById("bowers").style.display = 'none';
+            document.getElementById("hoover").style.display = 'none';
+            document.getElementById("bretheran").style.display = 'none';
+            document.getElementById("brown").style.display = 'none';
+            document.getElementById("chapeleast").style.display = 'none';
+            document.getElementById("esbenshade").style.display = 'none';
+            document.getElementById("chapelwest").style.display = 'none';
+            document.getElementById("hackmansouth").style.display = 'none';
+            document.getElementById("southfounders").style.display = 'none';
+            document.getElementById("hackman").style.display = 'none';
+            document.getElementById("myerwest").style.display = 'none';
+            document.getElementById("brinser").style.display = 'none';
+            imgOn = false;
+        }
+        else {
+            document.getElementById("brinser").style.display = 'block';
+            imgOn = true;
+        }
+    }
+    function showAdmissions() {
+        if (imgOn) {
+            document.getElementById("young").style.display = 'none';
+            document.getElementById("bowers").style.display = 'none';
+            document.getElementById("hoover").style.display = 'none';
+            document.getElementById("bretheran").style.display = 'none';
+            document.getElementById("brown").style.display = 'none';
+            document.getElementById("chapeleast").style.display = 'none';
+            document.getElementById("esbenshade").style.display = 'none';
+            document.getElementById("chapelwest").style.display = 'none';
+            document.getElementById("hackmansouth").style.display = 'none';
+            document.getElementById("southfounders").style.display = 'none';
+            document.getElementById("hackman").style.display = 'none';
+            document.getElementById("myerwest").style.display = 'none';
+            document.getElementById("brinser").style.display = 'none';
+            document.getElementById("admissions").style.display = 'none';
+            imgOn = false;
+        }
+        else {
+            document.getElementById("admissions").style.display = 'block';
+            imgOn = true;
+        }
+    }
+    function showAlpha() {
+        if (imgOn) {
+            document.getElementById("young").style.display = 'none';
+            document.getElementById("bowers").style.display = 'none';
+            document.getElementById("hoover").style.display = 'none';
+            document.getElementById("bretheran").style.display = 'none';
+            document.getElementById("brown").style.display = 'none';
+            document.getElementById("chapeleast").style.display = 'none';
+            document.getElementById("esbenshade").style.display = 'none';
+            document.getElementById("chapelwest").style.display = 'none';
+            document.getElementById("hackmansouth").style.display = 'none';
+            document.getElementById("southfounders").style.display = 'none';
+            document.getElementById("hackman").style.display = 'none';
+            document.getElementById("myerwest").style.display = 'none';
+            document.getElementById("brinser").style.display = 'none';
+            document.getElementById("admissions").style.display = 'none';
+            document.getElementById("alpha").style.display = 'none';
+            imgOn = false;
+        }
+        else {
+            document.getElementById("alpha").style.display = 'block';
+            imgOn = true;
+        }
+    }
+    function showAlphaDrive() {
+        if (imgOn) {
+            document.getElementById("young").style.display = 'none';
+            document.getElementById("bowers").style.display = 'none';
+            document.getElementById("hoover").style.display = 'none';
+            document.getElementById("bretheran").style.display = 'none';
+            document.getElementById("brown").style.display = 'none';
+            document.getElementById("chapeleast").style.display = 'none';
+            document.getElementById("esbenshade").style.display = 'none';
+            document.getElementById("chapelwest").style.display = 'none';
+            document.getElementById("hackmansouth").style.display = 'none';
+            document.getElementById("southfounders").style.display = 'none';
+            document.getElementById("hackman").style.display = 'none';
+            document.getElementById("myerwest").style.display = 'none';
+            document.getElementById("brinser").style.display = 'none';
+            document.getElementById("admissions").style.display = 'none';
+            document.getElementById("alpha").style.display = 'none';
+            document.getElementById("alphadrive").style.display = 'none';
+            imgOn = false;
+        }
+        else {
+            document.getElementById("alphadrive").style.display = 'block';
+            imgOn = true;
+        }
+    }
+    function showAlphaVisitor() {
+        if (imgOn) {
+            document.getElementById("young").style.display = 'none';
+            document.getElementById("bowers").style.display = 'none';
+            document.getElementById("hoover").style.display = 'none';
+            document.getElementById("bretheran").style.display = 'none';
+            document.getElementById("brown").style.display = 'none';
+            document.getElementById("chapeleast").style.display = 'none';
+            document.getElementById("esbenshade").style.display = 'none';
+            document.getElementById("chapelwest").style.display = 'none';
+            document.getElementById("hackmansouth").style.display = 'none';
+            document.getElementById("southfounders").style.display = 'none';
+            document.getElementById("hackman").style.display = 'none';
+            document.getElementById("myerwest").style.display = 'none';
+            document.getElementById("brinser").style.display = 'none';
+            document.getElementById("admissions").style.display = 'none';
+            document.getElementById("alphavisitor").style.display = 'none';
+            imgOn = false;
+        }
+        else {
+            document.getElementById("alphavisitor").style.display = 'block';
+            imgOn = true;
+        }
+    }
+    function showCampusSafety() {
+        if (imgOn) {
+            document.getElementById("young").style.display = 'none';
+            document.getElementById("bowers").style.display = 'none';
+            document.getElementById("hoover").style.display = 'none';
+            document.getElementById("bretheran").style.display = 'none';
+            document.getElementById("brown").style.display = 'none';
+            document.getElementById("chapeleast").style.display = 'none';
+            document.getElementById("esbenshade").style.display = 'none';
+            document.getElementById("chapelwest").style.display = 'none';
+            document.getElementById("hackmansouth").style.display = 'none';
+            document.getElementById("southfounders").style.display = 'none';
+            document.getElementById("hackman").style.display = 'none';
+            document.getElementById("myerwest").style.display = 'none';
+            document.getElementById("brinser").style.display = 'none';
+            document.getElementById("admissions").style.display = 'none';
+            document.getElementById("campussafety").style.display = 'none';
+            imgOn = false;
+        }
+        else {
+            document.getElementById("campussafety").style.display = 'block';
             imgOn = true;
         }
     }
