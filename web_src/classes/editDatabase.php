@@ -3,6 +3,7 @@
 require_once "../includes/config.php";
 require_once "DatabaseAPIConnection.php";
 
+//Add show parking time table
 ?>
 
 <!DOCTYPE html>
@@ -15,112 +16,115 @@ require_once "DatabaseAPIConnection.php";
 <body>
     <header>
         <h1>Edit Database</h1>
-        <!-- Add any additional header information or navigation elements -->
     </header>
 
     <main>
         <section id="badge">
             <h2>Badge Type Table</h2>
-            <!-- Form or table to edit data from Table 1 -->
-            <button type="button" onclick="showBadge('<?php echo $url; ?>', '<?php echo $api_key; ?>')">Show table!</button>
+            <button id="addBadge">Add</button>
+            <button id="showBadge" type="button" onclick="badgeTableVisibility('<?php echo $url; ?>', '<?php echo $api_key; ?>')">
+                Show table!
+            </button>
             <div id="badgeTable">
             </div>
         </section>
 
         <section id="Lot">
             <h2>Parking Lot Table</h2>
-            <!-- Form or table to edit data from Table 2 -->
-            <button type="button" onclick="showLot()">Show table!</button>
+            <button id="addLot">Add</button>
+            <button id="showLot" type="button" onclick="lotTableVisibility('<?php echo $url; ?>', '<?php echo $api_key; ?>')">
+                Show table!
+            </button>
+            <div id="lotTable">
+            </div>
         </section>
 
         <section id="time">
             <h2>Paking Time Table</h2>
-            <!-- Form or table to edit data from Table 3 -->
-            <button type="button" onclick="showTime()">Show table!</button>
+            <button id="addTime">Add</button>
+            <button id="showTime" type="button" onclick="showTime('<?php echo $url; ?>', '<?php echo $api_key; ?>')">
+                Show table!
+            </button>
+            <div id="timeTable">
+            </div>
         </section>
 
         <section id="rule">
             <h2>Parking Rule Table</h2>
-            <!-- Form or table to edit data from Table 4 -->
-            <button type="button" onclick="showRule()">Show table!</button>
+            <button id="addRule">Add</button>
+            <button id="showRule" type="button" onclick="ruleTableVisibility('<?php echo $url; ?>', '<?php echo $api_key; ?>')">
+                Show table!
+            </button>
+            <div id="ruleTable">
+            </div>
         </section>
     </main>
 
     <footer>
-        <!-- Footer content, if needed -->
     </footer>
 </body>
 </html>
 
+<script src="showTable.js"></script>
+
 <script>
 
-async function showBadge(url, api) {
-    const fulUrl = url + 'data_src/api/badgeType/read.php?APIKEY=' + api;
+let badgeTableVisible = false;
+let lotTableVisible = false;
+let ruleTableVisible = false;
 
-    try {
-        const response = await fetch(fulUrl);
-        const data = await response.json(); // Parse JSON response
-        console.log(data); // Log the response from the PHP file
+function badgeTableVisibility(url, api) {
+    const table = document.getElementById('badgeTable');
+    const button = document.getElementById('showBadge');
 
-        const table = document.createElement('table');
-        const tableHeader = document.createElement('thead');
-        const headerRow = document.createElement('tr');
-        const headers = ['Type ID', 'Name', 'Edit', 'Delete']; // Define your table headers here
-
-        headers.forEach(headerText => {
-            const header = document.createElement('th');
-            header.appendChild(document.createTextNode(headerText));
-            headerRow.appendChild(header);
-        });
-
-        tableHeader.appendChild(headerRow);
-        table.appendChild(tableHeader);
-
-        const tableBody = document.createElement('tbody');
-
-        data.forEach(item => {
-            const row = document.createElement('tr');
-            const id = document.createElement('td');
-            const name = document.createElement('td');
-            const edit = document.createElement('td');
-            const delet = document.createElement('td');
-
-            id.appendChild(document.createTextNode(item.typeID));
-            name.appendChild(document.createTextNode(item.name));
-            edit
-            delete
-
-
-            row.appendChild(cell1);
-            row.appendChild(cell2);
-
-            tableBody.appendChild(row);
-        });
-
-        table.appendChild(tableBody);
-
-        const element = document.getElementById('badgeTable');
-        element.innerHTML = ''; // Clear previous content
-        element.appendChild(table);
-    } catch (error) {
-        console.error('Error:', error);
+    if (badgeTableVisible) {
+        table.style.display = 'none';
+        button.textContent = 'Show Table!';
+    } else {
+        // Show the table (assuming showLot function does this)
+        showBadge(url, api);
+        table.style.display = 'block';
+        button.textContent = 'Hide Table!';
     }
+    badgeTableVisible = !badgeTableVisible;
 }
 
+function lotTableVisibility(url, api) {
+    const table = document.getElementById('lotTable');
+    const button = document.getElementById('showLot');
 
-
-function showLot(){
-    
+    if (lotTableVisible) {
+        table.style.display = 'none';
+        button.textContent = 'Show Table!';
+    } else {
+        // Show the table (assuming showLot function does this)
+        showLot(url, api);
+        table.style.display = 'block';
+        button.textContent = 'Hide Table!';
+    }
+    lotTableVisible = !lotTableVisible;
 }
 
+function ruleTableVisibility(url, api) {
+    const table = document.getElementById('ruleTable');
+    const button = document.getElementById('showRule');
 
-function showTime(){
-    alert("Hello World!");
+    if (ruleTableVisible) {
+        table.style.display = 'none';
+        button.textContent = 'Show Table!';
+    } else {
+        // Show the table (assuming showLot function does this)
+        showRule(url, api);
+        table.style.display = 'block';
+        button.textContent = 'Hide Table!';
+    }
+    ruleTableVisible = !ruleTableVisible;
 }
 
-
-function showRule(){
-    alert("Hello World!");
+async function showTime(rul, api){
+    //alert("Hello World!");
+    //const fulUrl = url + 'data_src/api/parkingTime/read.php?APIKEY=' + api;
+    //console.log(fulUrl);
 }
 
 </script>

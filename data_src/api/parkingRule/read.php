@@ -2,6 +2,9 @@
 require_once "../../includes/database_config.php";
 require_once "../../classes/ParkingDatabase.php";
 
+header("Access-Control-Allow-Origin: http://localhost");
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type, Authorization");
 
 //$ruleID = isset($_GET["ruleID"])?$_GET["ruleID"]:"";
 $typeID = isset($_GET["typeID"])?$_GET["typeID"]:"";

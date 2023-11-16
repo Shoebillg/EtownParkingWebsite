@@ -3,6 +3,10 @@
 require_once "../../includes/database_config.php";
 require_once "../../classes/ParkingDatabase.php";
 
+header("Access-Control-Allow-Origin: http://localhost");
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type, Authorization");
+
 
 $lotID = isset($_GET["lotID"])?$_GET["lotID"]:"";
 $lotName = isset($_GET["lotName"])?$_GET["lotName"]:"";
