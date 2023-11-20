@@ -83,7 +83,10 @@ require_once "./includes/header.php";
 </body>
 </html>
 
-<script src="./functions/showTable.js"></script>
+<script src="./functions/badgeType.js"></script>
+<script src="./functions/parkingLot.js"></script>
+<script src="./functions/parkingTime.js"></script>
+<script src="./functions/parkingRule.js"></script>
 
 <script>
 

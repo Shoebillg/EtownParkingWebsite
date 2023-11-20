@@ -12,7 +12,7 @@ $data = file_get_contents("php://input") != null ? json_decode(file_get_contents
 require_once "../../includes/database_config.php";
 require_once "../../classes/ParkingDatabase.php";
 
-$id = $data->ruleID;
+$ruleID = $data->ruleID;
 $typeID = $data->typeID;
 $lotID = $data->lotID;
 $timeID = $data->timeID;
@@ -29,9 +29,16 @@ if($ruleID==""||$ruleID==0){
     exit;
 }
 
-if($typeID == ""){
-    //update
+$params = [":ruleID"=>$ruleID,":typeID"=>$typeID,":lotID"=>$lotID,":timeID"=>$timeID,":day"=>$day,":description"=>$description];
+$sql = "update parkingRules set typeID=:typeID,lotID=:lotID,timeID=:timeID,day=:day, description=:description WHERE ruleID=:ruleID;";
+
+$status = ParkingDatabase::executeSQL($sql, $params);
+
+if ($status) {
+    echo json_encode(["message" => "✅ Product Updated!"]);
+} else {
+    echo json_encode(["message" => "❌ Cannot Update!"]);
 }
-//if else()
+
 
 ?>
