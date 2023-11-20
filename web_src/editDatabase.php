@@ -1,7 +1,22 @@
 <?php
 
-require_once "../includes/config.php";
-require_once "DatabaseAPIConnection.php";
+session_start();
+
+// Check if the user is not logged in, redirect to login page
+if (!isset($_SESSION['username'])) {
+    header("Location: login.php");
+    exit();
+}
+
+if (isset($_POST['logout'])) {
+    session_unset(); // Unset all session variables
+    session_destroy(); // Destroy the session
+    header("Location: login.php"); // Redirect to login page after logout
+    exit();
+}
+require_once "./includes/config.php";
+require_once "./classes/DatabaseAPIConnection.php";
+require_once "./includes/header.php";
 
 //Add show parking time table
 ?>
@@ -15,7 +30,10 @@ require_once "DatabaseAPIConnection.php";
 </head>
 <body>
     <header>
-        <h1>Edit Database</h1>
+        <h1 style="background-color:transparent;">Edit Database</h1>
+        <form method="post">
+            <input type="submit" name="logout" value="Logout">
+        </form>
     </header>
 
     <main>
@@ -65,7 +83,7 @@ require_once "DatabaseAPIConnection.php";
 </body>
 </html>
 
-<script src="showTable.js"></script>
+<script src="./functions/showTable.js"></script>
 
 <script>
 
