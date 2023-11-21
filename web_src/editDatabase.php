@@ -39,7 +39,9 @@ require_once "./includes/header.php";
     <main>
         <section id="badge">
             <h2>Badge Type Table</h2>
-            <button id="addBadge">Add</button>
+            <button id="addBadge">Add to badge type table</button>
+            <div id="addBadge">
+            </div>
             <button id="showBadge" type="button" onclick="badgeTableVisibility('<?php echo $url; ?>', '<?php echo $api_key; ?>')">
                 Show table!
             </button>
@@ -49,7 +51,9 @@ require_once "./includes/header.php";
 
         <section id="Lot">
             <h2>Parking Lot Table</h2>
-            <button id="addLot">Add</button>
+            <button id="addLot">Add to parking lot table</button>
+            <div id="addLot">
+            </div>
             <button id="showLot" type="button" onclick="lotTableVisibility('<?php echo $url; ?>', '<?php echo $api_key; ?>')">
                 Show table!
             </button>
@@ -59,7 +63,9 @@ require_once "./includes/header.php";
 
         <section id="time">
             <h2>Paking Time Table</h2>
-            <button id="addTime">Add</button>
+            <button id="addTime">Add to parking time table</button>
+            <div id="addTime">
+            </div>
             <button id="showTime" type="button" onclick="showTime('<?php echo $url; ?>', '<?php echo $api_key; ?>')">
                 Show table!
             </button>
@@ -69,7 +75,9 @@ require_once "./includes/header.php";
 
         <section id="rule">
             <h2>Parking Rule Table</h2>
-            <button id="addRule">Add</button>
+            <button id="addRule" onclick="addRule('<?php echo $url; ?>', '<?php echo $api_key; ?>')">Add to parking rule table</button>
+            <div id="addRuleBox">
+            </div>
             <button id="showRule" type="button" onclick="ruleTableVisibility('<?php echo $url; ?>', '<?php echo $api_key; ?>')">
                 Show table!
             </button>

@@ -1,5 +1,5 @@
 
-async function showRule(url, api){
+async function showRule(url, api){//when edit, if user change id, also change lot name, badge name, start and end time
     const fulUrl = url + 'data_src/api/parkingRule/read.php?APIKEY=' + api;
     console.log(fulUrl);   
 
@@ -11,7 +11,7 @@ async function showRule(url, api){
         const table = document.createElement('rule');
         const tableHeader = document.createElement('thead');
         const headerRow = document.createElement('tr');
-        const headers = ['Rule ID', 'TypeID', 'Lot ID', 'Time ID', 'Day', 'Description', 'Edit', 'Delete']; // Define table headers here
+        const headers = ['Rule ID', 'TypeID', 'Badge Type', 'Lot ID', 'Lot Name', 'Time ID', 'Start Time', 'End Time', 'Day', 'Description', 'Edit', 'Delete']; // Define table headers here
 
         headers.forEach(headerText => {
             const header = document.createElement('th');
@@ -28,8 +28,12 @@ async function showRule(url, api){
     const row = document.createElement('tr');
     const ruleID = document.createElement('td');
     const typeID = document.createElement('td');
+    const typeName = document.createElement('td');
     const lotID = document.createElement('td');
+    const lotName = document.createElement('td');
     const timeID = document.createElement('td');
+    const startTime = document.createElement('td');
+    const endTime = document.createElement('td');
     const day = document.createElement('td');
     const description = document.createElement('td');
     const edit = document.createElement('td');
@@ -37,8 +41,12 @@ async function showRule(url, api){
 
     ruleID.appendChild(document.createTextNode(item.ruleID));
     typeID.appendChild(document.createTextNode(item.typeID));
+    typeName.appendChild(document.createTextNode(item.name));
     lotID.appendChild(document.createTextNode(item.lotID));
+    lotName.appendChild(document.createTextNode(item.lotName));
     timeID.appendChild(document.createTextNode(item.timeID));
+    startTime.appendChild(document.createTextNode(item.startTime));
+    endTime.appendChild(document.createTextNode(item.endTime));
     day.appendChild(document.createTextNode(item.day));
     description.appendChild(document.createTextNode(item.description));
 
@@ -158,7 +166,9 @@ async function showRule(url, api){
 
         alert('Button clicked: ' + item.ruleID)
         //Call delete api for delete this item
+        deletUrl = url + 'data_src/api/parkingRule/delete.php';
 
+        deleteParkingRule(deletUrl, api, item.ruleID)
 
         // Add functionality to delete button click
         // For example: deleteRow(item.typeID);
@@ -168,8 +178,12 @@ async function showRule(url, api){
 
     row.appendChild(ruleID);
     row.appendChild(typeID);
+    row.appendChild(typeName);
     row.appendChild(lotID);
+    row.appendChild(lotName);
     row.appendChild(timeID);
+    row.appendChild(startTime);
+    row.appendChild(endTime);
     row.appendChild(day);
     row.appendChild(description);
     row.appendChild(edit);
@@ -217,4 +231,155 @@ async function updateParkingRule(url, api, data) {
     } catch (error) {
         console.log('Error:');
     }
+}
+
+async function deleteParkingRule(url, api, ruleID) {
+
+    try {
+        const response = await fetch(url, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                
+                // Add other necessary headers here
+            },
+            body: JSON.stringify({
+                ruleID: ruleID,
+                APIKEY: api,
+                // Add other properties as needed for your PHP script
+            }),
+        });
+
+        const responseData = await response.json();
+        console.log(responseData); // Log the response from the server
+    } catch (error) {
+        console.log('Error:');
+    }
+}
+
+//add rule
+function addRule(url, api){
+    //alert("Rule will add");
+    const addRuleBox = document.getElementById('addRuleBox');
+    addRuleBox.innerHTML = ''; // Clear previous content
+    //element.innerHTML = '<button>Hello</button>';
+
+    var typeLabel = document.createElement("label");
+    typeLabel.innerHTML = "Type ID: ";
+
+    var typeBox = document.createElement("input");
+    typeBox.setAttribute("type", "number");
+    typeBox.setAttribute("id", "typeNumber");
+    //typeInput.setAttribute("placeholder", "Enter a number...");
+
+    typeLabel.setAttribute("for", "typeLabe");
+    addRuleBox.appendChild(typeLabel);
+    addRuleBox.appendChild(typeBox);
+
+    var lotLabel = document.createElement("label");
+    lotLabel.innerHTML = "Lot ID: ";
+
+    var lotBox = document.createElement("input");
+    lotBox.setAttribute("type", "number");
+    lotBox.setAttribute("id", "lotNumber");
+    //typeInput.setAttribute("placeholder", "Enter a number...");
+
+    typeLabel.setAttribute("for", "lotLabel");
+    
+    var timeLabel = document.createElement("label");
+    timeLabel.innerHTML = "Time ID: ";
+
+    var timeBox = document.createElement("input");
+    timeBox.setAttribute("type", "number");
+    timeBox.setAttribute("id", "timeNumber");
+    //typeInput.setAttribute("placeholder", "Enter a number...");
+
+    typeLabel.setAttribute("for", "timeLabel");
+    
+    var dayLabel = document.createElement("label");
+    dayLabel.innerHTML = "Day:";
+
+    // Create a text box (input element)
+    var dayBox = document.createElement("input");
+    dayBox.setAttribute("type", "text");
+    dayBox.setAttribute("id", "dayText");
+    //typeIDBox.setAttribute("placeholder", "Enter text...");
+    dayLabel.setAttribute("for", "dayText");
+
+    var descLabel = document.createElement("label");
+    descLabel.innerHTML = " Description:";
+
+    // Create a text box (input element)
+    var descBox = document.createElement("input");
+    descBox.setAttribute("type", "text");
+    descBox.setAttribute("id", "dayText");
+    //typeIDBox.setAttribute("placeholder", "Enter text...");
+    descLabel.setAttribute("for", "descText");
+
+    addRuleBox.appendChild(typeLabel);
+    addRuleBox.appendChild(typeBox);
+    addRuleBox.appendChild(lotLabel);
+    addRuleBox.appendChild(lotBox);
+    addRuleBox.appendChild(timeLabel);
+    addRuleBox.appendChild(timeBox);
+    addRuleBox.appendChild(dayLabel);
+    addRuleBox.appendChild(dayBox);
+    addRuleBox.appendChild(descLabel);
+    addRuleBox.appendChild(descBox);
+
+    var addButton = document.createElement("button");
+    addButton.innerHTML = "Add";
+    addRuleBox.appendChild(addButton);
+
+    function handleClick() {
+        var typeInput = typeBox.value;
+        var lotInput = lotBox.value;
+        var timeInput = timeBox.value;
+        var dayInput = dayBox.value;
+        var descInput = descBox.value;
+        if(!typeInput || !lotInput || !timeInput || !dayInput){
+            alert('Please enter all info');
+        }
+        else{
+            alert("Type: " + typeInput + " Lot: "+ lotInput +"Time ID: " + timeInput +" Day: " + dayInput + " Description: " + descInput);
+            updateUrl = url + 'data_src/api/parkingRule/create.php';
+            addParkingRule(updateUrl, api, typeInput, lotInput, timeInput, dayInput, descInput);
+        }
+      }
+      
+      // Add click event listener to the button
+      if (addButton.addEventListener) {
+        addButton.addEventListener("click", handleClick);
+      } else if (addButton.attachEvent) {
+        addButton.attachEvent("onclick", handleClick);
+      }
+}
+
+async function addParkingRule(url, api, typeID, lotID, timeID, day, description){
+
+    try {
+        const response = await fetch(url, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*',
+                // Add other necessary headers here
+            },
+            body: JSON.stringify({
+                typeID: typeID,
+                lotID: lotID,
+                timeID: timeID,
+                day: day,
+                desc: description,
+                APIKEY: api,
+                // Add other properties as needed for your PHP script
+            }),
+        });
+
+        const responseData = await response.json();
+        console.log(responseData); // Log the response from the server
+    } catch (error) {
+        console.log('Error:');
+    }
+
 }
