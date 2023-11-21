@@ -1,6 +1,7 @@
 <?php
 require_once "../includes/config.php";
 require_once "DatabaseAPIConnection.php";
+require "../index.php";
 
 
 $fullUrl = $url."data_src/api/badgeType/read.php";
@@ -34,7 +35,7 @@ echo "</select>";
 </form>
 
 <div id="test">
-<img src="../images/CollegeMap2.png" alt="Map" usemap="#campusMap" width="1094" height="754" style="position:relative">
+<!--<img src="../images/CollegeMap2.png" alt="Map" usemap="#campusMap" width="1094" height="754" style="position:relative">-->
 
 <?php
 
@@ -43,11 +44,17 @@ $vars = ["APIKEY"=>$api_key];
 $web_string = DatabaseAPIConnection::get($fullUrl, $vars);
 $parkingRules = json_decode($web_string);
 
-foreach($parkingRules as $parkingRule){
+//foreach($parkingRules as $parkingRule){
     //echo $parkingRule->side." ".$parkingRule->top." ".$parkingRule->image;
-    echo "<p id=\"brownPin2\">";
-    echo "<img src=\"../images/lotpin.png\" usemap=\"#brownPinMap\" id=\"brownPin\" style=\"position: absolute; left: ".$parkingRule->side."px; top: ".$parkingRule->top."px; display:block;\">";
-    echo "</p>";
+ //   echo "<p id=\"brownPin2\">";
+ //   echo "<img src=\"../images/lotpin.png\" usemap=\"#brownPinMap\" id=\"brownPin\" style=\"position: absolute; left: ".$parkingRule->side."px; top: ".$parkingRule->top."px; display:block;\">";
+   // echo "</p>";
+//}
+
+foreach($parkingRules as $parkingRule){
+    
+    echo "<script> document.getElementById(.$parkingRule->lotID).style.display = 'block'; </script>";
+   
 }
 
 ?>

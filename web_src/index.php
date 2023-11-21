@@ -83,11 +83,11 @@ require_once "includes/dropdown.php";
 </p>
 <p id="alphaPin2">
     <img src="images/lotpin.png" usemap="#alphaPinMap" id="alphaPin"
-        style="position: absolute; left: 307px; top: 576px; display:block;">
+        style="position: absolute; left: 290px; top: 576px; display:block;">
 </p>
 <p id="alphaDrivePin2">
     <img src="images/lotpin.png" usemap="#alphaDrivePinMap" id="alphaDrivePin"
-        style="position: absolute; left: 343px; top: 604px; display:block;">
+        style="position: absolute; left: 325px; top: 604px; display:block;">
 </p>
 <p id="alphaVisitorPin2">
     <img src="images/lotpin.png" usemap="#alphaVisitorPinMap" id="alphaVisitorPin"
@@ -273,6 +273,13 @@ require_once "includes/dropdown.php";
             document.getElementById("hackmansouth").style.display = 'none';
             document.getElementById("southfounders").style.display = 'none';
             document.getElementById("hackman").style.display = 'none';
+            document.getElementById("myerwest").style.display = 'none';
+            document.getElementById("brinser").style.display = 'none';
+            document.getElementById("admissions").style.display = 'none';
+            document.getElementById("campussafety").style.display = 'none';
+            document.getElementById("alphavisitor").style.display = 'none';
+            document.getElementById("alphadrive").style.display = 'none';
+            document.getElementById("alpha").style.display = 'none';
             imgOn = false;
         }
         else {
@@ -294,6 +301,13 @@ require_once "includes/dropdown.php";
             document.getElementById("hackmansouth").style.display = 'none';
             document.getElementById("southfounders").style.display = 'none';
             document.getElementById("hackman").style.display = 'none';
+            document.getElementById("myerwest").style.display = 'none';
+            document.getElementById("brinser").style.display = 'none';
+            document.getElementById("admissions").style.display = 'none';
+            document.getElementById("campussafety").style.display = 'none';
+            document.getElementById("alphavisitor").style.display = 'none';
+            document.getElementById("alphadrive").style.display = 'none';
+            document.getElementById("alpha").style.display = 'none';
             imgOn = false;
         }
         else {
@@ -315,6 +329,13 @@ require_once "includes/dropdown.php";
             document.getElementById("hackmansouth").style.display = 'none';
             document.getElementById("southfounders").style.display = 'none';
             document.getElementById("hackman").style.display = 'none';
+            document.getElementById("myerwest").style.display = 'none';
+            document.getElementById("brinser").style.display = 'none';
+            document.getElementById("admissions").style.display = 'none';
+            document.getElementById("campussafety").style.display = 'none';
+            document.getElementById("alphavisitor").style.display = 'none';
+            document.getElementById("alphadrive").style.display = 'none';
+            document.getElementById("alpha").style.display = 'none';
             imgOn = false;
         }
         else {
@@ -336,6 +357,13 @@ require_once "includes/dropdown.php";
             document.getElementById("hackmansouth").style.display = 'none';
             document.getElementById("southfounders").style.display = 'none';
             document.getElementById("hackman").style.display = 'none';
+            document.getElementById("myerwest").style.display = 'none';
+            document.getElementById("brinser").style.display = 'none';
+            document.getElementById("admissions").style.display = 'none';
+            document.getElementById("campussafety").style.display = 'none';
+            document.getElementById("alphavisitor").style.display = 'none';
+            document.getElementById("alphadrive").style.display = 'none';
+            document.getElementById("alpha").style.display = 'none';
             imgOn = false;
         }
         else {
@@ -357,6 +385,13 @@ require_once "includes/dropdown.php";
             document.getElementById("hackmansouth").style.display = 'none';
             document.getElementById("southfounders").style.display = 'none';
             document.getElementById("hackman").style.display = 'none';
+            document.getElementById("myerwest").style.display = 'none';
+            document.getElementById("brinser").style.display = 'none';
+            document.getElementById("admissions").style.display = 'none';
+            document.getElementById("campussafety").style.display = 'none';
+            document.getElementById("alphavisitor").style.display = 'none';
+            document.getElementById("alphadrive").style.display = 'none';
+            document.getElementById("alpha").style.display = 'none';
             imgOn = false;
         }
         else {
@@ -378,6 +413,13 @@ require_once "includes/dropdown.php";
             document.getElementById("hackmansouth").style.display = 'none';
             document.getElementById("southfounders").style.display = 'none';
             document.getElementById("hackman").style.display = 'none';
+            document.getElementById("myerwest").style.display = 'none';
+            document.getElementById("brinser").style.display = 'none';
+            document.getElementById("admissions").style.display = 'none';
+            document.getElementById("campussafety").style.display = 'none';
+            document.getElementById("alphavisitor").style.display = 'none';
+            document.getElementById("alphadrive").style.display = 'none';
+            document.getElementById("alpha").style.display = 'none';
             imgOn = false;
         }
         else {
@@ -399,6 +441,13 @@ require_once "includes/dropdown.php";
             document.getElementById("hackmansouth").style.display = 'none';
             document.getElementById("southfounders").style.display = 'none';
             document.getElementById("hackman").style.display = 'none';
+            document.getElementById("myerwest").style.display = 'none';
+            document.getElementById("brinser").style.display = 'none';
+            document.getElementById("admissions").style.display = 'none';
+            document.getElementById("campussafety").style.display = 'none';
+            document.getElementById("alphavisitor").style.display = 'none';
+            document.getElementById("alphadrive").style.display = 'none';
+            document.getElementById("alpha").style.display = 'none';
             imgOn = false;
         }
         else {
@@ -420,6 +469,13 @@ require_once "includes/dropdown.php";
             document.getElementById("hackman").style.display = 'none';
             document.getElementById("hackmansouth").style.display = 'none';
             document.getElementById("southfounders").style.display = 'none';
+            document.getElementById("myerwest").style.display = 'none';
+            document.getElementById("brinser").style.display = 'none';
+            document.getElementById("admissions").style.display = 'none';
+            document.getElementById("campussafety").style.display = 'none';
+            document.getElementById("alphavisitor").style.display = 'none';
+            document.getElementById("alphadrive").style.display = 'none';
+            document.getElementById("alpha").style.display = 'none';
             imgOn = false;
         }
         else {
@@ -441,6 +497,13 @@ require_once "includes/dropdown.php";
             document.getElementById("hackmansouth").style.display = 'none';
             document.getElementById("southfounders").style.display = 'none';
             document.getElementById("hackman").style.display = 'none';
+            document.getElementById("myerwest").style.display = 'none';
+            document.getElementById("brinser").style.display = 'none';
+            document.getElementById("admissions").style.display = 'none';
+            document.getElementById("campussafety").style.display = 'none';
+            document.getElementById("alphavisitor").style.display = 'none';
+            document.getElementById("alphadrive").style.display = 'none';
+            document.getElementById("alpha").style.display = 'none';
             imgOn = false;
         }
         else {
@@ -462,6 +525,13 @@ require_once "includes/dropdown.php";
             document.getElementById("hackmansouth").style.display = 'none';
             document.getElementById("southfounders").style.display = 'none';
             document.getElementById("hackman").style.display = 'none';
+            document.getElementById("myerwest").style.display = 'none';
+            document.getElementById("brinser").style.display = 'none';
+            document.getElementById("admissions").style.display = 'none';
+            document.getElementById("campussafety").style.display = 'none';
+            document.getElementById("alphavisitor").style.display = 'none';
+            document.getElementById("alphadrive").style.display = 'none';
+            document.getElementById("alpha").style.display = 'none';
             imgOn = false;
         }
         else {
@@ -484,6 +554,12 @@ require_once "includes/dropdown.php";
             document.getElementById("southfounders").style.display = 'none';
             document.getElementById("hackman").style.display = 'none';
             document.getElementById("myerwest").style.display = 'none';
+            document.getElementById("brinser").style.display = 'none';
+            document.getElementById("admissions").style.display = 'none';
+            document.getElementById("campussafety").style.display = 'none';
+            document.getElementById("alphavisitor").style.display = 'none';
+            document.getElementById("alphadrive").style.display = 'none';
+            document.getElementById("alpha").style.display = 'none';
             imgOn = false;
         }
         else {
@@ -507,6 +583,11 @@ require_once "includes/dropdown.php";
             document.getElementById("hackman").style.display = 'none';
             document.getElementById("myerwest").style.display = 'none';
             document.getElementById("brinser").style.display = 'none';
+            document.getElementById("admissions").style.display = 'none';
+            document.getElementById("campussafety").style.display = 'none';
+            document.getElementById("alphavisitor").style.display = 'none';
+            document.getElementById("alphadrive").style.display = 'none';
+            document.getElementById("alpha").style.display = 'none';
             imgOn = false;
         }
         else {
@@ -530,6 +611,10 @@ require_once "includes/dropdown.php";
             document.getElementById("myerwest").style.display = 'none';
             document.getElementById("brinser").style.display = 'none';
             document.getElementById("admissions").style.display = 'none';
+            document.getElementById("campussafety").style.display = 'none';
+            document.getElementById("alphavisitor").style.display = 'none';
+            document.getElementById("alphadrive").style.display = 'none';
+            document.getElementById("alpha").style.display = 'none';
             imgOn = false;
         }
         else {
@@ -554,6 +639,9 @@ require_once "includes/dropdown.php";
             document.getElementById("brinser").style.display = 'none';
             document.getElementById("admissions").style.display = 'none';
             document.getElementById("alpha").style.display = 'none';
+            document.getElementById("campussafety").style.display = 'none';
+            document.getElementById("alphavisitor").style.display = 'none';
+            document.getElementById("alphadrive").style.display = 'none';
             imgOn = false;
         }
         else {
@@ -579,6 +667,9 @@ require_once "includes/dropdown.php";
             document.getElementById("admissions").style.display = 'none';
             document.getElementById("alpha").style.display = 'none';
             document.getElementById("alphadrive").style.display = 'none';
+            document.getElementById("admissions").style.display = 'none';
+            document.getElementById("campussafety").style.display = 'none';
+            document.getElementById("alphavisitor").style.display = 'none';
             imgOn = false;
         }
         else {
@@ -603,6 +694,10 @@ require_once "includes/dropdown.php";
             document.getElementById("brinser").style.display = 'none';
             document.getElementById("admissions").style.display = 'none';
             document.getElementById("alphavisitor").style.display = 'none';
+            document.getElementById("admissions").style.display = 'none';
+            document.getElementById("campussafety").style.display = 'none';
+            document.getElementById("alphadrive").style.display = 'none';
+            document.getElementById("alpha").style.display = 'none';
             imgOn = false;
         }
         else {
@@ -627,6 +722,9 @@ require_once "includes/dropdown.php";
             document.getElementById("brinser").style.display = 'none';
             document.getElementById("admissions").style.display = 'none';
             document.getElementById("campussafety").style.display = 'none';
+            document.getElementById("alphavisitor").style.display = 'none';
+            document.getElementById("alphadrive").style.display = 'none';
+            document.getElementById("alpha").style.display = 'none';
             imgOn = false;
         }
         else {
