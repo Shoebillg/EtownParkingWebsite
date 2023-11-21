@@ -40,7 +40,7 @@ require_once "./includes/header.php";
         <section id="badge">
             <h2>Badge Type Table</h2>
             <button id="addBadge">Add to badge type table</button>
-            <div id="addBadge">
+            <div id="addBadgeBox">
             </div>
             <button id="showBadge" type="button" onclick="badgeTableVisibility('<?php echo $url; ?>', '<?php echo $api_key; ?>')">
                 Show table!
@@ -52,7 +52,7 @@ require_once "./includes/header.php";
         <section id="Lot">
             <h2>Parking Lot Table</h2>
             <button id="addLot">Add to parking lot table</button>
-            <div id="addLot">
+            <div id="addLotBox">
             </div>
             <button id="showLot" type="button" onclick="lotTableVisibility('<?php echo $url; ?>', '<?php echo $api_key; ?>')">
                 Show table!
@@ -64,9 +64,9 @@ require_once "./includes/header.php";
         <section id="time">
             <h2>Paking Time Table</h2>
             <button id="addTime">Add to parking time table</button>
-            <div id="addTime">
+            <div id="addTimeBox">
             </div>
-            <button id="showTime" type="button" onclick="showTime('<?php echo $url; ?>', '<?php echo $api_key; ?>')">
+            <button id="showTime" type="button" onclick="timeTableVisibility('<?php echo $url; ?>', '<?php echo $api_key; ?>')">
                 Show table!
             </button>
             <div id="timeTable">
@@ -100,6 +100,7 @@ require_once "./includes/header.php";
 
 let badgeTableVisible = false;
 let lotTableVisible = false;
+let timeTableVisible = false;
 let ruleTableVisible = false;
 
 function badgeTableVisibility(url, api) {
@@ -134,6 +135,22 @@ function lotTableVisibility(url, api) {
     lotTableVisible = !lotTableVisible;
 }
 
+function timeTableVisibility(url, api) {
+    const table = document.getElementById('timeTable');
+    const button = document.getElementById('showTime');
+
+    if (timeTableVisible) {
+        table.style.display = 'none';
+        button.textContent = 'Show Table!';
+    } else {
+        // Show the table (assuming showLot function does this)
+        showTime(url, api);
+        table.style.display = 'block';
+        button.textContent = 'Hide Table!';
+    }
+    timeTableVisible = !timeTableVisible;
+}
+
 function ruleTableVisibility(url, api) {
     const table = document.getElementById('ruleTable');
     const button = document.getElementById('showRule');
@@ -150,11 +167,6 @@ function ruleTableVisibility(url, api) {
     ruleTableVisible = !ruleTableVisible;
 }
 
-async function showTime(rul, api){
-    //alert("Hello World!");
-    //const fulUrl = url + 'data_src/api/parkingTime/read.php?APIKEY=' + api;
-    //console.log(fulUrl);
-}
 
 </script>
 
