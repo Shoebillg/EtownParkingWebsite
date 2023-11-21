@@ -70,7 +70,7 @@ CREATE TABLE IF NOT EXISTS `etownparking`.`parkingRules` (
   CONSTRAINT `lotID`
     FOREIGN KEY (`lotID`)
     REFERENCES `etownparking`.`parkingLots` (`lotID`),
-  CONSTRAINT `lotID`
+  CONSTRAINT `timeID`
     FOREIGN KEY (`timeID`)
     REFERENCES `etownparking`.`parkingTimes` (`timeID`)
   );
