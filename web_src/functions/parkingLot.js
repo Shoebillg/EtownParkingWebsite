@@ -129,9 +129,11 @@ async function showLot(url, api){
     deleteButton.textContent = 'Delete';
     deleteButton.addEventListener('click', () => {
 
-        alert('Button clicked: ' + item.lotID)
+        alert('Delete Button clicked')
         //Call delete api for delete this item
-
+        deleteUrl = url + 'data_src/api/parkingLot/delete.php';
+        console.log(deleteUrl);
+        deleteParkingLot(deleteUrl, api, item.lotID);
 
         // Add functionality to delete button click
         // For example: deleteRow(item.typeID);
@@ -185,6 +187,36 @@ async function updateParkingLot(url, api, data) {
 
         const responseData = await response.json();
         console.log(responseData); // Log the response from the server
+    } catch (error) {
+        console.log('Error:');
+    }
+}
+
+async function deleteParkingLot(url, api, lotID) {
+
+    try {
+        const response = await fetch(url, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                
+                // Add other necessary headers here
+            },
+            body: JSON.stringify({
+                lotID: lotID,
+                APIKEY: api,
+                // Add other properties as needed for your PHP script
+            }),
+        });
+
+        const responseData = await response.json();
+        console.log(responseData); // Log the response from the server
+
+        console.log("Response Message:", responseData.message);
+
+        if('Lot ID is used in parkingRule table.' === responseData.message){
+            alert('Lot ID is used in parkingRule table.\nCannot delete!');
+        }
     } catch (error) {
         console.log('Error:');
     }

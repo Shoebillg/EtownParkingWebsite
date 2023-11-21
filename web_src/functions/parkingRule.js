@@ -1,5 +1,5 @@
 
-async function showRule(url, api){//when edit, if user change id, also change lot name, badge name, start and end time
+async function showRule(url, api){//when edit, if user change id, also change lot name, badge name, start and end time, cancel button for update
     const fulUrl = url + 'data_src/api/parkingRule/read.php?APIKEY=' + api;
     console.log(fulUrl);   
 
