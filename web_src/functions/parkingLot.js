@@ -44,43 +44,82 @@ async function showLot(url, api){
     const editButton = document.createElement('button');
     editButton.textContent = 'Edit';
     editButton.addEventListener('click', () => {
-        // Here you can trigger the editing process for the specific item
-        // For example, create an input field within the table cell and populate it with the existing value
-    
-        const nameField = document.createElement('input');
-        nameField.type = 'text';
-        nameField.value = item.lotName; // Assuming 'name' is the property to edit
-        name.innerHTML = ''; // Clear the cell content
-        name.appendChild(nameField);
-        
-        const imageField = document.createElement('input');
-        imageField.type = 'text';
-        imageField.value = item.image;
-        image.innerHTML = '';
-        image.appendChild(imageField);
 
-        const sideField = document.createElement('input');
-        sideField.type = 'number';
-        sideField.value = item.side;
-        side.innerHTML = '';
-        side.appendChild(sideField);
+        if(editButton.textContent === 'Edit'){
 
-        const topField = document.createElement('input');
-        topField.type = 'number';
-        topField.value = item.top;
-        top.innerHTML = '';
-        top.appendChild(topField);
+            editButton.textContent = 'Update';
 
     
-        // Update the edit button to a 'Save' button
-        editButton.textContent = 'Update';
-        editButton.addEventListener('click', () => {
-            // Save functionality here: Get the updated value from the inputField.value
-            //const updatedValue = inputField.value;
-            alert(item.lotID);
-            editButton.textContent = 'Edit'; 
+            const lotNameField = document.createElement('input');
+            lotNameField.type = 'text';
+            lotNameField.value = item.lotName; // Assuming 'name' is the property to edit
+            name.innerHTML = ''; // Clear the cell content
+            name.appendChild(lotNameField);
             
-        });
+            const imageField = document.createElement('input');
+            imageField.type = 'text';
+            imageField.value = item.image;
+            image.innerHTML = '';
+            image.appendChild(imageField);
+
+            const sideField = document.createElement('input');
+            sideField.type = 'number';
+            sideField.value = item.side;
+            side.innerHTML = '';
+            side.appendChild(sideField);
+
+            const topField = document.createElement('input');
+            topField.type = 'number';
+            topField.value = item.top;
+            top.innerHTML = '';
+            top.appendChild(topField);
+
+            lotNameField.addEventListener('change', () =>{
+
+            });
+
+            editButton.textContent == 'Update';
+        }
+
+        else if(editButton.textContent === 'Update'){
+       
+            // Save functionality here: Get the updated value from the inputField.value
+            //const updatedValue = typeIDField.value;
+            const lotNameInput = name.querySelector('input');
+            const lotNameUpdate = lotNameInput.value;
+
+            const imageInput = image.querySelector('input');
+            const imageUpdate = imageInput.value;
+
+            const sideInput = side.querySelector('input');
+            const sideUpdate = sideInput.value;
+
+            const topInput = top.querySelector('input');
+            const topUpdate = topInput.value;            
+
+            alert(lotNameUpdate +" "+imageUpdate +" "+sideUpdate +" "+topUpdate);  
+
+            const updateUrl = url + 'data_src/api/parkingLot/update.php';
+            console.log(updateUrl);
+
+            //alert(item.ruleID + ": " + updatedValue);
+            //alert(item.ruleID);
+            editButton.textContent = 'Edit';
+
+            name.innerHTML = lotNameUpdate;
+            image.innerHTML = imageUpdate;
+            side.innerHTML = sideUpdate;
+            top.innerHTML = topUpdate;
+
+            const lotData = {
+                lotID: item.lotID,
+                lotName: lotNameInput.value,
+                image: imageInput.value,
+                side: sideInput.value,
+                top: topInput.value,
+            };
+            updateParkingLot(updateUrl, api, lotData);
+        }
     });
     
     edit.appendChild(editButton);
@@ -121,4 +160,32 @@ async function showLot(url, api){
         console.error('Error:', error);
     }
 
+}
+
+async function updateParkingLot(url, api, data) {
+
+    try {
+        const response = await fetch(url, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*',
+                // Add other necessary headers here
+            },
+            body: JSON.stringify({
+                lotID: data.lotID,
+                lotName: data.lotName,
+                image: data.image,
+                side: data.side,
+                top: data.top,
+                APIKEY: api,
+                // Add other properties as needed for your PHP script
+            }),
+        });
+
+        const responseData = await response.json();
+        console.log(responseData); // Log the response from the server
+    } catch (error) {
+        console.log('Error:');
+    }
 }

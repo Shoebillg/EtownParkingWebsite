@@ -35,7 +35,7 @@ $sql = "update parkingRules set typeID=:typeID,lotID=:lotID,timeID=:timeID,day=:
 $status = ParkingDatabase::executeSQL($sql, $params);
 
 if ($status) {
-    echo json_encode(["message" => "✅ Product Updated!"]);
+    echo json_encode(["message" => "✅ Parking Rule Updated!"]);
 } else {
     echo json_encode(["message" => "❌ Cannot Update!"]);
 }
