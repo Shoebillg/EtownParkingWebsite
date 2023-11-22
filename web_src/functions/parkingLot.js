@@ -84,7 +84,7 @@ async function showLot(url, api){//change user can updload image
         else if(editButton.textContent === 'Update'){
        
             // Save functionality here: Get the updated value from the inputField.value
-            //const updatedValue = typeIDField.value;
+            const updatedValue = typeIDField.value;
             //const lotNameInput = name.querySelector('input');
             //const lotNameUpdate = lotNameInput.value;
 
@@ -96,15 +96,19 @@ async function showLot(url, api){//change user can updload image
 
             //const topInput = top.querySelector('input');
             //const topUpdate = topInput.value;            
+            const lotNameInput = name.querySelector('input').value;
+            const imageInput = image.querySelector('input').value;
+            const sideInput = side.querySelector('input').value;
+            const topInput = top.querySelector('input').value;
 
-            //alert(lotNameUpdate +" "+imageUpdate +" "+sideUpdate +" "+topUpdate);  
+            alert(lotNameUpdate +" "+imageUpdate +" "+sideUpdate +" "+topUpdate);  
 
-            //const updateUrl = url + 'data_src/api/parkingLot/update.php';
-            //console.log(updateUrl);
+            const updateUrl = url + 'data_src/api/parkingLot/update.php';
+            console.log(updateUrl);
 
-            //alert(item.ruleID + ": " + updatedValue);
-            //alert(item.ruleID);
-            //editButton.textContent = 'Edit';
+            alert(item.ruleID + ": " + updatedValue);
+            alert(item.ruleID);
+            editButton.textContent = 'Edit';
 
             //name.innerHTML = lotNameUpdate;
             //image.innerHTML = imageUpdate;
@@ -120,11 +124,7 @@ async function showLot(url, api){//change user can updload image
             //};
             //updateParkingLot(updateUrl, api, lotData);
             // Get updated values from input fields
-            const lotNameInput = name.querySelector('input').value;
-            const imageInput = image.querySelector('input').value;
-            const sideInput = side.querySelector('input').value;
-            const topInput = top.querySelector('input').value;
-            
+              
             // Make an API call to update data
             const updatedLotData = {
                 lotID: item.lotID,
