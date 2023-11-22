@@ -113,11 +113,11 @@ async function showTime(url, api){//when edit, if user change id, also change lo
     deleteButton.textContent = 'Delete';
     deleteButton.addEventListener('click', () => {
 
-        alert('Button clicked: ' + item.timeID)
+        alert('Delete Button clicked')
         //Call delete api for delete this item
         deletUrl = url + 'data_src/api/parkingTime/delete.php';
 
-        //deleteParkingTime(deletUrl, api, item.timeID)
+        deleteParkingTime(deletUrl, api, item.timeID)
 
         // Add functionality to delete button click
         // For example: deleteRow(item.typeID);
@@ -169,4 +169,123 @@ async function updateParkingTime(url, api, data) {
     } catch (error) {
         console.log('Error:');
     }
+}
+
+async function deleteParkingTime(url, api, timeID) {
+
+    try {
+        const response = await fetch(url, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                
+                // Add other necessary headers here
+            },
+            body: JSON.stringify({
+                timeID: timeID,
+                APIKEY: api,
+                // Add other properties as needed for your PHP script
+            }),
+        });
+
+        const responseData = await response.json();
+        console.log(responseData); // Log the response from the server
+        if('Time ID is used in parkingRule table.' === responseData.message){
+            alert('Time ID is used in parkingRule table.\nCannot delete!');
+        }
+        else{
+            alert('Time Deleted!');
+        }
+    } catch (error) {
+        console.log('Error:');
+    }
+}
+
+
+function addTime(url, api){
+    //alert("Rule will add");
+    const addTimeBox = document.getElementById('addTimeBox');
+    addTimeBox.innerHTML = ''; // Clear previous content
+    //element.innerHTML = '<button>Hello</button>';
+
+    var startLabel = document.createElement("label");
+    startLabel.innerHTML = "Start Time: ";
+
+    var startBox = document.createElement("input");
+    startBox.setAttribute("type", "time");
+    startBox.setAttribute("id", "startTime");
+    startBox.setAttribute("step", "1");
+    //typeInput.setAttribute("placeholder", "Enter a number...");
+
+    startLabel.setAttribute("for", "startLabe");
+    addTimeBox.appendChild(startLabel);
+    addTimeBox.appendChild(startBox);
+
+    var endLabel = document.createElement("label");
+    endLabel.innerHTML = "End Time: ";
+
+    var endBox = document.createElement("input");
+    endBox.setAttribute("type", "time");
+    endBox.setAttribute("id", "endTime");
+    endBox.setAttribute("step", "1");
+    //typeInput.setAttribute("placeholder", "Enter a number...");
+
+    endLabel.setAttribute("for", "endLabel");
+
+    addTimeBox.appendChild(startLabel);
+    addTimeBox.appendChild(startBox);
+    addTimeBox.appendChild(endLabel);
+    addTimeBox.appendChild(endBox);
+
+    var addButton = document.createElement("button");
+    addButton.innerHTML = "Add";
+    addTimeBox.appendChild(addButton);
+
+    function handleClick() {
+        var startInput = startBox.value;
+        var endInput = endBox.value;
+
+        if(!startInput || !endInput){
+            alert('Please enter all info');
+        }
+        else{
+            //alert("Name: " + nameInput + " Image: "+ imageInput +"Top: " + topInput +" Side: " + sideInput);
+            updateUrl = url + 'data_src/api/parkingTime/create.php';
+            addParkingTime(updateUrl, api, startInput, endInput);
+        }
+      }
+      
+      // Add click event listener to the button
+      if (addButton.addEventListener) {
+        addButton.addEventListener("click", handleClick);
+      } else if (addButton.attachEvent) {
+        addButton.attachEvent("onclick", handleClick);
+      }
+}
+
+async function addParkingTime(url, api, startTime, endTime){
+
+    try {
+        const response = await fetch(url, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*',
+                // Add other necessary headers here
+            },
+            body: JSON.stringify({
+                startTime: startTime,
+                endTime: endTime,
+                APIKEY: api,
+                // Add other properties as needed for your PHP script
+            }),
+        });
+
+        const responseData = await response.json();
+        console.log(responseData); // Log the response from the server
+        alert('Lot Added!');
+    } catch (error) {
+        console.log('Error:');
+    }
+
 }

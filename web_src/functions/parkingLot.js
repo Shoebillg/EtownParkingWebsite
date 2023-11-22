@@ -1,4 +1,4 @@
-async function showLot(url, api){
+async function showLot(url, api){//change user can updload image
 
     const fulUrl = url + 'data_src/api/parkingLot/read.php?APIKEY=' + api;
     console.log(fulUrl);    
