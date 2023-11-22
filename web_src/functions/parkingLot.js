@@ -45,152 +45,79 @@ async function showLot(url, api){//change user can updload image
     editButton.textContent = 'Edit';
     editButton.addEventListener('click', () => {
         if (editButton.textContent === 'Edit') {
-            const typeIDField = document.createElement('input');
-            typeIDField.type = 'number';
-            typeIDField.value = item.typeID; // Assuming 'name' is the property to edit
-            typeID.innerHTML = ''; // Clear the cell content
-            typeID.appendChild(typeIDField);
-
-            const lotIDField = document.createElement('input');
-            lotIDField.type = 'number';
-            lotIDField.value = item.lotID;
-            lotID.innerHTML = '';
-            lotID.appendChild(lotIDField);
-
-            const timeIDField = document.createElement('input');
-            timeIDField.type = 'number';
-            timeIDField.value = item.timeID;
-            timeID.innerHTML = '';
-            timeID.appendChild(timeIDField);
-
-            const dayField = document.createElement('input');
-            dayField.type = 'text';
-            dayField.value = item.day;
-            day.innerHTML = '';
-            day.appendChild(dayField);
-
-            const descField = document.createElement('input');
-            descField.type = 'text';
-            descField.value = item.description;
-            description.innerHTML = '';
-            description.appendChild(descField);
-
-            // Update the edit button to a 'Save' button
-            editButton.textContent = 'Update';
-
-            typeIDField.addEventListener('change', () => {
-                
-            });
-
-            lotIDField.addEventListener('change', () => {
-                
-            });
-
-            timeIDField.addEventListener('change', () => {
-                
-            });
-
-            dayField.addEventListener('change', () => {
-                
-            });
-
-            descField.addEventListener('change', () => {
-                
-                //alert(currentValue + " " + originalValue);
-            });
-        }
-        if(editButton.textContent === 'Edit'){
-
-            editButton.textContent = 'Update';
-
-    
+            // Create input fields for editing
             const lotNameField = document.createElement('input');
             lotNameField.type = 'text';
-            lotNameField.value = item.lotName; // Assuming 'name' is the property to edit
+            lotNameField.value = item.lotName; // Assuming 'lotName' is the property to edit
             name.innerHTML = ''; // Clear the cell content
             name.appendChild(lotNameField);
-            
+    
             const imageField = document.createElement('input');
             imageField.type = 'text';
             imageField.value = item.image;
             image.innerHTML = '';
             image.appendChild(imageField);
-
+    
             const sideField = document.createElement('input');
             sideField.type = 'number';
             sideField.value = item.side;
             side.innerHTML = '';
             side.appendChild(sideField);
-
+    
             const topField = document.createElement('input');
             topField.type = 'number';
             topField.value = item.top;
             top.innerHTML = '';
             top.appendChild(topField);
-
-            lotNameField.addEventListener('change', () =>{
-
-            });
-
+    
             editButton.textContent = 'Update';
-        }
-
-        else if(editButton.textContent === 'Update'){
-       
-            // Save functionality here: Get the updated value from the inputField.value
-            const updatedValue = typeIDField.value;
-            //const lotNameInput = name.querySelector('input');
-            //const lotNameUpdate = lotNameInput.value;
-
-            //const imageInput = image.querySelector('input');
-            //const imageUpdate = imageInput.value;
-
-            //const sideInput = side.querySelector('input');
-            //const sideUpdate = sideInput.value;
-
-            //const topInput = top.querySelector('input');
-            //const topUpdate = topInput.value;            
-            const lotNameInput = name.querySelector('input').value;
-            const imageInput = image.querySelector('input').value;
-            const sideInput = side.querySelector('input').value;
-            const topInput = top.querySelector('input').value;
-
-            alert(lotNameUpdate +" "+imageUpdate +" "+sideUpdate +" "+topUpdate);  
-
-            const updateUrl = url + 'data_src/api/parkingLot/update.php';
-            console.log(updateUrl);
-
-            alert(item.ruleID + ": " + updatedValue);
-            alert(item.ruleID);
-            editButton.textContent = 'Edit';
-
-            name.innerHTML = lotNameUpdate;
-            image.innerHTML = imageUpdate;
-            side.innerHTML = sideUpdate;
-            top.innerHTML = topUpdate;
-
-            //const lotData = {
-                //lotID: item.lotID,
-                //lotName: lotNameInput.value,
-                //image: imageInput.value,
-                //side: sideInput.value,
-                //top: topInput.value,
-            //};
-            //updateParkingLot(updateUrl, api, lotData);
-            // Get updated values from input fields
-              
-            // Make an API call to update data
-            const updatedLotData = {
-                lotID: item.lotID,
-                lotName: lotNameInput,
-                image: imageInput,
-                side: sideInput,
-                top: topInput,
+    
+            // Store initial values for potential revert
+            const initialValues = {
+                lotName: item.lotName,
+                image: item.image,
+                side: item.side,
+                top: item.top,
             };
-            updateParkingLot(updateUrl, api, updatedLotData);}});
-            // Get updated values from input fields
-
-    edit.appendChild(editButton);
+    
+            editButton.addEventListener('click', () => {
+                if (editButton.textContent === 'Update') {
+                    const updatedLotData = {
+                        lotID: item.lotID,
+                        lotName: lotNameField.value,
+                        image: imageField.value,
+                        side: sideField.value,
+                        top: topField.value,
+                    };
+    
+                    const updateUrl = url + 'data_src/api/parkingLot/update.php';
+                    updateParkingLot(updateUrl, api, updatedLotData)
+                        .then(response => {
+                            if (response.ok) {
+                                // Update UI after successful update
+                                showLot(url, api);
+                                alert('Lot Updated!');
+                            } else {
+                                // Handle failed update here (if needed)
+                                alert('Update failed!');
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Error:', error);
+                            alert('Error occurred while updating lot.');
+                        });
+    
+                    // Revert to 'Edit' button text
+                    editButton.textContent = 'Edit';
+                    // Revert UI to initial values if needed
+                    name.innerHTML = initialValues.lotName;
+                    image.innerHTML = initialValues.image;
+                    side.innerHTML = initialValues.side;
+                    top.innerHTML = initialValues.top;
+                }
+            });
+        }
+    });
 
     // Delete button
     const deleteButton = document.createElement('button');
