@@ -110,10 +110,10 @@ async function showLot(url, api){//change user can updload image
             alert(item.ruleID);
             editButton.textContent = 'Edit';
 
-            //name.innerHTML = lotNameUpdate;
-            //image.innerHTML = imageUpdate;
-            //side.innerHTML = sideUpdate;
-            //top.innerHTML = topUpdate;
+            name.innerHTML = lotNameUpdate;
+            image.innerHTML = imageUpdate;
+            side.innerHTML = sideUpdate;
+            top.innerHTML = topUpdate;
 
             //const lotData = {
                 //lotID: item.lotID,
