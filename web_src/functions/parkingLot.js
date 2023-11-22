@@ -97,7 +97,7 @@ async function showLot(url, api){
             const topInput = top.querySelector('input');
             const topUpdate = topInput.value;            
 
-            alert(lotNameUpdate +" "+imageUpdate +" "+sideUpdate +" "+topUpdate);  
+            //alert(lotNameUpdate +" "+imageUpdate +" "+sideUpdate +" "+topUpdate);  
 
             const updateUrl = url + 'data_src/api/parkingLot/update.php';
             console.log(updateUrl);
@@ -129,7 +129,7 @@ async function showLot(url, api){
     deleteButton.textContent = 'Delete';
     deleteButton.addEventListener('click', () => {
 
-        alert('Delete Button clicked')
+        //alert('Delete Button clicked')
         //Call delete api for delete this item
         deleteUrl = url + 'data_src/api/parkingLot/delete.php';
         console.log(deleteUrl);
@@ -187,6 +187,8 @@ async function updateParkingLot(url, api, data) {
 
         const responseData = await response.json();
         console.log(responseData); // Log the response from the server
+        alert('Lot Updated!');
+
     } catch (error) {
         console.log('Error:');
     }
@@ -217,7 +219,125 @@ async function deleteParkingLot(url, api, lotID) {
         if('Lot ID is used in parkingRule table.' === responseData.message){
             alert('Lot ID is used in parkingRule table.\nCannot delete!');
         }
+        else{
+            alert('Lot Deleted!');
+        }
     } catch (error) {
         console.log('Error:');
     }
+}
+
+//add lot
+function addLot(url, api){
+    //alert("Rule will add");
+    const addLotBox = document.getElementById('addLotBox');
+    addLotBox.innerHTML = ''; // Clear previous content
+    //element.innerHTML = '<button>Hello</button>';
+
+    var nameLabel = document.createElement("label");
+    nameLabel.innerHTML = "Lot Name: ";
+
+    var nameBox = document.createElement("input");
+    nameBox.setAttribute("type", "text");
+    nameBox.setAttribute("id", "nameText");
+    //typeInput.setAttribute("placeholder", "Enter a number...");
+
+    nameLabel.setAttribute("for", "nameLabe");
+    addLotBox.appendChild(nameLabel);
+    addLotBox.appendChild(nameBox);
+
+    var imageLabel = document.createElement("label");
+    imageLabel.innerHTML = "Image: ";
+
+    var imageBox = document.createElement("input");
+    imageBox.setAttribute("type", "text");
+    imageBox.setAttribute("id", "imageText");
+    //typeInput.setAttribute("placeholder", "Enter a number...");
+
+    imageLabel.setAttribute("for", "imageLabel");
+    
+    var sideLabel = document.createElement("label");
+    sideLabel.innerHTML = "Side: ";
+
+    var sideBox = document.createElement("input");
+    sideBox.setAttribute("type", "number");
+    sideBox.setAttribute("id", "sideNumber");
+    //typeInput.setAttribute("placeholder", "Enter a number...");
+
+    sideLabel.setAttribute("for", "sideLabel");
+    
+    var topLabel = document.createElement("label");
+    topLabel.innerHTML = "Top:";
+
+    // Create a text box (input element)
+    var topBox = document.createElement("input");
+    topBox.setAttribute("type", "number");
+    topBox.setAttribute("id", "topNumber");
+    //typeIDBox.setAttribute("placeholder", "Enter text...");
+    topLabel.setAttribute("for", "topNumber");
+
+    addLotBox.appendChild(nameLabel);
+    addLotBox.appendChild(nameBox);
+    addLotBox.appendChild(imageLabel);
+    addLotBox.appendChild(imageBox);
+    addLotBox.appendChild(sideLabel);
+    addLotBox.appendChild(sideBox);
+    addLotBox.appendChild(topLabel);
+    addLotBox.appendChild(topBox);
+
+    var addButton = document.createElement("button");
+    addButton.innerHTML = "Add";
+    addLotBox.appendChild(addButton);
+
+    function handleClick() {
+        var nameInput = nameBox.value;
+        var imageInput = imageBox.value;
+        var sideInput = sideBox.value;
+        var topInput = topBox.value;
+
+        if(!nameInput || !imageInput || !sideInput || !topInput){
+            alert('Please enter all info');
+        }
+        else{
+            //alert("Name: " + nameInput + " Image: "+ imageInput +"Top: " + topInput +" Side: " + sideInput);
+            updateUrl = url + 'data_src/api/parkingLot/create.php';
+            addParkingLot(updateUrl, api, nameInput, imageInput, sideInput, topInput);
+        }
+      }
+      
+      // Add click event listener to the button
+      if (addButton.addEventListener) {
+        addButton.addEventListener("click", handleClick);
+      } else if (addButton.attachEvent) {
+        addButton.attachEvent("onclick", handleClick);
+      }
+}
+
+async function addParkingLot(url, api, lotName, image, side, top){
+
+    try {
+        const response = await fetch(url, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*',
+                // Add other necessary headers here
+            },
+            body: JSON.stringify({
+                lotName: lotName,
+                image: image,
+                side: side,
+                top: top,
+                APIKEY: api,
+                // Add other properties as needed for your PHP script
+            }),
+        });
+
+        const responseData = await response.json();
+        console.log(responseData); // Log the response from the server
+        alert('Lot Added!');
+    } catch (error) {
+        console.log('Error:');
+    }
+
 }

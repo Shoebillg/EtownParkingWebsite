@@ -101,7 +101,7 @@ async function showTime(url, api){//when edit, if user change id, also change lo
                 startTime: startInput.value,
                 endTime: endInput.value,
             };
-            //updateParkingTime(updateUrl, api, timeData);
+            updateParkingTime(updateUrl, api, timeData);
 
         }
     });
@@ -143,4 +143,30 @@ async function showTime(url, api){//when edit, if user change id, also change lo
         console.error('Error:', error);
     }
 
+}
+
+async function updateParkingTime(url, api, data) {
+
+    try {
+        const response = await fetch(url, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*',
+                // Add other necessary headers here
+            },
+            body: JSON.stringify({
+                timeID: data.timeID,
+                startTime: data.startTime,
+                endTime: data.endTime,
+                APIKEY: api,
+                // Add other properties as needed for your PHP script
+            }),
+        });
+
+        const responseData = await response.json();
+        console.log(responseData); // Log the response from the server
+    } catch (error) {
+        console.log('Error:');
+    }
 }

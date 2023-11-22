@@ -9,11 +9,10 @@ header("Access-Control-Allow-Headers: Access-Control-Allow-Headers, Access-Contr
 
 $data = file_get_contents("php://input") != null ? json_decode(file_get_contents("php://input")) : die();
 
-$typeID = $data->typeID;
-$lotID = $data->lotID;
-$timeID = $data->timeID;
-$day = $data->day;
-$description = $data->desc;
+$lotName = $data->lotName;
+$image = $data->image;
+$side = $data->side;
+$top = $data->top;
 $key = $data->APIKEY;
 /*
 $typeID = isset($_POST["typeID"])?$_POST["typeID"]:"";
@@ -27,9 +26,9 @@ if($key!=$GLOBAL_API_KEY){
   echo json_encode(["message"=>"Invalid API KEY"]);
   exit;
 }
-$params = [":typeID"=>$typeID,":lotID"=>$lotID,":timeID"=>$timeID,":day"=>$day,":description"=>$description];
-$sql = "Insert into parkingRules (typeID,lotID,timeID,day,description) VALUES (:typeID,:lotID,:timeID,:day,:description);";
+$params = [":lotName"=>$lotName,":image"=>$image,":side"=>$side,":top"=>$top];
+$sql = "Insert into parkingLots (lotName,image,side,top) VALUES (:lotName,:image,:side,:top);";
 ParkingDatabase::executeSQL($sql, $params);
-$message = ["message"=>"Rule Created Successfully"];
+$message = ["message"=>"Lot Created Successfully"];
 echo json_encode($message);
 ?>

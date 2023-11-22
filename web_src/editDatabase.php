@@ -39,7 +39,7 @@ require_once "./includes/header.php";
     <main>
         <section id="badge">
             <h2>Badge Type Table</h2>
-            <button id="addBadge">Add to badge type table</button>
+            <button id="addBadge" onclick="addBadge('<?php echo $url; ?>', '<?php echo $api_key; ?>')">Add to badge type table</button>
             <div id="addBadgeBox">
             </div>
             <button id="showBadge" type="button" onclick="badgeTableVisibility('<?php echo $url; ?>', '<?php echo $api_key; ?>')">
@@ -51,7 +51,7 @@ require_once "./includes/header.php";
 
         <section id="Lot">
             <h2>Parking Lot Table</h2>
-            <button id="addLot">Add to parking lot table</button>
+            <button id="addLot"onclick="addLot('<?php echo $url; ?>', '<?php echo $api_key; ?>')">Add to parking lot table</button>
             <div id="addLotBox">
             </div>
             <button id="showLot" type="button" onclick="lotTableVisibility('<?php echo $url; ?>', '<?php echo $api_key; ?>')">
@@ -63,7 +63,7 @@ require_once "./includes/header.php";
 
         <section id="time">
             <h2>Paking Time Table</h2>
-            <button id="addTime">Add to parking time table</button>
+            <button id="addTime" onclick="addTime('<?php echo $url; ?>', '<?php echo $api_key; ?>')">Add to parking time table</button>
             <div id="addTimeBox">
             </div>
             <button id="showTime" type="button" onclick="timeTableVisibility('<?php echo $url; ?>', '<?php echo $api_key; ?>')">

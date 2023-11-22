@@ -129,7 +129,7 @@ async function showRule(url, api){//when edit, if user change id, also change lo
 
             const descInput = description.querySelector('input');
             const descUpdate = descInput.value;
-            alert(typeUpdate +" "+lotUpdate +" "+timeUpdate +" "+dayUpdate +descUpdate);  
+            //alert(typeUpdate +" "+lotUpdate +" "+timeUpdate +" "+dayUpdate +descUpdate);  
 
             const updateUrl = url + 'data_src/api/parkingRule/update.php';
             console.log(updateUrl);
@@ -228,6 +228,7 @@ async function updateParkingRule(url, api, data) {
 
         const responseData = await response.json();
         console.log(responseData); // Log the response from the server
+        alert('Rule Updated!');
     } catch (error) {
         console.log('Error:');
     }
@@ -252,6 +253,7 @@ async function deleteParkingRule(url, api, ruleID) {
 
         const responseData = await response.json();
         console.log(responseData); // Log the response from the server
+        alert('Rule Deleted!');
     } catch (error) {
         console.log('Error:');
     }
@@ -284,7 +286,7 @@ function addRule(url, api){
     lotBox.setAttribute("id", "lotNumber");
     //typeInput.setAttribute("placeholder", "Enter a number...");
 
-    typeLabel.setAttribute("for", "lotLabel");
+    lotLabel.setAttribute("for", "lotLabel");
     
     var timeLabel = document.createElement("label");
     timeLabel.innerHTML = "Time ID: ";
@@ -294,7 +296,7 @@ function addRule(url, api){
     timeBox.setAttribute("id", "timeNumber");
     //typeInput.setAttribute("placeholder", "Enter a number...");
 
-    typeLabel.setAttribute("for", "timeLabel");
+    timeLabel.setAttribute("for", "timeLabel");
     
     var dayLabel = document.createElement("label");
     dayLabel.innerHTML = "Day:";
@@ -378,8 +380,12 @@ async function addParkingRule(url, api, typeID, lotID, timeID, day, description)
 
         const responseData = await response.json();
         console.log(responseData); // Log the response from the server
+        alert('Rule Added!');
+        
     } catch (error) {
-        console.log('Error:');
+//        console.log('Error:');
+        alert('Rule cannot be added!\nError!');
+
     }
 
 }
