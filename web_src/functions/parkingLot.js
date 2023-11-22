@@ -78,7 +78,7 @@ async function showLot(url, api){//change user can updload image
 
             });
 
-            editButton.textContent == 'Update';
+            editButton.textContent = 'Update';
         }
 
         else if(editButton.textContent === 'Update'){
