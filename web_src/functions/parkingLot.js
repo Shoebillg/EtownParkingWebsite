@@ -45,40 +45,35 @@ async function showLot(url, api){//change user can updload image
     editButton.textContent = 'Edit';
     editButton.addEventListener('click', () => {
         if (editButton.textContent === 'Edit') {
+            // Clear the row content
+            id.innerHTML = '';
+            name.innerHTML = '';
+            image.innerHTML = '';
+            side.innerHTML = '';
+            top.innerHTML = '';
+    
             // Create input fields for editing
             const lotNameField = document.createElement('input');
             lotNameField.type = 'text';
             lotNameField.value = item.lotName; // Assuming 'lotName' is the property to edit
-            name.innerHTML = ''; // Clear the cell content
             name.appendChild(lotNameField);
     
             const imageField = document.createElement('input');
             imageField.type = 'text';
             imageField.value = item.image;
-            image.innerHTML = '';
             image.appendChild(imageField);
     
             const sideField = document.createElement('input');
             sideField.type = 'number';
             sideField.value = item.side;
-            side.innerHTML = '';
             side.appendChild(sideField);
     
             const topField = document.createElement('input');
             topField.type = 'number';
             topField.value = item.top;
-            top.innerHTML = '';
             top.appendChild(topField);
     
             editButton.textContent = 'Update';
-    
-            // Store initial values for potential revert
-            const initialValues = {
-                lotName: item.lotName,
-                image: item.image,
-                side: item.side,
-                top: item.top,
-            };
     
             editButton.addEventListener('click', () => {
                 if (editButton.textContent === 'Update') {
@@ -109,15 +104,12 @@ async function showLot(url, api){//change user can updload image
     
                     // Revert to 'Edit' button text
                     editButton.textContent = 'Edit';
-                    // Revert UI to initial values if needed
-                    name.innerHTML = initialValues.lotName;
-                    image.innerHTML = initialValues.image;
-                    side.innerHTML = initialValues.side;
-                    top.innerHTML = initialValues.top;
                 }
             });
         }
     });
+    
+
 
     // Delete button
     const deleteButton = document.createElement('button');
