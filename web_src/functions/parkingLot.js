@@ -85,42 +85,54 @@ async function showLot(url, api){
        
             // Save functionality here: Get the updated value from the inputField.value
             //const updatedValue = typeIDField.value;
-            const lotNameInput = name.querySelector('input');
-            const lotNameUpdate = lotNameInput.value;
+            //const lotNameInput = name.querySelector('input');
+            //const lotNameUpdate = lotNameInput.value;
 
-            const imageInput = image.querySelector('input');
-            const imageUpdate = imageInput.value;
+            //const imageInput = image.querySelector('input');
+            //const imageUpdate = imageInput.value;
 
-            const sideInput = side.querySelector('input');
-            const sideUpdate = sideInput.value;
+            //const sideInput = side.querySelector('input');
+            //const sideUpdate = sideInput.value;
 
-            const topInput = top.querySelector('input');
-            const topUpdate = topInput.value;            
+            //const topInput = top.querySelector('input');
+            //const topUpdate = topInput.value;            
 
             //alert(lotNameUpdate +" "+imageUpdate +" "+sideUpdate +" "+topUpdate);  
 
-            const updateUrl = url + 'data_src/api/parkingLot/update.php';
-            console.log(updateUrl);
+            //const updateUrl = url + 'data_src/api/parkingLot/update.php';
+            //console.log(updateUrl);
 
             //alert(item.ruleID + ": " + updatedValue);
             //alert(item.ruleID);
-            editButton.textContent = 'Edit';
+            //editButton.textContent = 'Edit';
 
-            name.innerHTML = lotNameUpdate;
-            image.innerHTML = imageUpdate;
-            side.innerHTML = sideUpdate;
-            top.innerHTML = topUpdate;
+            //name.innerHTML = lotNameUpdate;
+            //image.innerHTML = imageUpdate;
+            //side.innerHTML = sideUpdate;
+            //top.innerHTML = topUpdate;
 
-            const lotData = {
+            //const lotData = {
+                //lotID: item.lotID,
+                //lotName: lotNameInput.value,
+                //image: imageInput.value,
+                //side: sideInput.value,
+                //top: topInput.value,
+            //};
+            //updateParkingLot(updateUrl, api, lotData);
+            // Get updated values from input fields
+            const lotNameInput = name.querySelector('input').value;
+            const imageInput = image.querySelector('input').value;
+            const sideInput = side.querySelector('input').value;
+            const topInput = top.querySelector('input').value;
+            
+            // Make an API call to update data
+            const updatedLotData = {
                 lotID: item.lotID,
-                lotName: lotNameInput.value,
-                image: imageInput.value,
-                side: sideInput.value,
-                top: topInput.value,
-            };
-            updateParkingLot(updateUrl, api, lotData);
-        }
-    });
+                lotName: lotNameInput,
+                image: imageInput,
+                side: sideInput,
+                top: topInput,};
+            updateParkingLot(updateUrl, api, updatedLotData);}});
     
     edit.appendChild(editButton);
 
@@ -187,11 +199,21 @@ async function updateParkingLot(url, api, data) {
 
         const responseData = await response.json();
         console.log(responseData); // Log the response from the server
-        alert('Lot Updated!');
-
+        
+        // Update the UI based on the API response
+        // For example, if the response is successful, you might inform the user or refresh the data displayed
+        // Example: Reload the data after successful update
+        if (response.ok) {
+            // Call the function to refresh the displayed data after update
+            showLot(url, api);
+        } else {
+            // Handle failed update here (optional)
+        }
     } catch (error) {
-        console.log('Error:');
+        console.log('Error:', error);
+        // Handle error (optional)
     }
+    alert('Lot Updated!');
 }
 
 async function deleteParkingLot(url, api, lotID) {

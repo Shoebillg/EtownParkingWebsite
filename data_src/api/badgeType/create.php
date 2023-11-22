@@ -19,7 +19,6 @@ if ($id == "" || $id == 0) {
     exit;
 }
 
-
 try {
     if ($id === 0) {
         http_response_code(400); // Bad Request
