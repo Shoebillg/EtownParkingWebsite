@@ -171,3 +171,76 @@ async function deleteParkingBadge(url, api, typeID) {
         console.log('Error:');
     }
 }
+
+//add lot
+function addBadge(url, api){
+    //alert("Rule will add");
+    const addBadgeBox = document.getElementById('addBadgeBox');
+    addBadgeBox.innerHTML = ''; // Clear previous content
+    //element.innerHTML = '<button>Hello</button>';
+
+    var nameLabel = document.createElement("label");
+    nameLabel.innerHTML = "Badge Name: ";
+
+    var nameBox = document.createElement("input");
+    nameBox.setAttribute("type", "text");
+    nameBox.setAttribute("id", "nameText");
+    //typeInput.setAttribute("placeholder", "Enter a number...");
+
+    nameLabel.setAttribute("for", "nameLabe");
+    addBadgeBox.appendChild(nameLabel);
+    addBadgeBox.appendChild(nameBox);
+
+    addBadgeBox.appendChild(nameLabel);
+    addBadgeBox.appendChild(nameBox);
+
+    var addButton = document.createElement("button");
+    addButton.innerHTML = "Add";
+    addBadgeBox.appendChild(addButton);
+
+    function handleClick() {
+        var nameInput = nameBox.value;
+
+        if(!nameInput){
+            alert('Please enter all info');
+        }
+        else{
+            alert("Name: " + nameInput);
+            updateUrl = url + 'data_src/api/badgeType/create.php';
+            addParkingBadge(updateUrl, api, nameInput);
+        }
+      }
+      
+      // Add click event listener to the button
+      if (addButton.addEventListener) {
+        addButton.addEventListener("click", handleClick);
+      } else if (addButton.attachEvent) {
+        addButton.attachEvent("onclick", handleClick);
+      }
+}
+
+async function addParkingBadge(url, api, name){
+
+    try {
+        const response = await fetch(url, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*',
+                // Add other necessary headers here
+            },
+            body: JSON.stringify({
+                name: name,
+                APIKEY: api,
+                // Add other properties as needed for your PHP script
+            }),
+        });
+
+        const responseData = await response.json();
+        console.log(responseData); // Log the response from the server
+        alert('Badge Added!');
+    } catch (error) {
+        console.log('Error:');
+    }
+
+}
