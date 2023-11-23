@@ -1,0 +1,106 @@
+button{
+    background-color:  #0A2240;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+  button:hover{
+    background-color: #61bf1a;
+  }
+
+  .logout {
+    background-color: #3DB5E6;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+
+  .logout:hover {
+    background-color: #004B98;
+  }
+
+  .show {
+    background-color: #004B98;
+  }
+
+  .show:hover{
+    background-color: #E1261C;
+  }
+
+  .add {
+    background-color: #61bf1a;
+  }
+
+  .add:hover{
+    background-color: #C8C8C8;
+    color: black;
+  }
+
+  .delete {
+    background-color: #E1261C;
+  }
+
+  .delete:hover {
+    border: 2px solid #E1261C;
+    background-color: white;
+    color: black;
+  }
+
+  .edit {
+    background-color: #C8C8C8;
+    color: black;
+    border: 1px solid black;
+  }
+
+  .edit:hover{
+    background-color: #3DB5E6;
+  }
+
+  td, th {
+    border: 1px solid #C8C8C8;
+    text-align: left;
+    padding: 8px;
+  }
+
+  tr:nth-child(even){
+    background-color: #f2f2f2;
+  }
+
+  th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #0A2240;
+    color: white;
+  }
+
+  tr{
+    font-size: 18px;
+  }
+
+  tr:hover {
+    background-color: #ddd;
+  }
+  input{
+    border-radius: 8px;
+    font-size:18px;
+    border: 2px solid #3DB5E6;
+  }
+
+  label{
+    font-size: 18px;
+  }

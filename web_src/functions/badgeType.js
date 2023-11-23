@@ -35,6 +35,8 @@ async function showBadge(url, api) {//add cancel button for update
     // Edit button
     const editButton = document.createElement('button');
     editButton.textContent = 'Edit';
+    editButton.classList.add("edit");
+    
     editButton.addEventListener('click', () => {
     
         if (editButton.textContent === 'Edit') {
@@ -84,6 +86,8 @@ async function showBadge(url, api) {//add cancel button for update
     // Delete button
     const deleteButton = document.createElement('button');
     deleteButton.textContent = 'Delete';
+    deleteButton.classList.add("delete");
+
     deleteButton.addEventListener('click', () => {
 
         alert('Delete Button clicked')

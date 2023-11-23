@@ -54,6 +54,8 @@ async function showRule(url, api){//when edit, if user change id, also change lo
     // Edit button
     const editButton = document.createElement('button');
     editButton.textContent = 'Edit';
+    editButton.classList.add("edit");
+
     editButton.addEventListener('click', () => {
         
         if (editButton.textContent === 'Edit') {
@@ -162,6 +164,8 @@ async function showRule(url, api){//when edit, if user change id, also change lo
     // Delete button
     const deleteButton = document.createElement('button');
     deleteButton.textContent = 'Delete';
+    deleteButton.classList.add("delete");
+
     deleteButton.addEventListener('click', () => {
 
         alert('Button clicked: ' + item.ruleID)

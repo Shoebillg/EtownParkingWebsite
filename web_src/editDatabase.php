@@ -23,6 +23,7 @@ require_once "./includes/header.php";
 
 <!DOCTYPE html>
 <html lang="en">
+<LINK rel='stylesheet' href='css/editdb.css'>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,56 +33,56 @@ require_once "./includes/header.php";
     <header>
         <h1 style="background-color:transparent;">Edit Database</h1>
         <form method="post">
-            <input type="submit" name="logout" value="Logout">
+            <input type="submit" name="logout" value="Logout" class="logout">
         </form>
     </header>
 
     <main>
         <section id="badge">
             <h2>Badge Type Table</h2>
-            <button id="addBadge" onclick="addBadge('<?php echo $url; ?>', '<?php echo $api_key; ?>')">Add to badge type table</button>
+            <button class="add" id="addBadge" onclick="addBadge('<?php echo $url; ?>', '<?php echo $api_key; ?>')">Add to badge type table</button>
             <div id="addBadgeBox">
             </div>
-            <button id="showBadge" type="button" onclick="badgeTableVisibility('<?php echo $url; ?>', '<?php echo $api_key; ?>')">
+            <button class="show"id="showBadge" type="button" onclick="badgeTableVisibility('<?php echo $url; ?>', '<?php echo $api_key; ?>')">
                 Show table!
             </button>
-            <div id="badgeTable">
+            <div id="badgeTable" style="overflow-x:auto;">
             </div>
         </section>
 
         <section id="Lot">
             <h2>Parking Lot Table</h2>
-            <button id="addLot"onclick="addLot('<?php echo $url; ?>', '<?php echo $api_key; ?>')">Add to parking lot table</button>
+            <button class="add" id="addLot"onclick="addLot('<?php echo $url; ?>', '<?php echo $api_key; ?>')">Add to parking lot table</button>
             <div id="addLotBox">
             </div>
-            <button id="showLot" type="button" onclick="lotTableVisibility('<?php echo $url; ?>', '<?php echo $api_key; ?>')">
+            <button class="show"id="showLot" type="button" onclick="lotTableVisibility('<?php echo $url; ?>', '<?php echo $api_key; ?>')">
                 Show table!
             </button>
-            <div id="lotTable">
+            <div id="lotTable" style="overflow-x:auto;">
             </div>
         </section>
 
         <section id="time">
             <h2>Paking Time Table</h2>
-            <button id="addTime" onclick="addTime('<?php echo $url; ?>', '<?php echo $api_key; ?>')">Add to parking time table</button>
+            <button class="add" id="addTime" onclick="addTime('<?php echo $url; ?>', '<?php echo $api_key; ?>')">Add to parking time table</button>
             <div id="addTimeBox">
             </div>
-            <button id="showTime" type="button" onclick="timeTableVisibility('<?php echo $url; ?>', '<?php echo $api_key; ?>')">
+            <button class="show" id="showTime" type="button" onclick="timeTableVisibility('<?php echo $url; ?>', '<?php echo $api_key; ?>')">
                 Show table!
             </button>
-            <div id="timeTable">
+            <div id="timeTable" style="overflow-x:auto;">
             </div>
         </section>
 
         <section id="rule">
             <h2>Parking Rule Table</h2>
-            <button id="addRule" onclick="addRule('<?php echo $url; ?>', '<?php echo $api_key; ?>')">Add to parking rule table</button>
+            <button class="add" id="addRule" onclick="addRule('<?php echo $url; ?>', '<?php echo $api_key; ?>')">Add to parking rule table</button>
             <div id="addRuleBox">
             </div>
-            <button id="showRule" type="button" onclick="ruleTableVisibility('<?php echo $url; ?>', '<?php echo $api_key; ?>')">
+            <button class="show" id="showRule" type="button" onclick="ruleTableVisibility('<?php echo $url; ?>', '<?php echo $api_key; ?>')">
                 Show table!
             </button>
-            <div id="ruleTable">
+            <div id="ruleTable" style="overflow-x:auto;">
             </div>
         </section>
     </main>
@@ -169,13 +170,3 @@ function ruleTableVisibility(url, api) {
 
 
 </script>
-
-<style>
-
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
-
-</style>
