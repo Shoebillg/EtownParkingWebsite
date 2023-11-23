@@ -35,33 +35,50 @@ async function showBadge(url, api) {//add cancel button for update
     // Edit button
     const editButton = document.createElement('button');
     editButton.textContent = 'Edit';
-    editButton.addEventListener('click', async () => {
-        // Here you can trigger the editing process for the specific item
-        // For example, create an input field within the table cell and populate it with the existing value
+    editButton.addEventListener('click', () => {
     
-        const inputField = document.createElement('input');
-        inputField.type = 'text';
-        inputField.value = item.name; // Assuming 'name' is the property to edit
-        name.innerHTML = ''; // Clear the cell content
-        name.appendChild(inputField);
-    
-        // Update the edit button to a 'Save' button
-        editButton.textContent = 'Update';
-        editButton.addEventListener('click', async () => {
-            // Save functionality here: Get the updated value from the inputField.value
-            editButton.textContent = 'Edit'; 
-            
-            const updatedValue = inputField.value;
-            //update here
-            alert(item.typeID);
-            const updateUrl = url + 'data_src/api/badgeType/read.php';
-            const response = await fetch(updateUrl);
-            const data = await response.json(); // Parse JSON response
-            console.log(data);
+        if (editButton.textContent === 'Edit') {
+            const nameField = document.createElement('input');
+            nameField.type = 'text';
+            nameField.value = item.name; // Assuming 'name' is the property to edit
+            name.innerHTML = ''; // Clear the cell content
+            name.appendChild(nameField);
 
-        });
-    });
+            // Update the edit button to a 'Save' button
+            editButton.textContent = 'Update';
+
+            nameField.addEventListener('change', () => {
+                
+            });
+
+        }
+        else if(editButton.textContent === 'Update'){
     
+            // Save functionality here: Get the updated value from the inputField.value
+            //const updatedValue = typeIDField.value;
+            const nameInput = name.querySelector('input');
+            const nameUpdate = nameInput.value;
+
+            alert('Update Button clicked');  
+
+            const updateUrl = url + 'data_src/api/badgeType/update.php';
+            console.log(updateUrl);
+
+            //alert(item.ruleID + ": " + updatedValue);
+            //alert(item.ruleID);
+            editButton.textContent = 'Edit';
+
+            name.innerHTML = nameUpdate;
+
+            const typeData = {
+                typeID: item.typeID,
+                name: nameInput.value,
+            };
+            updateParkingBadge(updateUrl, api, typeData);
+
+        }
+    });
+
     edit.appendChild(editButton);
 
     // Delete button
@@ -69,13 +86,12 @@ async function showBadge(url, api) {//add cancel button for update
     deleteButton.textContent = 'Delete';
     deleteButton.addEventListener('click', () => {
 
-        alert('BUtton clicked: ' + item.typeID)
+        alert('Delete Button clicked')
         //Call delete api for delete this item
+        deletUrl = url + 'data_src/api/badgeType/delete.php';
 
+        deleteParkingBadge(deletUrl, api, item.typeID)
 
-        // Add functionality to delete button click
-        // For example: deleteRow(item.typeID);
-        // Replace 'deleteRow' with your delete function and pass necessary parameters
     });
     del.appendChild(deleteButton);
 
@@ -98,4 +114,60 @@ async function showBadge(url, api) {//add cancel button for update
     }
 }
 
+async function updateParkingBadge(url, api, data) {
 
+    try {
+        const response = await fetch(url, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*',
+                // Add other necessary headers here
+            },
+            body: JSON.stringify({
+                typeID: data.typeID,
+                name: data.name,
+                APIKEY: api,
+                // Add other properties as needed for your PHP script
+            }),
+        });
+
+        const responseData = await response.json();
+        console.log(responseData); // Log the response from the server
+        alert('Badge Updated!');
+    } catch (error) {
+        console.log('Error:');
+    }
+}
+
+async function deleteParkingBadge(url, api, typeID) {
+
+    try {
+        const response = await fetch(url, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                
+                // Add other necessary headers here
+            },
+            body: JSON.stringify({
+                typeID: typeID,
+                APIKEY: api,
+                // Add other properties as needed for your PHP script
+            }),
+        });
+
+        const responseData = await response.json();
+        console.log(responseData); // Log the response from the server
+        
+
+        if('Type ID is used in parkingRule table.' === responseData.message){
+            alert('Type ID is used in parkingRule table.\nCannot delete!');
+        }
+        else{
+            alert('Badge Deleted!');
+        }
+    } catch (error) {
+        console.log('Error:');
+    }
+}
