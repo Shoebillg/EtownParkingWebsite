@@ -106,9 +106,9 @@ async function showLot(url, api){//change user can updload image
                     editButton.textContent = 'Edit';
                 }
             });
-        }
+        }    
     });
-    
+    edit.appendChild(editButton);
 
 
     // Delete button
@@ -180,12 +180,15 @@ async function updateParkingLot(url, api, data) {
         // Example: Reload the data after successful update
         if (response.ok) {
             // Call the function to refresh the displayed data after update
-            showLot(url, api);
+            //showLot(url, api);
         } else {
             // Handle failed update here (optional)
+            throw new Error('Update failed');
         }
     } catch (error) {
-        console.log('Error:', error);
+        console.error('Error:', error);
+        throw new Error('Error occurred while updating lot.');
+        //console.log('Error:', error);
         // Handle error (optional)
     }
     alert('Lot Updated!');
