@@ -32,56 +32,74 @@ require_once "./includes/header.php";
 <body>
     <header>
         <h1 style="background-color:transparent;">Edit Database</h1>
+        <div>
         <form method="post">
             <input type="submit" name="logout" value="Logout" class="logout">
         </form>
+        </div>
     </header>
 
     <main>
         <section id="badge">
             <h2>Badge Type Table</h2>
-            <button class="add" id="addBadge" onclick="addBadge('<?php echo $url; ?>', '<?php echo $api_key; ?>')">Add to badge type table</button>
+            <div>
+                <button class="add" id="addBadge" onclick="addBadge('<?php echo $url; ?>', '<?php echo $api_key; ?>')">Add to badge type table</button>
+            </div>
             <div id="addBadgeBox">
             </div>
-            <button class="show"id="showBadge" type="button" onclick="badgeTableVisibility('<?php echo $url; ?>', '<?php echo $api_key; ?>')">
-                Show table!
-            </button>
-            <div id="badgeTable" style="overflow-x:auto;">
+            <div>
+                <button class="show"id="showBadge" type="button" onclick="badgeTableVisibility('<?php echo $url; ?>', '<?php echo $api_key; ?>')">
+                    Show table!
+                </button>
+            </div>
+            <div class="badgeTable" id="badgeTable" style="overflow-x:auto;">
             </div>
         </section>
 
         <section id="Lot">
             <h2>Parking Lot Table</h2>
-            <button class="add" id="addLot"onclick="addLot('<?php echo $url; ?>', '<?php echo $api_key; ?>')">Add to parking lot table</button>
+            <div>
+                <button class="add" id="addLot"onclick="addLot('<?php echo $url; ?>', '<?php echo $api_key; ?>')">Add to parking lot table</button>
+            </div>
             <div id="addLotBox">
             </div>
-            <button class="show"id="showLot" type="button" onclick="lotTableVisibility('<?php echo $url; ?>', '<?php echo $api_key; ?>')">
-                Show table!
-            </button>
+            <div>
+                <button class="show"id="showLot" type="button" onclick="lotTableVisibility('<?php echo $url; ?>', '<?php echo $api_key; ?>')">
+                    Show table!
+                </button>   
+            </div>
             <div id="lotTable" style="overflow-x:auto;">
             </div>
         </section>
 
         <section id="time">
             <h2>Paking Time Table</h2>
-            <button class="add" id="addTime" onclick="addTime('<?php echo $url; ?>', '<?php echo $api_key; ?>')">Add to parking time table</button>
+            <div>
+                <button class="add" id="addTime" onclick="addTime('<?php echo $url; ?>', '<?php echo $api_key; ?>')">Add to parking time table</button>
+            </div>
             <div id="addTimeBox">
             </div>
-            <button class="show" id="showTime" type="button" onclick="timeTableVisibility('<?php echo $url; ?>', '<?php echo $api_key; ?>')">
-                Show table!
-            </button>
+            <div>
+                <button class="show" id="showTime" type="button" onclick="timeTableVisibility('<?php echo $url; ?>', '<?php echo $api_key; ?>')">
+                    Show table!
+                </button>
+            </div>
             <div id="timeTable" style="overflow-x:auto;">
             </div>
         </section>
 
         <section id="rule">
             <h2>Parking Rule Table</h2>
-            <button class="add" id="addRule" onclick="addRule('<?php echo $url; ?>', '<?php echo $api_key; ?>')">Add to parking rule table</button>
+            <div>
+                <button class="add" id="addRule" onclick="addRule('<?php echo $url; ?>', '<?php echo $api_key; ?>')">Add to parking rule table</button>
+            </div>
             <div id="addRuleBox">
             </div>
-            <button class="show" id="showRule" type="button" onclick="ruleTableVisibility('<?php echo $url; ?>', '<?php echo $api_key; ?>')">
-                Show table!
-            </button>
+            <div>
+                <button class="show" id="showRule" type="button" onclick="ruleTableVisibility('<?php echo $url; ?>', '<?php echo $api_key; ?>')">
+                    Show table!
+                </button>
+            </div>
             <div id="ruleTable" style="overflow-x:auto;">
             </div>
         </section>
@@ -114,7 +132,7 @@ function badgeTableVisibility(url, api) {
     } else {
         // Show the table (assuming showLot function does this)
         showBadge(url, api);
-        table.style.display = 'block';
+        table.style.display = 'flex';
         button.textContent = 'Hide Table!';
     }
     badgeTableVisible = !badgeTableVisible;
@@ -130,7 +148,7 @@ function lotTableVisibility(url, api) {
     } else {
         // Show the table (assuming showLot function does this)
         showLot(url, api);
-        table.style.display = 'block';
+        table.style.display = 'flex';
         button.textContent = 'Hide Table!';
     }
     lotTableVisible = !lotTableVisible;
@@ -146,7 +164,7 @@ function timeTableVisibility(url, api) {
     } else {
         // Show the table (assuming showLot function does this)
         showTime(url, api);
-        table.style.display = 'block';
+        table.style.display = 'flex';
         button.textContent = 'Hide Table!';
     }
     timeTableVisible = !timeTableVisible;
@@ -162,7 +180,7 @@ function ruleTableVisibility(url, api) {
     } else {
         // Show the table (assuming showLot function does this)
         showRule(url, api);
-        table.style.display = 'block';
+        table.style.display = 'flex';
         button.textContent = 'Hide Table!';
     }
     ruleTableVisible = !ruleTableVisible;

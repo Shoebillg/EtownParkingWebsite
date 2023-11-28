@@ -1,12 +1,12 @@
 
 async function showRule(url, api){//when edit, if user change id, also change lot name, badge name, start and end time, cancel button for update
     const fulUrl = url + 'data_src/api/parkingRule/read.php?APIKEY=' + api;
-    console.log(fulUrl);   
+    //console.log(fulUrl);   
 
     try {
         const response = await fetch(fulUrl);
         const data = await response.json(); // Parse JSON response
-        console.log(data); // Log the response from the PHP file
+        //console.log(data); // Log the response from the PHP file
 
         const table = document.createElement('rule');
         const tableHeader = document.createElement('thead');
@@ -134,7 +134,7 @@ async function showRule(url, api){//when edit, if user change id, also change lo
             //alert(typeUpdate +" "+lotUpdate +" "+timeUpdate +" "+dayUpdate +descUpdate);  
 
             const updateUrl = url + 'data_src/api/parkingRule/update.php';
-            console.log(updateUrl);
+            //console.log(updateUrl);
 
             //alert(item.ruleID + ": " + updatedValue);
             //alert(item.ruleID);
@@ -168,7 +168,7 @@ async function showRule(url, api){//when edit, if user change id, also change lo
 
     deleteButton.addEventListener('click', () => {
 
-        alert('Button clicked: ' + item.ruleID)
+        //alert('Button clicked: ' + item.ruleID)
         //Call delete api for delete this item
         deletUrl = url + 'data_src/api/parkingRule/delete.php';
 
@@ -231,8 +231,13 @@ async function updateParkingRule(url, api, data) {
         });
 
         const responseData = await response.json();
-        console.log(responseData); // Log the response from the server
-        alert('Rule Updated!');
+        //console.log(responseData); // Log the response from the server
+        alert('Rule Updated');
+        const table = document.getElementById('ruleTable');
+        const button = document.getElementById('showRule');
+        table.style.display = 'none';
+        button.textContent = 'Show Table!';
+        ruleTableVisible = !ruleTableVisible;
     } catch (error) {
         console.log('Error:');
     }
@@ -256,8 +261,13 @@ async function deleteParkingRule(url, api, ruleID) {
         });
 
         const responseData = await response.json();
-        console.log(responseData); // Log the response from the server
+        //console.log(responseData); // Log the response from the server
         alert('Rule Deleted!');
+        const table = document.getElementById('ruleTable');
+        const button = document.getElementById('showRule');
+        table.style.display = 'none';
+        button.textContent = 'Show Table!';
+        ruleTableVisible = !ruleTableVisible;
     } catch (error) {
         console.log('Error:');
     }
@@ -347,7 +357,7 @@ function addRule(url, api){
             alert('Please enter all info');
         }
         else{
-            alert("Type: " + typeInput + " Lot: "+ lotInput +"Time ID: " + timeInput +" Day: " + dayInput + " Description: " + descInput);
+            //alert("Type: " + typeInput + " Lot: "+ lotInput +"Time ID: " + timeInput +" Day: " + dayInput + " Description: " + descInput);
             updateUrl = url + 'data_src/api/parkingRule/create.php';
             addParkingRule(updateUrl, api, typeInput, lotInput, timeInput, dayInput, descInput);
         }
@@ -383,8 +393,8 @@ async function addParkingRule(url, api, typeID, lotID, timeID, day, description)
         });
 
         const responseData = await response.json();
-        console.log(responseData); // Log the response from the server
-        alert('Rule Added!');
+        //console.log(responseData); // Log the response from the server
+        alert('Rule Added');
         
     } catch (error) {
 //        console.log('Error:');

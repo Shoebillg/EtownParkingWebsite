@@ -17,7 +17,7 @@ h{
     text-underline-offset: 0.3em;
  }
 
- div{
+ .footer{
     height: 200px;
     background-color: #0A2240;
  }

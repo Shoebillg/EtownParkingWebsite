@@ -1,11 +1,11 @@
 async function showTime(url, api){//when edit, if user change id, also change lot name, badge name, start and end time, cancel button for update
     const fulUrl = url + 'data_src/api/parkingTime/read.php?APIKEY=' + api;
-    console.log(fulUrl);   
+    //console.log(fulUrl);   
 
     try {
         const response = await fetch(fulUrl);
         const data = await response.json(); // Parse JSON response
-        console.log(data); // Log the response from the PHP file
+        //console.log(data); // Log the response from the PHP file
 
         const table = document.createElement('time');
         const tableHeader = document.createElement('thead');
@@ -85,10 +85,10 @@ async function showTime(url, api){//when edit, if user change id, also change lo
             const endInput = end.querySelector('input');
             const endUpdate = endInput.value;
 
-            alert(startUpdate +" "+endUpdate);  
+            //alert(startUpdate +" "+endUpdate);  
 
             const updateUrl = url + 'data_src/api/parkingTime/update.php';
-            console.log(updateUrl);
+            //console.log(updateUrl);
 
             //alert(item.timeID + ": " + updatedValue);
             //alert(item.tiemID);
@@ -117,7 +117,7 @@ async function showTime(url, api){//when edit, if user change id, also change lo
 
     deleteButton.addEventListener('click', () => {
 
-        alert('Delete Button clicked')
+        //alert('Delete Button clicked')
         //Call delete api for delete this item
         deletUrl = url + 'data_src/api/parkingTime/delete.php';
 
@@ -169,7 +169,13 @@ async function updateParkingTime(url, api, data) {
         });
 
         const responseData = await response.json();
-        console.log(responseData); // Log the response from the server
+        //console.log(responseData); // Log the response from the server
+        alert('Time updated');
+        const table = document.getElementById('timeTable');
+        const button = document.getElementById('showTime');
+        table.style.display = 'none';
+        button.textContent = 'Show Table!';
+        timeTableVisible = !timeTableVisible;
     } catch (error) {
         console.log('Error:');
     }
@@ -193,12 +199,17 @@ async function deleteParkingTime(url, api, timeID) {
         });
 
         const responseData = await response.json();
-        console.log(responseData); // Log the response from the server
+        //console.log(responseData); // Log the response from the server
         if('Time ID is used in parkingRule table.' === responseData.message){
             alert('Time ID is used in parkingRule table.\nCannot delete!');
         }
         else{
-            alert('Time Deleted!');
+            alert('Time Deleted');
+            const table = document.getElementById('timeTable');
+            const button = document.getElementById('showTime');
+            table.style.display = 'none';
+            button.textContent = 'Show Table!';
+            timeTableVisible = !timeTableVisible;
         }
     } catch (error) {
         console.log('Error:');
@@ -286,7 +297,7 @@ async function addParkingTime(url, api, startTime, endTime){
         });
 
         const responseData = await response.json();
-        console.log(responseData); // Log the response from the server
+        //console.log(responseData); // Log the response from the server
         alert('Lot Added!');
     } catch (error) {
         console.log('Error:');

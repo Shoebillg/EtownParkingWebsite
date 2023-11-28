@@ -1,4 +1,6 @@
 <?php
+require_once "./includes/config.php";
+
 session_start(); // Start the session
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Check the submitted credentials
@@ -6,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['password'];
 
     // Replace this with your actual validation logic (e.g., database validation)
-    if ($username === 'user' && $password === 'BlueJays!') {
+    if ($username === $user && $password === $pass) {
         $_SESSION['username'] = $username; // Set the username in the session
         header("Location: editDatabase.php"); // Redirect to the editDatabase.php page
         exit();
@@ -36,7 +38,7 @@ require_once "./includes/header.php";
             //var hash = CryptoJS.MD5(password).toString(); // Convert the hash to string
 
             // Other validation checks can be added as needed
-            if (username === 'user' && password === 'BlueJays!') {
+            if (username === $user && password === $pass) {
                 alert("Login successful!");
                 return true;
             } else {

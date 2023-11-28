@@ -4,7 +4,7 @@ async function showBadge(url, api) {//add cancel button for update
     try {
         const response = await fetch(fulUrl);
         const data = await response.json(); // Parse JSON response
-        console.log(data); // Log the response from the PHP file
+        //console.log(data); // Log the response from the PHP file
 
         const table = document.createElement('badge');
         const tableHeader = document.createElement('thead');
@@ -61,10 +61,10 @@ async function showBadge(url, api) {//add cancel button for update
             const nameInput = name.querySelector('input');
             const nameUpdate = nameInput.value;
 
-            alert('Update Button clicked');  
+            //alert('Update Button clicked');  
 
             const updateUrl = url + 'data_src/api/badgeType/update.php';
-            console.log(updateUrl);
+            //console.log(updateUrl);
 
             //alert(item.ruleID + ": " + updatedValue);
             //alert(item.ruleID);
@@ -90,7 +90,7 @@ async function showBadge(url, api) {//add cancel button for update
 
     deleteButton.addEventListener('click', () => {
 
-        alert('Delete Button clicked')
+        //alert('Delete Button clicked')
         //Call delete api for delete this item
         deletUrl = url + 'data_src/api/badgeType/delete.php';
 
@@ -137,8 +137,13 @@ async function updateParkingBadge(url, api, data) {
         });
 
         const responseData = await response.json();
-        console.log(responseData); // Log the response from the server
-        alert('Badge Updated!');
+        //console.log(responseData); // Log the response from the server
+        alert('Badge Updated');
+        const table = document.getElementById('badgeTable');
+        const button = document.getElementById('showBadge');
+        table.style.display = 'none';
+        button.textContent = 'Show Table!';
+        badgeTableVisible = !badgeTableVisible;
     } catch (error) {
         console.log('Error:');
     }
@@ -162,14 +167,19 @@ async function deleteParkingBadge(url, api, typeID) {
         });
 
         const responseData = await response.json();
-        console.log(responseData); // Log the response from the server
+        //console.log(responseData); // Log the response from the server
         
 
         if('Type ID is used in parkingRule table.' === responseData.message){
             alert('Type ID is used in parkingRule table.\nCannot delete!');
         }
         else{
-            alert('Badge Deleted!');
+            alert('Badge Deleted');
+            const table = document.getElementById('badgeTable');
+            const button = document.getElementById('showBadge');
+            table.style.display = 'none';
+            button.textContent = 'Show Table!';
+            badgeTableVisible = !badgeTableVisible;
         }
     } catch (error) {
         console.log('Error:');
@@ -209,7 +219,7 @@ function addBadge(url, api){
             alert('Please enter all info');
         }
         else{
-            alert("Name: " + nameInput);
+            //alert("Name: " + nameInput);
             updateUrl = url + 'data_src/api/badgeType/create.php';
             addParkingBadge(updateUrl, api, nameInput);
         }
@@ -241,8 +251,8 @@ async function addParkingBadge(url, api, name){
         });
 
         const responseData = await response.json();
-        console.log(responseData); // Log the response from the server
-        alert('Badge Added!');
+        //console.log(responseData); // Log the response from the server
+        alert('Badge Added');
     } catch (error) {
         console.log('Error:');
     }

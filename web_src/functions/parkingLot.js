@@ -1,12 +1,12 @@
 async function showLot(url, api){//change user can updload image
 
     const fulUrl = url + 'data_src/api/parkingLot/read.php?APIKEY=' + api;
-    console.log(fulUrl);    
+    //console.log(fulUrl);    
 
     try {
         const response = await fetch(fulUrl);
         const data = await response.json(); // Parse JSON response
-        console.log(data); // Log the response from the PHP file
+        //console.log(data); // Log the response from the PHP file
 
         const table = document.createElement('lot');
         const tableHeader = document.createElement('thead');
@@ -102,7 +102,7 @@ async function showLot(url, api){//change user can updload image
             //alert(lotNameUpdate +" "+imageUpdate +" "+sideUpdate +" "+topUpdate);  
 
             const updateUrl = url + 'data_src/api/parkingLot/update.php';
-            console.log(updateUrl);
+            //console.log(updateUrl);
 
             //alert(item.ruleID + ": " + updatedValue);
             //alert(item.ruleID);
@@ -136,7 +136,7 @@ async function showLot(url, api){//change user can updload image
         //alert('Delete Button clicked')
         //Call delete api for delete this item
         deleteUrl = url + 'data_src/api/parkingLot/delete.php';
-        console.log(deleteUrl);
+        //console.log(deleteUrl);
         deleteParkingLot(deleteUrl, api, item.lotID);
 
         // Add functionality to delete button click
@@ -190,8 +190,13 @@ async function updateParkingLot(url, api, data) {
         });
 
         const responseData = await response.json();
-        console.log(responseData); // Log the response from the server
-        alert('Lot Updated!');
+        //console.log(responseData); // Log the response from the server
+        alert('Lot Updated');
+        const table = document.getElementById('lotTable');
+        const button = document.getElementById('showLot');
+        table.style.display = 'none';
+        button.textContent = 'Show Table!';
+        lotTableVisible = !lotTableVisible;
 
     } catch (error) {
         console.log('Error:');
@@ -216,15 +221,20 @@ async function deleteParkingLot(url, api, lotID) {
         });
 
         const responseData = await response.json();
-        console.log(responseData); // Log the response from the server
+        //console.log(responseData); // Log the response from the server
 
-        console.log("Response Message:", responseData.message);
+        //console.log("Response Message:", responseData.message);
 
         if('Lot ID is used in parkingRule table.' === responseData.message){
             alert('Lot ID is used in parkingRule table.\nCannot delete!');
         }
         else{
-            alert('Lot Deleted!');
+            alert('Lot Deleted');
+            const table = document.getElementById('lotTable');
+            const button = document.getElementById('showLot');
+            table.style.display = 'none';
+            button.textContent = 'Show Table!';
+            lotTableVisible = !lotTableVisible;            
         }
     } catch (error) {
         console.log('Error:');
@@ -338,7 +348,7 @@ async function addParkingLot(url, api, lotName, image, side, top){
         });
 
         const responseData = await response.json();
-        console.log(responseData); // Log the response from the server
+        //console.log(responseData); // Log the response from the server
         alert('Lot Added!');
     } catch (error) {
         console.log('Error:');

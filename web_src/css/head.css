@@ -24,6 +24,7 @@ ul {
   background-color: #004B98;
   height: 90px;
   display: flex;
+  width: 100%;
 }
 
 li {
