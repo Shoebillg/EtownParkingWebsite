@@ -4,7 +4,7 @@ async function showBadge(url, api) {//add cancel button for update
     try {
         const response = await fetch(fulUrl);
         const data = await response.json(); // Parse JSON response
-        console.log(data); // Log the response from the PHP file
+        //console.log(data); // Log the response from the PHP file
 
         const table = document.createElement('badge');
         const tableHeader = document.createElement('thead');
@@ -35,47 +35,67 @@ async function showBadge(url, api) {//add cancel button for update
     // Edit button
     const editButton = document.createElement('button');
     editButton.textContent = 'Edit';
-    editButton.addEventListener('click', async () => {
-        // Here you can trigger the editing process for the specific item
-        // For example, create an input field within the table cell and populate it with the existing value
+    editButton.classList.add("edit");
     
-        const inputField = document.createElement('input');
-        inputField.type = 'text';
-        inputField.value = item.name; // Assuming 'name' is the property to edit
-        name.innerHTML = ''; // Clear the cell content
-        name.appendChild(inputField);
+    editButton.addEventListener('click', () => {
     
-        // Update the edit button to a 'Save' button
-        editButton.textContent = 'Update';
-        editButton.addEventListener('click', async () => {
-            // Save functionality here: Get the updated value from the inputField.value
-            editButton.textContent = 'Edit'; 
-            
-            const updatedValue = inputField.value;
-            //update here
-            alert(item.typeID);
-            const updateUrl = url + 'data_src/api/badgeType/read.php';
-            const response = await fetch(updateUrl);
-            const data = await response.json(); // Parse JSON response
-            console.log(data);
+        if (editButton.textContent === 'Edit') {
+            const nameField = document.createElement('input');
+            nameField.type = 'text';
+            nameField.value = item.name; // Assuming 'name' is the property to edit
+            name.innerHTML = ''; // Clear the cell content
+            name.appendChild(nameField);
 
-        });
-    });
+            // Update the edit button to a 'Save' button
+            editButton.textContent = 'Update';
+
+            nameField.addEventListener('change', () => {
+                
+            });
+
+        }
+        else if(editButton.textContent === 'Update'){
     
+            // Save functionality here: Get the updated value from the inputField.value
+            //const updatedValue = typeIDField.value;
+            const nameInput = name.querySelector('input');
+            const nameUpdate = nameInput.value;
+
+            //alert('Update Button clicked');  
+
+            const updateUrl = url + 'data_src/api/badgeType/update.php';
+            //console.log(updateUrl);
+
+            //alert(item.ruleID + ": " + updatedValue);
+            //alert(item.ruleID);
+            editButton.textContent = 'Edit';
+
+            name.innerHTML = nameUpdate;
+
+            const typeData = {
+                typeID: item.typeID,
+                name: nameInput.value,
+            };
+            updateParkingBadge(updateUrl, api, typeData);
+
+        }
+    });
+
     edit.appendChild(editButton);
 
     // Delete button
     const deleteButton = document.createElement('button');
     deleteButton.textContent = 'Delete';
+    deleteButton.classList.add("delete");
+
     deleteButton.addEventListener('click', () => {
 
-        alert('BUtton clicked: ' + item.typeID)
+        //alert('Delete Button clicked')
         //Call delete api for delete this item
+        deletUrl = url + 'data_src/api/badgeType/delete.php';
 
+        deleteParkingBadge(deletUrl, api, item.typeID)
 
-        // Add functionality to delete button click
-        // For example: deleteRow(item.typeID);
-        // Replace 'deleteRow' with your delete function and pass necessary parameters
     });
     del.appendChild(deleteButton);
 
@@ -98,4 +118,143 @@ async function showBadge(url, api) {//add cancel button for update
     }
 }
 
+async function updateParkingBadge(url, api, data) {
 
+    try {
+        const response = await fetch(url, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*',
+                // Add other necessary headers here
+            },
+            body: JSON.stringify({
+                typeID: data.typeID,
+                name: data.name,
+                APIKEY: api,
+                // Add other properties as needed for your PHP script
+            }),
+        });
+
+        const responseData = await response.json();
+        //console.log(responseData); // Log the response from the server
+        alert('Badge Updated');
+        const table = document.getElementById('badgeTable');
+        const button = document.getElementById('showBadge');
+        table.style.display = 'none';
+        button.textContent = 'Show Table!';
+        badgeTableVisible = !badgeTableVisible;
+    } catch (error) {
+        console.log('Error:');
+    }
+}
+
+async function deleteParkingBadge(url, api, typeID) {
+
+    try {
+        const response = await fetch(url, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                
+                // Add other necessary headers here
+            },
+            body: JSON.stringify({
+                typeID: typeID,
+                APIKEY: api,
+                // Add other properties as needed for your PHP script
+            }),
+        });
+
+        const responseData = await response.json();
+        //console.log(responseData); // Log the response from the server
+        
+
+        if('Type ID is used in parkingRule table.' === responseData.message){
+            alert('Type ID is used in parkingRule table.\nCannot delete!');
+        }
+        else{
+            alert('Badge Deleted');
+            const table = document.getElementById('badgeTable');
+            const button = document.getElementById('showBadge');
+            table.style.display = 'none';
+            button.textContent = 'Show Table!';
+            badgeTableVisible = !badgeTableVisible;
+        }
+    } catch (error) {
+        console.log('Error:');
+    }
+}
+
+//add lot
+function addBadge(url, api){
+    //alert("Rule will add");
+    const addBadgeBox = document.getElementById('addBadgeBox');
+    addBadgeBox.innerHTML = ''; // Clear previous content
+    //element.innerHTML = '<button>Hello</button>';
+
+    var nameLabel = document.createElement("label");
+    nameLabel.innerHTML = "Badge Name: ";
+
+    var nameBox = document.createElement("input");
+    nameBox.setAttribute("type", "text");
+    nameBox.setAttribute("id", "nameText");
+    //typeInput.setAttribute("placeholder", "Enter a number...");
+
+    nameLabel.setAttribute("for", "nameLabe");
+    addBadgeBox.appendChild(nameLabel);
+    addBadgeBox.appendChild(nameBox);
+
+    addBadgeBox.appendChild(nameLabel);
+    addBadgeBox.appendChild(nameBox);
+
+    var addButton = document.createElement("button");
+    addButton.innerHTML = "Add";
+    addBadgeBox.appendChild(addButton);
+
+    function handleClick() {
+        var nameInput = nameBox.value;
+
+        if(!nameInput){
+            alert('Please enter all info');
+        }
+        else{
+            //alert("Name: " + nameInput);
+            updateUrl = url + 'data_src/api/badgeType/create.php';
+            addParkingBadge(updateUrl, api, nameInput);
+        }
+      }
+      
+      // Add click event listener to the button
+      if (addButton.addEventListener) {
+        addButton.addEventListener("click", handleClick);
+      } else if (addButton.attachEvent) {
+        addButton.attachEvent("onclick", handleClick);
+      }
+}
+
+async function addParkingBadge(url, api, name){
+
+    try {
+        const response = await fetch(url, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*',
+                // Add other necessary headers here
+            },
+            body: JSON.stringify({
+                name: name,
+                APIKEY: api,
+                // Add other properties as needed for your PHP script
+            }),
+        });
+
+        const responseData = await response.json();
+        //console.log(responseData); // Log the response from the server
+        alert('Badge Added');
+    } catch (error) {
+        console.log('Error:');
+    }
+
+}

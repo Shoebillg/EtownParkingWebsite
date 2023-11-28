@@ -17,9 +17,20 @@ if (isset($_GET['id']) || isset($_GET['day']) || isset($_GET['time'])) {
 
         foreach($parkingRules as $parkingRule){
 
-            echo "<p id=\"brownPin2\">";
-            echo "<img src=\"../images/lotpin.png\" usemap=\"#brownPinMap\" id=\"brownPin\" style=\"position: absolute; left: ".$parkingRule->side."px; top: ".$parkingRule->top."px; display:block;\">";
+            //echo $parkingRule->lotName." ".$parkingRule->side." ".$parkingRule->top." ".$parkingRule->image;
+            echo "<p id=\"".$parkingRule->lotName."Pin2\">";
+            
+            if($parkingRule->top == null || $parkingRule->side == null || $parkingRule->top == "" || $parkingRule->side == ""){
+                continue;
+            }
+            
+            echo "<img src=\"./images/lotpin.png\" usemap=\"#".$parkingRule->lotName."PinMap\" id=\"".$parkingRule->lotName."Pin\" style=\"position: absolute; left: ".$parkingRule->side."px; top: ".$parkingRule->top."px; display:block;\">";
             echo "</p>";
+            echo "<map name=\"".$parkingRule->lotName."PinMap\">";
+            //echo "<area shape=\"circle\" coords=\"10,10,10\" href=\"#".$parkingRule->lotName."\" onclick=\"show".$parkingRule->lotID."();\">";
+            echo "<area shape=\"circle\" coords=\"10,10,10\" href=\"#".$parkingRule->lotName."\" onclick=\"showPicture(".$parkingRule->lotID.",'".$parkingRule->image."');\">";
+            
+            echo "</map>";
         }
     }/*
     else if($day != 0 && $id == 0){//only day is selected
@@ -57,9 +68,20 @@ if (isset($_GET['id']) || isset($_GET['day']) || isset($_GET['time'])) {
         $parkingRules = json_decode($web_string);
 
         foreach($parkingRules as $parkingRule){
-            echo "<p id=\"brownPin2\">";
-            echo "<img src=\"../images/lotpin.png\" usemap=\"#brownPinMap\" id=\"brownPin\" style=\"position: absolute; left: ".$parkingRule->side."px; top: ".$parkingRule->top."px; display:block;\">";
+            //echo $parkingRule->lotName." ".$parkingRule->side." ".$parkingRule->top." ".$parkingRule->image;
+            echo "<p id=\"".$parkingRule->lotName."Pin2\">";
+            
+            if($parkingRule->top == null || $parkingRule->side == null || $parkingRule->top == "" || $parkingRule->side == ""){
+                continue;
+            }
+            
+            echo "<img src=\"./images/lotpin.png\" usemap=\"#".$parkingRule->lotName."PinMap\" id=\"".$parkingRule->lotName."Pin\" style=\"position: absolute; left: ".$parkingRule->side."px; top: ".$parkingRule->top."px; display:block;\">";
             echo "</p>";
+            echo "<map name=\"".$parkingRule->lotName."PinMap\">";
+            //echo "<area shape=\"circle\" coords=\"10,10,10\" href=\"#".$parkingRule->lotName."\" onclick=\"show".$parkingRule->lotID."();\">";
+            echo "<area shape=\"circle\" coords=\"10,10,10\" href=\"#".$parkingRule->lotName."\" onclick=\"showPicture(".$parkingRule->lotID.",'".$parkingRule->image."');\">";
+            
+            echo "</map>";
         }
     }
 } else {

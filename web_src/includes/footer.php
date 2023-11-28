@@ -2,7 +2,7 @@
 <html>
 <LINK rel='stylesheet' href='css/footer.css'>
 <body>
-<div>
+<div class="footer">
 <h><a href=#>Powered by Etown CS and Engineering</a></h>
 </body>
 

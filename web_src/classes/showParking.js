@@ -16,7 +16,7 @@ function showParking() {
     var time = document.getElementById("appt").value;
 
     // Use the Fetch API to make an HTTP GET request to the PHP file with the name as a query parameter
-    fetch(`getParkingRule.php?id=${encodeURIComponent(badgeID)}&day=${encodeURIComponent(dayID)}&time=${encodeURIComponent(time)}`)
+    fetch(`./classes/getParkingRule.php?id=${encodeURIComponent(badgeID)}&day=${encodeURIComponent(dayID)}&time=${encodeURIComponent(time)}`)
         .then(response => response.text()) // Assuming the response is plain text
         .then(data => {
             //console.log(data); // Log the response from the PHP file
@@ -24,7 +24,7 @@ function showParking() {
             const element = document.getElementById('test');
 
             // Get the existing content
-            const existingContent = "<img src=\"../images/CollegeMap2.png\" alt=\"Map\" usemap=\"#campusMap\" width=\"1094\" height=\"754\" style=\"position:relative\">";
+            const existingContent = "<img src=\"./images/CollegeMap2.png\" alt=\"Map\" usemap=\"#campusMap\" width=\"1094\" height=\"754\" style=\"position:relative\">";
 
             // Add new content to the existing content
             const newContent = data;

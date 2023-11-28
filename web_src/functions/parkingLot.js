@@ -1,12 +1,12 @@
 async function showLot(url, api){//change user can updload image
 
     const fulUrl = url + 'data_src/api/parkingLot/read.php?APIKEY=' + api;
-    console.log(fulUrl);    
+    //console.log(fulUrl);    
 
     try {
         const response = await fetch(fulUrl);
         const data = await response.json(); // Parse JSON response
-        console.log(data); // Log the response from the PHP file
+        //console.log(data); // Log the response from the PHP file
 
         const table = document.createElement('lot');
         const tableHeader = document.createElement('thead');
@@ -43,83 +43,100 @@ async function showLot(url, api){//change user can updload image
     // Edit button
     const editButton = document.createElement('button');
     editButton.textContent = 'Edit';
+    editButton.classList.add("edit");
+
     editButton.addEventListener('click', () => {
-        if (editButton.textContent === 'Edit') {
-            // Clear the row content
-            id.innerHTML = '';
-            name.innerHTML = '';
-            image.innerHTML = '';
-            side.innerHTML = '';
-            top.innerHTML = '';
+
+        if(editButton.textContent === 'Edit'){
+
+            editButton.textContent = 'Update';
+
     
-            // Create input fields for editing
             const lotNameField = document.createElement('input');
             lotNameField.type = 'text';
-            lotNameField.value = item.lotName; // Assuming 'lotName' is the property to edit
+            lotNameField.value = item.lotName; // Assuming 'name' is the property to edit
+            name.innerHTML = ''; // Clear the cell content
             name.appendChild(lotNameField);
-    
+            
             const imageField = document.createElement('input');
             imageField.type = 'text';
             imageField.value = item.image;
+            image.innerHTML = '';
             image.appendChild(imageField);
-    
+
             const sideField = document.createElement('input');
             sideField.type = 'number';
             sideField.value = item.side;
+            side.innerHTML = '';
             side.appendChild(sideField);
-    
+
             const topField = document.createElement('input');
             topField.type = 'number';
             topField.value = item.top;
+            top.innerHTML = '';
             top.appendChild(topField);
-    
-            editButton.textContent = 'Update';
-    
-            editButton.addEventListener('click', () => {
-                if (editButton.textContent === 'Update') {
-                    const updatedLotData = {
-                        lotID: item.lotID,
-                        lotName: lotNameField.value,
-                        image: imageField.value,
-                        side: sideField.value,
-                        top: topField.value,
-                    };
-    
-                    const updateUrl = url + 'data_src/api/parkingLot/update.php';
-                    updateParkingLot(updateUrl, api, updatedLotData)
-                        .then(response => {
-                            if (response.ok) {
-                                // Update UI after successful update
-                                showLot(url, api);
-                                alert('Lot Updated!');
-                            } else {
-                                // Handle failed update here (if needed)
-                                alert('Update failed!');
-                            }
-                        })
-                        .catch(error => {
-                            console.error('Error:', error);
-                            alert('Error occurred while updating lot.');
-                        });
-    
-                    // Revert to 'Edit' button text
-                    editButton.textContent = 'Edit';
-                }
-            });
-        }    
-    });
-    edit.appendChild(editButton);
 
+            lotNameField.addEventListener('change', () =>{
+
+            });
+
+            editButton.textContent = 'Update';
+        }
+
+        else if(editButton.textContent === 'Update'){
+       
+            // Save functionality here: Get the updated value from the inputField.value
+            //const updatedValue = typeIDField.value;
+            const lotNameInput = name.querySelector('input');
+            const lotNameUpdate = lotNameInput.value;
+
+            const imageInput = image.querySelector('input');
+            const imageUpdate = imageInput.value;
+
+            const sideInput = side.querySelector('input');
+            const sideUpdate = sideInput.value;
+
+            const topInput = top.querySelector('input');
+            const topUpdate = topInput.value;            
+
+            //alert(lotNameUpdate +" "+imageUpdate +" "+sideUpdate +" "+topUpdate);  
+
+            const updateUrl = url + 'data_src/api/parkingLot/update.php';
+            //console.log(updateUrl);
+
+            //alert(item.ruleID + ": " + updatedValue);
+            //alert(item.ruleID);
+            editButton.textContent = 'Edit';
+
+            name.innerHTML = lotNameUpdate;
+            image.innerHTML = imageUpdate;
+            side.innerHTML = sideUpdate;
+            top.innerHTML = topUpdate;
+
+            const lotData = {
+                lotID: item.lotID,
+                lotName: lotNameInput.value,
+                image: imageInput.value,
+                side: sideInput.value,
+                top: topInput.value,
+            };
+            updateParkingLot(updateUrl, api, lotData);
+        }
+    });
+    
+    edit.appendChild(editButton);
 
     // Delete button
     const deleteButton = document.createElement('button');
     deleteButton.textContent = 'Delete';
+    deleteButton.classList.add("delete");
+
     deleteButton.addEventListener('click', () => {
 
         //alert('Delete Button clicked')
         //Call delete api for delete this item
         deleteUrl = url + 'data_src/api/parkingLot/delete.php';
-        console.log(deleteUrl);
+        //console.log(deleteUrl);
         deleteParkingLot(deleteUrl, api, item.lotID);
 
         // Add functionality to delete button click
@@ -173,25 +190,17 @@ async function updateParkingLot(url, api, data) {
         });
 
         const responseData = await response.json();
-        console.log(responseData); // Log the response from the server
-        
-        // Update the UI based on the API response
-        // For example, if the response is successful, you might inform the user or refresh the data displayed
-        // Example: Reload the data after successful update
-        if (response.ok) {
-            // Call the function to refresh the displayed data after update
-            //showLot(url, api);
-        } else {
-            // Handle failed update here (optional)
-            throw new Error('Update failed');
-        }
+        //console.log(responseData); // Log the response from the server
+        alert('Lot Updated');
+        const table = document.getElementById('lotTable');
+        const button = document.getElementById('showLot');
+        table.style.display = 'none';
+        button.textContent = 'Show Table!';
+        lotTableVisible = !lotTableVisible;
+
     } catch (error) {
-        console.error('Error:', error);
-        throw new Error('Error occurred while updating lot.');
-        //console.log('Error:', error);
-        // Handle error (optional)
+        console.log('Error:');
     }
-    alert('Lot Updated!');
 }
 
 async function deleteParkingLot(url, api, lotID) {
@@ -212,15 +221,20 @@ async function deleteParkingLot(url, api, lotID) {
         });
 
         const responseData = await response.json();
-        console.log(responseData); // Log the response from the server
+        //console.log(responseData); // Log the response from the server
 
-        console.log("Response Message:", responseData.message);
+        //console.log("Response Message:", responseData.message);
 
         if('Lot ID is used in parkingRule table.' === responseData.message){
             alert('Lot ID is used in parkingRule table.\nCannot delete!');
         }
         else{
-            alert('Lot Deleted!');
+            alert('Lot Deleted');
+            const table = document.getElementById('lotTable');
+            const button = document.getElementById('showLot');
+            table.style.display = 'none';
+            button.textContent = 'Show Table!';
+            lotTableVisible = !lotTableVisible;            
         }
     } catch (error) {
         console.log('Error:');
@@ -334,7 +348,7 @@ async function addParkingLot(url, api, lotName, image, side, top){
         });
 
         const responseData = await response.json();
-        console.log(responseData); // Log the response from the server
+        //console.log(responseData); // Log the response from the server
         alert('Lot Added!');
     } catch (error) {
         console.log('Error:');

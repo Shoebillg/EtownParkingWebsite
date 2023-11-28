@@ -7,11 +7,12 @@ $vars = ["APIKEY" => $api_key];
 $web_string = DatabaseAPIConnection::get($fullUrl, $vars);
 
 $badgeTypes = json_decode($web_string);
+/*
 echo "<select class=\"badgeType\"><option>Choose an option</option>";
 foreach ($badgeTypes as $badgeType) {
     echo "<option value=\"" . $badgeType->name . "\">" . $badgeType->name . "</option>";
 }
-echo "</select>";
+echo "</select>";*/
 ?>
 
 <html>
