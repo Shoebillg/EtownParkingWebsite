@@ -15,86 +15,86 @@ require_once "includes/dropdown.php";
 
 <!--all pin locations are stored here-->
 <p id="brownPin2">
-    <img src="images/lotpin.png" usemap="#brownPinMap" id="brownPin"
+    <img src="images/lotpin.png" usemap="#brownPinMap" id="7"
         style="position: absolute; left: 429px; top: 268px; display:block;">
 </p>
 
 <p id="bretheranPin2">
-    <img src="images/lotpin.png" usemap="#bretheranPinMap" id="bretheranPin"
+    <img src="images/lotpin.png" usemap="#bretheranPinMap" id="13"
         style="position: absolute; left: 310px; top: 726px; display:block;">
 </p>
 
 <p id="hooverPin2">
-    <img src="images/lotpin.png" usemap="#hooverPinMap" id="hooverPin"
+    <img src="images/lotpin.png" usemap="#hooverPinMap" id="2"
         style="position: absolute; left: 330px; top: 453px; display:block;">
 </p>
 
 <p id="bowersPin2">
-    <img src="images/lotpin.png" usemap="#bowersPinMap" id="bowersPin"
+    <img src="images/lotpin.png" usemap="#bowersPinMap" id="18"
         style="position: absolute; left: 555px; top: 538px; display:block;">
 </p>
 
 <p id="chapelEastPin2">
-    <img src="images/lotpin.png" usemap="#chapelEastPinMap" id="chapelEastPin"
+    <img src="images/lotpin.png" usemap="#chapelEastPinMap" id="5"
         style="position: absolute; left: 518px; top: 387px; display:block;">
 </p>
 
 <p id="youngPin2">
-    <img src="images/lotpin.png" usemap="#youngPinMap" id="youngPin"
+    <img src="images/lotpin.png" usemap="#youngPinMap" id="6"
         style="position: absolute; left: 576px; top: 364px; display:block;">
 </p>
 
 <p id="esbenshadePin2">
-    <img src="images/lotpin.png" usemap="#esbenshadePinMap" id="esbenshadePin"
+    <img src="images/lotpin.png" usemap="#esbenshadePinMap" id="3"
         style="position: absolute; left: 400px; top: 410px; display:block;">
 </p>
 
 <p id="chapelWestPin2">
-    <img src="images/lotpin.png" usemap="#chapelWestPinMap" id="chapelWestPin"
+    <img src="images/lotpin.png" usemap="#chapelWestPinMap" id="4"
         style="position: absolute; left: 435px; top: 420px; display:block;">
 </p>
 
 <p id="hackmanPin2">
-    <img src="images/lotpin.png" usemap="#hackmanPinMap" id="hackmanPin"
+    <img src="images/lotpin.png" usemap="#hackmanPinMap" id="15"
         style="position: absolute; left: 570px; top: 580px; display:block;">
 </p>
 
 <p id="hackmanSouthPin2">
-    <img src="images/lotpin.png" usemap="#hackmanSouthPinMap" id="hackmanSouthPin"
+    <img src="images/lotpin.png" usemap="#hackmanSouthPinMap" id="16"
         style="position: absolute; left: 580px; top: 646px; display:block;">
 </p>
 
 <p id="southFoundersPin2">
-    <img src="images/lotpin.png" usemap="#southFoundersPinMap" id="southFoundersPin"
+    <img src="images/lotpin.png" usemap="#southFoundersPinMap" id="17"
         style="position: absolute; left: 545px; top: 681px; display:block;">
 </p>
 
 <p id="myerWestPin2">
-    <img src="images/lotpin.png" usemap="#myerWestPinMap" id="myerWestPin"
+    <img src="images/lotpin.png" usemap="#myerWestPinMap" id="12"
         style="position: absolute; left: 287px; top: 667px; display:block;">
 </p>
 <p id="brinserPin2">
-    <img src="images/lotpin.png" usemap="#brinserPinMap" id="brinserPin"
+    <img src="images/lotpin.png" usemap="#brinserPinMap" id="14"
         style="position: absolute; left: 433px; top: 577px; display:block;">
 </p>
 <p id="admissionsPin2">
-    <img src="images/lotpin.png" usemap="#admissionsPinMap" id="admissionsPin"
+    <img src="images/lotpin.png" usemap="#admissionsPinMap" id="1"
         style="position: absolute; left: 150px; top: 567px; display:block;">
 </p>
 <p id="alphaPin2">
-    <img src="images/lotpin.png" usemap="#alphaPinMap" id="alphaPin"
+    <img src="images/lotpin.png" usemap="#alphaPinMap" id="9"
         style="position: absolute; left: 290px; top: 576px; display:block;">
 </p>
 <p id="alphaDrivePin2">
-    <img src="images/lotpin.png" usemap="#alphaDrivePinMap" id="alphaDrivePin"
+    <img src="images/lotpin.png" usemap="#alphaDrivePinMap" id="10"
         style="position: absolute; left: 325px; top: 604px; display:block;">
 </p>
 <p id="alphaVisitorPin2">
-    <img src="images/lotpin.png" usemap="#alphaVisitorPinMap" id="alphaVisitorPin"
+    <img src="images/lotpin.png" usemap="#alphaVisitorPinMap" id="8"
         style="position: absolute; left: 316px; top: 537px; display:block;">
 </p>
 <p id="campusSafetyPin2">
-    <img src="images/lotpin.png" usemap="#campusSafetyPinMap" id="campusSafetyPin"
+    <img src="images/lotpin.png" usemap="#campusSafetyPinMap" id="11"
         style="position: absolute; left: 232px; top: 649px; display:block;">
 </p>
 <!--All maps with images are stored here (basically the buttons)-->
