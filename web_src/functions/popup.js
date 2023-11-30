@@ -4,7 +4,7 @@ function showModal(message) {
     modalContent.innerText = message;
     modal.style.display = 'block';
   }
-   
+  
   function hideModal() {
     const modal = document.querySelector('.modal');
     modal.style.display = 'none';
