@@ -104,7 +104,7 @@ function showPictureDesc(lotID, image, desc){
         //console.log(existingContent);
 
         // Add new content to the existing content
-        var lotImage = "<img src=\"./images/lots/"+ image +"\" id=\"alphadrive\" style=\"position: absolute; left: 1094px; top: 141px;\"><p style=\"position: absolute; left: 1094px; top: 800px; color: black;\">"+desc+"</p>";
+        var lotImage = "<img src=\"./images/lots/"+ image +"\" id=\"alphadrive\" style=\"position: absolute; left: 1094px; top: 141px;\"><p style=\"position: absolute; left: 1094px; top: 830px; color: black;\">"+desc+"</p>";
         
         if(existingContent.localeCompare(lotImage) == 0){
             lotImage = "";
