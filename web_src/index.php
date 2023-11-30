@@ -736,8 +736,4 @@ require_once "includes/dropdown.php";
 
 <?php
 require_once "includes/footer.php";
-
-// http://localhost/EtownParkingWebsite/web_src/index.php
-// https://www.earthdatascience.org/courses/scientists-guide-to-plotting-data-in-python/plot-spatial-data/customize-raster-plots/interactive-maps/
-
 ?>

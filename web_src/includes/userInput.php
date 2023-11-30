@@ -1,25 +1,25 @@
 <?php
 
 
-$fullUrl = $url."data_src/api/badgeType/read.php";
+$fullUrl = $url . "data_src/api/badgeType/read.php";
 
-$vars = ["APIKEY"=>$api_key];
+$vars = ["APIKEY" => $api_key];
 $web_string = DatabaseAPIConnection::get($fullUrl, $vars);
 
 $badgeTypes = json_decode($web_string);
 echo "<div class=\"dayTime\">";
 echo "<div class=\"userSelect\">";
-echo "<select class=\"badgeType\" id=\"badgeType\" onchange=\"showParking()\"\"><option id = 0>Choose an option</option>";
-foreach($badgeTypes as $badgeType){
-    echo "<option value=\"".$badgeType->name."\" id=\"".$badgeType->typeID."\">".$badgeType->name."</option>";
+echo "<select class=\"dropdown\" id=\"badgeType\" onchange=\"showParking()\"\"><option id = 0>Choose an option</option>";
+foreach ($badgeTypes as $badgeType) {
+    echo "<option value=\"" . $badgeType->name . "\" id=\"" . $badgeType->typeID . "\">" . $badgeType->name . "</option>";
 }
 echo "</select>";
 ?>
 <LINK rel='stylesheet' href='css/dropdown.css'>
 
 
-<select class="day" id="day" onchange="showParking()">
-    <option id = "0">Please Choose a Day</option>
+<select class="dropdown" id="day" onchange="showParking()">
+    <option id="0">Please Choose a Day</option>
     <option id="sun" value="Sunday">Sunday</option>
     <option id="mon" value="Monday">Monday</option>
     <option id="tue" value="Tuesday">Tuesday</option>
@@ -29,8 +29,8 @@ echo "</select>";
     <option id="sat" value="Saturday">Saturday</option>
 </select>
 <form id="timeForm">
-  <label for="appt" class="timeLabel">Select a time:</label>
-  <input type="time" id="appt" name="appt" onchange="showParking()" class="time">
+    <label for="appt" class="dropdown">Select a time:</label>
+    <input type="time" id="appt" name="appt" onchange="showParking()" class="dropdown">
 </form>
 
 <input type="radio" id="noneEV" name="EV" checked onclick="showEV(true);" class="ev">
