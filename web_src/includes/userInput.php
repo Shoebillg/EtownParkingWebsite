@@ -29,7 +29,7 @@ echo "</select>";
     <option id="sat" value="Saturday">Saturday</option>
 </select>
 <form id="timeForm">
-    <label for="appt" class="dropdown">Select a time:</label>
+    <label for="appt" class="timeLabel">Select a time:</label>
     <input type="time" id="appt" name="appt" onchange="showParking()" class="dropdown">
 </form>
 

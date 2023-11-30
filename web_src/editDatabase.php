@@ -116,6 +116,14 @@ require_once "./includes/header.php";
         </section>
     </main>
 
+<br><br>
+
+<form action="./classes/uploadImage.php" method="post" enctype="multipart/form-data" class="image">
+Select image to upload:
+<input type="file" name="fileToUpload" id="fileToUpload" accept="image/*" required>
+<input type="submit" value="Upload Image" name="submit" class="upload">
+</form>
+
     <footer>
     </footer>
 </body>

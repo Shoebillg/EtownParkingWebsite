@@ -108,6 +108,13 @@ button{
   h1{
     text-align: center;
   }
+
+  .upload:hover{
+    background-color: #004B98;
+  }
+  .image{
+    font-size: 22px;
+  }
 /*
   h2{
     text-align: center;
