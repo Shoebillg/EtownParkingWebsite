@@ -261,7 +261,16 @@ function addTime(url, api){
         var endInput = endBox.value;
 
         if(!startInput || !endInput){
-            alert('Please enter all info');
+
+            if(!startInput && !endInput){
+                alert('Please enter: Start Time, End Time');
+            }
+            else if(!startInput){
+                alert('Please enter: Start Time');
+            }
+            else{
+                alert('Please enter: End Time');
+            }
         }
         else{
             //alert("Name: " + nameInput + " Image: "+ imageInput +"Top: " + topInput +" Side: " + sideInput);

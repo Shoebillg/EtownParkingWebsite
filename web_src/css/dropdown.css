@@ -2,3 +2,16 @@
     font-size: 24px;
     background-color: #C8C8C8;
 }
+
+.badgeType, .day, .time{
+    font-size: 24px;
+    background-color: #C8C8C8;
+}
+.timeLabel, .ev{
+    font-size: 24px;
+}
+
+.userSelect{
+    display: flex;
+    align-items: center;
+}

@@ -310,7 +310,35 @@ function addLot(url, api){
         var topInput = topBox.value;
 
         if(!nameInput || !imageInput || !sideInput || !topInput){
-            alert('Please enter all info');
+            var text = 'Please enter:';
+            if(!nameInput){
+                if(!imageInput || !sideInput || !topInput){
+                    text = text + ' Lot Name,';
+                }
+                else{
+                    text = text + ' Lot Name';
+                }
+            }
+            if(!imageInput){
+                if(!sideInput || !topInput){
+                    text = text + ' Image,';
+                }
+                else{
+                    text = text + ' Image';
+                }
+            }
+            if(!sideInput){
+                if(!topInput){
+                    text = text + ' Side,';
+                }
+                else{
+                    text = text + ' Side';
+                }
+            }
+            if(!topInput){
+                text = text + ' Top';
+            }
+            alert(text);
         }
         else{
             //alert("Name: " + nameInput + " Image: "+ imageInput +"Top: " + topInput +" Side: " + sideInput);

@@ -354,7 +354,37 @@ function addRule(url, api){
         var dayInput = dayBox.value;
         var descInput = descBox.value;
         if(!typeInput || !lotInput || !timeInput || !dayInput){
-            alert('Please enter all info');
+
+            var text = 'Please enter:';
+            if(!typeInput){
+                if(!lotInput || !timeInput || !dayInput){
+                    text = text + ' Type ID,';
+                }
+                else{
+                    text = text + ' Type ID';
+                }
+            }
+            if(!lotInput){
+                if(!timeInput || !dayInput){
+                    text = text + ' Lot ID,';
+                }
+                else{
+                    text = text + ' Lot ID';
+                }
+            }
+            if(!timeInput){
+                if(!dayInput){
+                    text = text + ' Time ID,';
+                }
+                else{
+                    text = text + ' Time ID';
+                }
+            }
+            if(!dayInput){
+                text = text + ' Day';
+            }
+            alert(text);
+            //alert('Please enter all info');
         }
         else{
             //alert("Type: " + typeInput + " Lot: "+ lotInput +"Time ID: " + timeInput +" Day: " + dayInput + " Description: " + descInput);
@@ -394,7 +424,7 @@ async function addParkingRule(url, api, typeID, lotID, timeID, day, description)
 
         const responseData = await response.json();
         //console.log(responseData); // Log the response from the server
-        alert('Rule Added');
+        alert(responseData.message);
         
     } catch (error) {
 //        console.log('Error:');

@@ -14,6 +14,10 @@ function showParking() {
 
     //var form = document.getElementById("timeForm");
     var time = document.getElementById("appt").value;
+    /*if(time == ""){
+        setCurrentTime()
+    }*/
+
 
     // Use the Fetch API to make an HTTP GET request to the PHP file with the name as a query parameter
     fetch(`./classes/getParkingRule.php?id=${encodeURIComponent(badgeID)}&day=${encodeURIComponent(dayID)}&time=${encodeURIComponent(time)}`)
@@ -33,9 +37,16 @@ function showParking() {
             // Update the content
             element.innerHTML = updatedContent;
 
-            console.log("TypeID: " + badgeID + " Day: " + dayID + " Time: " + time);
+            //console.log("TypeID: " + badgeID + " Day: " + dayID + " Time: " + time);
 
             //document.getElementById("test").innerHTML = data;
         })
         .catch(error => console.error('Error:', error));
+}
+
+// Function to set the default value to the current time
+function setCurrentTime() {
+    const now = new Date();
+    const formattedTime = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
+    document.getElementById('appt').value = formattedTime;
 }

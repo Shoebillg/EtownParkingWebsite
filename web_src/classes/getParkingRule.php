@@ -58,9 +58,14 @@ if (isset($_GET['id']) || isset($_GET['day']) || isset($_GET['time'])) {
     else{
         if($day == 0){
             $day ="";
+            exit;
         }
         if($id == 0){
             $id = "";
+            exit;
+        }
+        if($time == ""){
+            exit;
         }
         $fullUrl = $url."data_src/api/parkingRule/read.php";
         $vars = ["APIKEY"=>$api_key, "typeID"=>$id, "day"=>$day, "time"=>$time];

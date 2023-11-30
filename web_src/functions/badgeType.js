@@ -205,8 +205,8 @@ function addBadge(url, api){
     addBadgeBox.appendChild(nameLabel);
     addBadgeBox.appendChild(nameBox);
 
-    addBadgeBox.appendChild(nameLabel);
-    addBadgeBox.appendChild(nameBox);
+    //addBadgeBox.appendChild(nameLabel);
+    //addBadgeBox.appendChild(nameBox);
 
     var addButton = document.createElement("button");
     addButton.innerHTML = "Add";
@@ -216,7 +216,7 @@ function addBadge(url, api){
         var nameInput = nameBox.value;
 
         if(!nameInput){
-            alert('Please enter all info');
+            alert('Please enter: Badge Name');
         }
         else{
             //alert("Name: " + nameInput);
