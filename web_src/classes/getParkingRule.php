@@ -28,7 +28,7 @@ if (isset($_GET['id']) || isset($_GET['day']) || isset($_GET['time'])) {
             echo "</p>";
             echo "<map name=\"".$parkingRule->lotName."PinMap\">";
             //echo "<area shape=\"circle\" coords=\"10,10,10\" href=\"#".$parkingRule->lotName."\" onclick=\"show".$parkingRule->lotID."();\">";
-            echo "<area shape=\"circle\" coords=\"10,10,10\" href=\"#".$parkingRule->lotName."\" onclick=\"showPicture(".$parkingRule->lotID.",'".$parkingRule->image."');\">";
+            echo "<area shape=\"circle\" coords=\"10,10,10\" href=\"#".$parkingRule->lotName."\" onclick=\"showPicture(".$parkingRule->lotID.",'".$parkingRule->image.".');\">";
             
             echo "</map>";
         }
@@ -84,7 +84,7 @@ if (isset($_GET['id']) || isset($_GET['day']) || isset($_GET['time'])) {
             echo "</p>";
             echo "<map name=\"".$parkingRule->lotName."PinMap\">";
             //echo "<area shape=\"circle\" coords=\"10,10,10\" href=\"#".$parkingRule->lotName."\" onclick=\"show".$parkingRule->lotID."();\">";
-            echo "<area shape=\"circle\" coords=\"10,10,10\" href=\"#".$parkingRule->lotName."\" onclick=\"showPicture(".$parkingRule->lotID.",'".$parkingRule->image."');\">";
+            echo "<area shape=\"circle\" coords=\"10,10,10\" href=\"#".$parkingRule->lotName."\" onclick=\"showPictureDesc(".$parkingRule->lotID.",'".$parkingRule->image."', '".$parkingRule->description."');\">";
             
             echo "</map>";
         }

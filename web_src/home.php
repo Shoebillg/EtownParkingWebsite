@@ -90,7 +90,33 @@ require_once "./includes/footer.php";
         element.innerHTML = updatedContent;
     }
 
+
+
 </script>
+
+<script>
+function showPictureDesc(lotID, image, desc){
+        //alert(lotID + " " + image + desc);
+        const element = document.getElementById('showLot');
+
+        // Get the existing content
+        var existingContent = element.innerHTML;
+        //console.log(existingContent);
+
+        // Add new content to the existing content
+        var lotImage = "<img src=\"./images/lots/"+ image +"\" id=\"alphadrive\" style=\"position: absolute; left: 1094px; top: 141px;\"><p style=\"position: absolute; left: 1094px; top: 850px; color: black;\">"+desc+"</p>";
+        
+        if(existingContent.localeCompare(lotImage) == 0){
+            lotImage = "";
+        }
+        const updatedContent = lotImage;
+
+        // Update the content
+        element.innerHTML = updatedContent;
+    }
+</script>
+
+
 
 </body>
 </html>
