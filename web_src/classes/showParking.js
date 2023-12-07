@@ -42,6 +42,9 @@ function showParking() {
             //document.getElementById("test").innerHTML = data;
         })
         .catch(error => console.error('Error:', error));
+        const element = document.getElementById('showLot');
+        element.innerHTML = "";
+
 }
 
 // Function to set the default value to the current time

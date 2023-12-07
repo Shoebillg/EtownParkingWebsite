@@ -56,7 +56,7 @@ if (isset($_GET['id']) || isset($_GET['day']) || isset($_GET['time'])) {
         }
     }*/
     else{
-        if($day == 0){
+        if($day == ""){
             $day ="";
             exit;
         }
@@ -67,6 +67,7 @@ if (isset($_GET['id']) || isset($_GET['day']) || isset($_GET['time'])) {
         if($time == ""){
             exit;
         }
+        $fullUrl = '';
         $fullUrl = $url."data_src/api/parkingRule/read.php";
         $vars = ["APIKEY"=>$api_key, "typeID"=>$id, "day"=>$day, "time"=>$time];
         $web_string = DatabaseAPIConnection::get($fullUrl, $vars);

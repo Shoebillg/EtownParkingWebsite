@@ -2,6 +2,8 @@
 require_once "./../includes/config.php";
 
 $urlEditdb = $url.'web_src/editDatabase.php';
+//$urlEditdb = $url.'editDatabase.php';
+
 $target_dir = "./../images/lots/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
