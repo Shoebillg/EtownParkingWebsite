@@ -9,6 +9,147 @@ require_once "includes/dropdown.php";
 ?>
 <br>
 
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* The Modal (background) */
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            padding-top: 100px;
+            /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-height: 80%;
+            /* Set a max height for the modal content */
+            overflow-y: auto;
+            /* Enable vertical scroll if needed */
+        }
+
+        /* The Close Button */
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Responsive image */
+        .modal-content img {
+            max-width: 100%;
+            /* Ensure images don't exceed the width of the modal content */
+            height: auto;
+            /* Maintain aspect ratio */
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Brown Lot Modal -->
+    <div id="brownModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('brownModal')">&times;</span>
+            <p>Brown Lot</p>
+            <img src="images/lots/CollegeMapBrownLot.png">
+            <p>Available 24/7 for all students and staff</p>
+        </div>
+    </div>
+
+    <!-- Brethren Lot Modal -->
+    <div id="brethrenModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('brethrenModal')">&times;</span>
+            <p>Church of the Brethren Lot</p>
+            <img src="images/lots/CollegeMapBretheranChurch2.png">
+            <p>Available Monday 6am - Friday 6pm for all students and staff</p>
+        </div>
+    </div>
+
+    <script>
+        // Get the modals
+        var modal1 = document.getElementById("brownModal");
+        var modal2 = document.getElementById("brethrenModal");
+
+        // When the user clicks the button, open the corresponding modal 
+        function showBrownLot() {
+            modal1.style.display = "block";
+        }
+
+        function showBrethrenLot() {
+            modal2.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        function closeModal(modalId) {
+            var modal = document.getElementById(modalId);
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal1) {
+                modal1.style.display = "none";
+            }
+            if (event.target == modal2) {
+                modal2.style.display = "none";
+            }
+            if (event.target == modal3) {
+                modal3.style.display = "none";
+            }
+            if (event.target == modal4) {
+                modal4.style.display = "none";
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>
+
+
 <!--Etown Parking Website Coming Soon!-->
 
 <img src="images/CollegeMap2.png" alt="Map" usemap="#campusMap" width="1094" height="754" style="position:relative">
@@ -100,45 +241,13 @@ require_once "includes/dropdown.php";
 
 <!--All maps with images are stored here (basically the buttons)-->
 <map name="brownPinMap">
-    <area shape="circle" coords="10,10,10" href="#brown" onclick="showModal('brownModal');" alt="BrownLot">
+    <area shape="circle" coords="10,10,10" href="#brown" onclick="showBrownLot();" alt="BrownLot">
 </map>
-
-<!-- Modal for Brown Lot -->
-<div id="brownModal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal('brownModal')">&times;</span>
-        <p>Brown Lot</p>
-        <img src="images/lots/CollegeMapBrownLot.png" alt="Brown Lot Image">
-        <p> Available </p>
-    </div>
-</div>
-
-<script>
-    function showModal(modalId) {
-        var modal = document.getElementById(modalId);
-        modal.style.display = 'block';
-    }
-
-    function closeModal(modalId) {
-        var modal = document.getElementById(modalId);
-        modal.style.display = 'none';
-    }
-
-    // Close modal if the user clicks outside of it
-    window.onclick = function (event) {
-        if (event.target.classList.contains('modal')) {
-            event.target.style.display = 'none';
-        }
-    };
-</script>
 
 <map name="bretheranPinMap">
-    <area shape="circle" coords="10,10,10" href="#Bretheran" onclick="showBretheran();" alt="BretheranChurch">
+    <area shape="circle" coords="10,10,10" href="#Bretheran" onclick="showBrethrenLot();" alt="BretheranChurch">
 </map>
-<p id="bretheran2">
-    <img src="images/lots/CollegeMapBretheranChurch2.png" id="bretheran"
-        style="position: absolute; left: 1094px; top: 141px; display:none;">
-</p>
+
 
 <map name="hooverPinMap">
     <area shape="circle" coords="10,10,10" href="#Hoover" onclick="showHoover();" alt="Hoover">
@@ -263,6 +372,7 @@ require_once "includes/dropdown.php";
 <!--All functions are stored here-->
 <script>
     var imgOn = false;
+
     function showBretheran() {
         if (imgOn) {
             document.getElementById("bretheran").style.display = 'none';
