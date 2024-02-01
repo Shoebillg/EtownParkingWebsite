@@ -1,30 +1,172 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Popup Example</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-height: 80%; /* Set a max height for the modal content */
+  overflow-y: auto; /* Enable vertical scroll if needed */
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Responsive image */
+.modal-content img {
+  max-width: 100%; /* Ensure images don't exceed the width of the modal content */
+  height: auto; /* Maintain aspect ratio */
+}
+</style>
 </head>
 <body>
 
-    <button id="btn1" onclick="openPopup('popup1')">Open Popup 1</button>
-    <button id="btn2" onclick="openPopup('popup2')">Open Popup 2</button>
+<h2>Modal Test</h2>
 
-    <div class="popup" id="popup1">
-        <span class="close" onclick="closePopup('popup1')">&times;</span>
-        <h2>Popup 1 Title</h2>
-        <img src="image1.jpg" alt="Image 1">
-        <p>Popup 1 text content goes here.</p>
-    </div>
+<!-- Buttons to Trigger/Open The Modals -->
+<button id="myBtn1">Leffler Chapel East</button>
+<button id="myBtn2">Leffler Chapel West</button>
+<button id="myBtn3">Brown</button>
+<button id="myBtn4">Quads</button>
 
-    <div class="popup" id="popup2">
-        <span class="close" onclick="closePopup('popup2')">&times;</span>
-        <h2>Popup 2 Title</h2>
-        <img src="image2.jpg" alt="Image 2">
-        <p>Popup 2 text content goes here.</p>
-    </div>
+<!-- The First Modal -->
+<div id="myModal1" class="modal">
 
-    <script src="script.js"></script>
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('myModal1')">&times;</span>
+    <p>Leffler Chapel East</p>
+    <img src="img/CollegeMap.png">
+    <p>Available 24/7 for all students and staff</p>
+  </div>
+
+</div>
+
+<!-- The Second Modal -->
+<div id="myModal2" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('myModal2')">&times;</span>
+    <p>Leffler Chapel West</p>
+    <img src="img/CollegeMap.png">
+    <p>Available 24/7 for staff and 6pm-6am for all students</p>
+  </div>
+
+</div>
+
+<!-- The Third Modal -->
+<div id="myModal3" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('myModal3')">&times;</span>
+    <p>Brown</p>
+    <img src="img/CollegeMap.png">
+    <p>Available 24/7 for all students and staff</p>
+  </div>
+
+</div>
+
+<!-- The Fourth Modal -->
+<div id="myModal4" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('myModal4')">&times;</span>
+    <p>Quads</p>
+    <img src="img/CollegeMap.png">
+    <p>Available 24/7 for all students and staff</p>
+  </div>
+
+</div>
+
+<script>
+// Get the modals
+var modal1 = document.getElementById("myModal1");
+var modal2 = document.getElementById("myModal2");
+var modal3 = document.getElementById("myModal3");
+var modal4 = document.getElementById("myModal4");
+
+// Get the buttons that open the modals
+var btn1 = document.getElementById("myBtn1");
+var btn2 = document.getElementById("myBtn2");
+var btn3 = document.getElementById("myBtn3");
+var btn4 = document.getElementById("myBtn4");
+
+// When the user clicks the button, open the corresponding modal 
+btn1.onclick = function() {
+  modal1.style.display = "block";
+}
+
+btn2.onclick = function() {
+  modal2.style.display = "block";
+}
+
+btn3.onclick = function() {
+  modal3.style.display = "block";
+}
+
+btn4.onclick = function() {
+  modal4.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+function closeModal(modalId) {
+  var modal = document.getElementById(modalId);
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal1) {
+    modal1.style.display = "none";
+  }
+  if (event.target == modal2) {
+    modal2.style.display = "none";
+  }
+  if (event.target == modal3) {
+    modal3.style.display = "none";
+  }
+  if (event.target == modal4) {
+    modal4.style.display = "none";
+  }
+}
+</script>
+
 </body>
 </html>

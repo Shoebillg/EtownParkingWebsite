@@ -97,14 +97,40 @@ require_once "includes/dropdown.php";
     <img src="images/lotpin.png" usemap="#campusSafetyPinMap" id="11"
         style="position: absolute; left: 232px; top: 649px; display:block;">
 </p>
+
 <!--All maps with images are stored here (basically the buttons)-->
 <map name="brownPinMap">
-    <area shape="circle" coords="10,10,10" href="#brown" onclick="showBrown();" alt="BrownLot">
+    <area shape="circle" coords="10,10,10" href="#brown" onclick="showModal('brownModal');" alt="BrownLot">
 </map>
-<p id="brown2">
-    <img src="images/lots/CollegeMapBrownLot.png" id="brown"
-        style="position: absolute; left: 1094px; top: 141px; display:none;">
-</p>
+
+<!-- Modal for Brown Lot -->
+<div id="brownModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('brownModal')">&times;</span>
+        <p>Brown Lot</p>
+        <img src="images/lots/CollegeMapBrownLot.png" alt="Brown Lot Image">
+        <p> Available </p>
+    </div>
+</div>
+
+<script>
+    function showModal(modalId) {
+        var modal = document.getElementById(modalId);
+        modal.style.display = 'block';
+    }
+
+    function closeModal(modalId) {
+        var modal = document.getElementById(modalId);
+        modal.style.display = 'none';
+    }
+
+    // Close modal if the user clicks outside of it
+    window.onclick = function (event) {
+        if (event.target.classList.contains('modal')) {
+            event.target.style.display = 'none';
+        }
+    };
+</script>
 
 <map name="bretheranPinMap">
     <area shape="circle" coords="10,10,10" href="#Bretheran" onclick="showBretheran();" alt="BretheranChurch">
@@ -237,29 +263,6 @@ require_once "includes/dropdown.php";
 <!--All functions are stored here-->
 <script>
     var imgOn = false;
-    function showBrown() {
-        if (imgOn) {
-            document.getElementById("brown").style.display = 'none';
-            document.getElementById("bretheran").style.display = 'none';
-            document.getElementById("bowers").style.display = 'none';
-            document.getElementById("hoover").style.display = 'none';
-            document.getElementById("young").style.display = 'none';
-            document.getElementById("chapeleast").style.display = 'none';
-            document.getElementById("esbenshade").style.display = 'none';
-            document.getElementById("chapelwest").style.display = 'none';
-            document.getElementById("hackmansouth").style.display = 'none';
-            document.getElementById("southfounders").style.display = 'none';
-            document.getElementById("hackman").style.display = 'none';
-            imgOn = false;
-        }
-        else {
-            document.getElementById("brown").style.display = 'block';
-            imgOn = true;
-        }
-
-        //brown.src = "images/lots/CollegeMapBrownLot.png";
-    }
-
     function showBretheran() {
         if (imgOn) {
             document.getElementById("bretheran").style.display = 'none';
