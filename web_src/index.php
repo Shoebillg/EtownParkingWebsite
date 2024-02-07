@@ -97,6 +97,96 @@ require_once "includes/dropdown.php";
 
 <body>
 
+    <!-- Admissions Lot Modal -->
+    <div id="admissionsModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('brownModal')">&times;</span>
+
+            <div class="image-container">
+                <p>Brown Lot</p>
+                <p>Available 24/7 for all students and staff</p>
+                <img src="images/lots/ElizabethtownLotBrown.png">
+            </div>
+        </div>
+    </div>
+
+    <!-- Hoover Lot Modal -->
+    <div id="hooverModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('brownModal')">&times;</span>
+
+            <div class="image-container">
+                <p>Brown Lot</p>
+                <p>Available 24/7 for all students and staff</p>
+                <img src="images/lots/ElizabethtownLotBrown.png">
+            </div>
+        </div>
+    </div>
+
+    <!-- Esbenshade Lot Modal -->
+    <div id="esbenshadeModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('brownModal')">&times;</span>
+
+            <div class="image-container">
+                <p>Brown Lot</p>
+                <p>Available 24/7 for all students and staff</p>
+                <img src="images/lots/ElizabethtownLotBrown.png">
+            </div>
+        </div>
+    </div>
+
+    <!-- Leffler West Lot Modal -->
+    <div id="chapelWestModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('brownModal')">&times;</span>
+
+            <div class="image-container">
+                <p>Leffler Chapel West Lot</p>
+                <p>Available 24/7 for all staff, 4pm-6am and weekends for students</p>
+                <img src="images/lots/ElizabethtownLotLefflerWest.png">
+            </div>
+        </div>
+    </div>
+
+    <!-- Leffler East Lot Modal -->
+    <div id="chapelEastModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('brownModal')">&times;</span>
+
+            <div class="image-container">
+                <p>Leffler Chapel West Lot</p>
+                <p>Available 24/7 for all students and staff</p>
+                <img src="images/lots/ElizabethtownLotLefflerEast.png">
+            </div>
+        </div>
+    </div>
+
+    <!-- Young Center Lot Modal -->
+    <div id="chapelEastModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('brownModal')">&times;</span>
+
+            <div class="image-container">
+                <p>Leffler Chapel West Lot</p>
+                <p>Available 24/7 for all students and staff</p>
+                <img src="images/lots/ElizabethtownLotLefflerEast.png">
+            </div>
+        </div>
+    </div>
+
     <!-- Brown Lot Modal -->
     <div id="brownModal" class="modal">
 
@@ -108,6 +198,51 @@ require_once "includes/dropdown.php";
                 <p>Brown Lot</p>
                 <p>Available 24/7 for all students and staff</p>
                 <img src="images/lots/ElizabethtownLotBrown.png">
+            </div>
+        </div>
+    </div>
+
+    <!-- Alpha Visitor Modal -->
+    <div id="alphaVisitorModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('brownModal')">&times;</span>
+
+            <div class="image-container">
+                <p>Leffler Chapel West Lot</p>
+                <p>Available 24/7 for all students and staff</p>
+                <img src="images/lots/ElizabethtownLotLefflerEast.png">
+            </div>
+        </div>
+    </div>
+
+    <!-- Alpha Modal -->
+    <div id="alphaModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('brownModal')">&times;</span>
+
+            <div class="image-container">
+                <p>Leffler Chapel West Lot</p>
+                <p>Available 24/7 for all students and staff</p>
+                <img src="images/lots/ElizabethtownLotLefflerEast.png">
+            </div>
+        </div>
+    </div>
+
+    <!-- Alpha Drive Modal -->
+    <div id="alphaDriveModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('brownModal')">&times;</span>
+
+            <div class="image-container">
+                <p>Leffler Chapel West Lot</p>
+                <p>Available 24/7 for all students and staff</p>
+                <img src="images/lots/ElizabethtownLotLefflerEast.png">
             </div>
         </div>
     </div>
@@ -124,63 +259,63 @@ require_once "includes/dropdown.php";
         </div>
     </div>
 
-    <!-- Brown Lot Modal -->
-    <div id="chapelWestModal" class="modal">
+    <!-- Brinser Lot Modal -->
+    <div id="brinserModal" class="modal">
 
         <!-- Modal content -->
         <div class="modal-content">
-            <span class="close" onclick="closeModal('brownModal')">&times;</span>
-
-            <div class="image-container">
-                <p>Brown Lot</p>
-                <p>Available 24/7 for all students and staff</p>
-                <img src="images/lots/ElizabethtownLotBrown.png">
-            </div>
+            <span class="close" onclick="closeModal('brethrenModal')">&times;</span>
+            <p>Church of the Brethren Lot</p>
+            <img src="images/lots/CollegeMapBretheranChurch2.png">
+            <p>Available Monday 6am - Friday 6pm for all students and staff</p>
         </div>
     </div>
 
-    <!-- Brown Lot Modal -->
-    <div id="chapelEastModal" class="modal">
+    <!-- Hackman Apartments North Modal -->
+    <div id="hackmanNorthzModal" class="modal">
 
         <!-- Modal content -->
         <div class="modal-content">
-            <span class="close" onclick="closeModal('brownModal')">&times;</span>
-
-            <div class="image-container">
-                <p>Brown Lot</p>
-                <p>Available 24/7 for all students and staff</p>
-                <img src="images/lots/ElizabethtownLotBrown.png">
-            </div>
+            <span class="close" onclick="closeModal('brethrenModal')">&times;</span>
+            <p>Church of the Brethren Lot</p>
+            <img src="images/lots/CollegeMapBretheranChurch2.png">
+            <p>Available Monday 6am - Friday 6pm for all students and staff</p>
         </div>
     </div>
 
-    <!-- Brown Lot Modal -->
-    <div id="youngCenterModal" class="modal">
+    <!-- Hackman Apartments South Modal -->
+    <div id="hackmanSouthModal" class="modal">
 
         <!-- Modal content -->
         <div class="modal-content">
-            <span class="close" onclick="closeModal('brownModal')">&times;</span>
-
-            <div class="image-container">
-                <p>Brown Lot</p>
-                <p>Available 24/7 for all students and staff</p>
-                <img src="images/lots/ElizabethtownLotBrown.png">
-            </div>
+            <span class="close" onclick="closeModal('brethrenModal')">&times;</span>
+            <p>Church of the Brethren Lot</p>
+            <img src="images/lots/CollegeMapBretheranChurch2.png">
+            <p>Available Monday 6am - Friday 6pm for all students and staff</p>
         </div>
     </div>
 
-    <!-- Brown Lot Modal -->
-    <div id="admissionsModal" class="modal">
+    <!-- South Founders Lot Modal -->
+    <div id="brethrenModal" class="modal">
 
         <!-- Modal content -->
         <div class="modal-content">
-            <span class="close" onclick="closeModal('brownModal')">&times;</span>
+            <span class="close" onclick="closeModal('brethrenModal')">&times;</span>
+            <p>South Founders Lot Modal (behind tennis courts)</p>
+            <img src="images/lots/CollegeMapBretheranChurch2.png">
+            <p>Available Monday 6am - Friday 6pm for all students and staff</p>
+        </div>
+    </div>
 
-            <div class="image-container">
-                <p>Brown Lot</p>
-                <p>Available 24/7 for all students and staff</p>
-                <img src="images/lots/ElizabethtownLotBrown.png">
-            </div>
+    <!-- Bowers Fitness Center Lot -->
+    <div id="brethrenModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('brethrenModal')">&times;</span>
+            <p>Church of the Brethren Lot</p>
+            <img src="images/lots/CollegeMapBretheranChurch2.png">
+            <p>Available Monday 6am - Friday 6pm for all students and staff</p>
         </div>
     </div>
 
@@ -188,6 +323,9 @@ require_once "includes/dropdown.php";
         // Get the modals
         var modal1 = document.getElementById("brownModal");
         var modal2 = document.getElementById("brethrenModal");
+        var modal3 = document.getElementById("chapelWestModal");
+        var modal4 = document.getElementById("chapelEastModal");
+
 
         // When the user clicks the button, open the corresponding modal 
         function showBrownLot() {
@@ -196,6 +334,14 @@ require_once "includes/dropdown.php";
 
         function showBrethrenLot() {
             modal2.style.display = "block";
+        }
+
+        function showChapelWest() {
+            modal3.style.display = "block";
+        }
+
+        function showChapelEast() {
+            modal4.style.display = "block";
         }
 
         // When the user clicks on <span> (x), close the modal
@@ -225,7 +371,6 @@ require_once "includes/dropdown.php";
 </body>
 
 </html>
-
 
 <!--Etown Parking Website Coming Soon!-->
 
@@ -291,26 +436,32 @@ require_once "includes/dropdown.php";
     <img src="images/lotpin2.png" usemap="#myerWestPinMap" id="12" width="14.88" height="23.76"
         style="position: absolute; left: 287px; top: 667px; display:block;">
 </p>
+
 <p id="brinserPin2">
     <img src="images/lotpin2.png" usemap="#brinserPinMap" id="14" width="14.88" height="23.76"
         style="position: absolute; left: 433px; top: 577px; display:block;">
 </p>
+
 <p id="admissionsPin2">
     <img src="images/lotpin2.png" usemap="#admissionsPinMap" id="1" width="14.88" height="23.76"
         style="position: absolute; left: 150px; top: 567px; display:block;">
 </p>
+
 <p id="alphaPin2">
     <img src="images/lotpin2.png" usemap="#alphaPinMap" id="9" width="14.88" height="23.76"
         style="position: absolute; left: 290px; top: 576px; display:block;">
 </p>
+
 <p id="alphaDrivePin2">
     <img src="images/lotpin2.png" usemap="#alphaDrivePinMap" id="10" width="14.88" height="23.76"
         style="position: absolute; left: 325px; top: 604px; display:block;">
 </p>
+
 <p id="alphaVisitorPin2">
     <img src="images/lotpin2.png" usemap="#alphaVisitorPinMap" id="8" width="14.88" height="23.76"
         style="position: absolute; left: 316px; top: 537px; display:block;">
 </p>
+
 <p id="campusSafetyPin2">
     <img src="images/lotpin2.png" usemap="#campusSafetyPinMap" id="11" width="14.88" height="23.76"
         style="position: absolute; left: 232px; top: 649px; display:block;">
@@ -325,604 +476,69 @@ require_once "includes/dropdown.php";
     <area shape="circle" coords="10,10,10" href="#Bretheran" onclick="showBrethrenLot();" alt="BretheranChurch">
 </map>
 
-
 <map name="hooverPinMap">
     <area shape="circle" coords="10,10,10" href="#Hoover" onclick="showHoover();" alt="Hoover">
 </map>
-<p id="hoover2">
-    <img src="images/lots/CollegeMapHoover.png" id="hoover"
-        style="position: absolute; left: 1094px; top: 141px; display:none;">
-</p>
 
 <map name="bowersPinMap">
     <area shape="circle" coords="10,10,10" href="#Bowers" onclick="showBowers();" alt="Bowers">
 </map>
-<p id="bowers2">
-    <img src="images/lots/CollegeMapBowers.png" id="bowers"
-        style="position: absolute; left: 1094px; top: 141px; display:none;">
-</p>
 
 <map name="youngPinMap">
     <area shape="circle" coords="10,10,10" href="#YoungCenter" onclick="showYoung();" alt="YoungCenter">
 </map>
-<p id="bowers2">
-    <img src="images/lots/CollegeMapYoungCenter.png" id="young"
-        style="position: absolute; left: 1094px; top: 141px; display:none;">
-</p>
 
 <map name="chapelEastPinMap">
     <area shape="circle" coords="10,10,10" href="#ChapelEast" onclick="showChapelEast();" alt="ChapelEast">
 </map>
-<p id="chapelEast2">
-    <img src="images/lots/CollegeMapChapelEast.png" id="chapeleast"
-        style="position: absolute; left: 1094px; top: 141px; display:none;">
-</p>
 
 <map name="esbenshadePinMap">
     <area shape="circle" coords="10,10,10" href="#Esbenshade" onclick="showEsbenshade();" alt="Esbenshade">
 </map>
-<p id="esbenshade2">
-    <img src="images/lots/CollegeMapEsbenshade.png" id="esbenshade"
-        style="position: absolute; left: 1094px; top: 141px; display:none;">
-</p>
 
 <map name="chapelWestPinMap">
     <area shape="circle" coords="10,10,10" href="#ChapelWest" onclick="showChapelWest();" alt="ChapelWest">
 </map>
-<p id="chapelWest2">
-    <img src="images/lots/CollegeMapChapelWest.png" id="chapelwest"
-        style="position: absolute; left: 1094px; top: 141px; display:none;">
-</p>
 
 <map name="hackmanPinMap">
     <area shape="circle" coords="10,10,10" href="#Hackman" onclick="showHackman();" alt="Hackman">
 </map>
-<p id="hackman2">
-    <img src="images/lots/CollegeMapHackman.png" id="hackman"
-        style="position: absolute; left: 1094px; top: 141px; display:none;">
-</p>
 
 <map name="hackmanSouthPinMap">
     <area shape="circle" coords="10,10,10" href="#HackmanSouth" onclick="showHackmanSouth();" alt="HackmanSouth">
 </map>
-<p id="hackmanSouth2">
-    <img src="images/lots/CollegeMapHackmanSouth.png" id="hackmansouth"
-        style="position: absolute; left: 1094px; top: 141px; display:none;">
-</p>
 
 <map name="southFoundersPinMap">
     <area shape="circle" coords="10,10,10" href="#SouthFounders" onclick="showSouthFounders();" alt="SouthFounders">
 </map>
-<p id="southFounders2">
-    <img src="images/lots/CollegeMapSouthFounders.png" id="southfounders"
-        style="position: absolute; left: 1094px; top: 141px; display:none;">
-</p>
+
 <map name="myerWestPinMap">
     <area shape="circle" coords="10,10,10" href="#MyerWest" onclick="showMyerWest();" alt="MyerWest">
 </map>
-<p id="myerWest2">
-    <img src="images/lots/CollegeMapMyerWest.png" id="myerwest"
-        style="position: absolute; left: 1094px; top: 141px; display:none;">
-</p>
+
 <map name="brinserPinMap">
     <area shape="circle" coords="10,10,10" href="#Brinser" onclick="showBrinser();" alt="Brinser">
 </map>
-<p id="brinser2">
-    <img src="images/lots/CollegeMapBrinser.png" id="brinser"
-        style="position: absolute; left: 1094px; top: 141px; display:none;">
-</p>
+
 <map name="admissionsPinMap">
     <area shape="circle" coords="10,10,10" href="#Admissions" onclick="showAdmissions();" alt="Admissions">
 </map>
-<p id="admissions2">
-    <img src="images/lots/CollegeMapAdmissions.png" id="admissions"
-        style="position: absolute; left: 1094px; top: 141px; display:none;">
-</p>
+
 <map name="alphaPinMap">
     <area shape="circle" coords="10,10,10" href="#Alpha" onclick="showAlpha();" alt="Alpha">
 </map>
-<p id="alpha2">
-    <img src="images/lots/CollegeMapAlpha.png" id="alpha"
-        style="position: absolute; left: 1094px; top: 141px; display:none;">
-</p>
+
 <map name="alphaDrivePinMap">
     <area shape="circle" coords="10,10,10" href="#AlphaDrive" onclick="showAlphaDrive();" alt="AlphaDrive">
 </map>
-<p id="alphaDrive2">
-    <img src="images/lots/CollegeMapAlphaDrive.png" id="alphadrive"
-        style="position: absolute; left: 1094px; top: 141px; display:none;">
-</p>
+
 <map name="alphaVisitorPinMap">
     <area shape="circle" coords="10,10,10" href="#AlphaVisitor" onclick="showAlphaVisitor();" alt="AlphaVisitor">
 </map>
-<p id="alphaVisitor2">
-    <img src="images/lots/CollegeMapAlphaVisitor.png" id="alphavisitor"
-        style="position: absolute; left: 1094px; top: 141px; display:none;">
-</p>
+
 <map name="campusSafetyPinMap">
     <area shape="circle" coords="10,10,10" href="#CampusSafety" onclick="showCampusSafety();" alt="CampusSafety">
 </map>
-<p id="campusSafety2">
-    <img src="images/lots/CollegeMapCampusSafety.png" id="campussafety"
-        style="position: absolute; left: 1094px; top: 141px; display:none;">
-</p>
-<!--All functions are stored here-->
-<script>
-    var imgOn = false;
-
-    function showBretheran() {
-        if (imgOn) {
-            document.getElementById("bretheran").style.display = 'none';
-            document.getElementById("brown").style.display = 'none';
-            document.getElementById("bowers").style.display = 'none';
-            document.getElementById("hoover").style.display = 'none';
-            document.getElementById("young").style.display = 'none';
-            document.getElementById("chapeleast").style.display = 'none';
-            document.getElementById("esbenshade").style.display = 'none';
-            document.getElementById("chapelwest").style.display = 'none';
-            document.getElementById("hackmansouth").style.display = 'none';
-            document.getElementById("southfounders").style.display = 'none';
-            document.getElementById("hackman").style.display = 'none';
-            document.getElementById("myerwest").style.display = 'none';
-            document.getElementById("brinser").style.display = 'none';
-            document.getElementById("admissions").style.display = 'none';
-            document.getElementById("campussafety").style.display = 'none';
-            document.getElementById("alphavisitor").style.display = 'none';
-            document.getElementById("alphadrive").style.display = 'none';
-            document.getElementById("alpha").style.display = 'none';
-            imgOn = false;
-        }
-        else {
-            document.getElementById("bretheran").style.display = 'block';
-            imgOn = true;
-        }
-    }
-
-    function showHoover() {
-        if (imgOn) {
-            document.getElementById("hoover").style.display = 'none';
-            document.getElementById("bretheran").style.display = 'none';
-            document.getElementById("brown").style.display = 'none';
-            document.getElementById("bowers").style.display = 'none';
-            document.getElementById("young").style.display = 'none';
-            document.getElementById("chapeleast").style.display = 'none';
-            document.getElementById("esbenshade").style.display = 'none';
-            document.getElementById("chapelwest").style.display = 'none';
-            document.getElementById("hackmansouth").style.display = 'none';
-            document.getElementById("southfounders").style.display = 'none';
-            document.getElementById("hackman").style.display = 'none';
-            document.getElementById("myerwest").style.display = 'none';
-            document.getElementById("brinser").style.display = 'none';
-            document.getElementById("admissions").style.display = 'none';
-            document.getElementById("campussafety").style.display = 'none';
-            document.getElementById("alphavisitor").style.display = 'none';
-            document.getElementById("alphadrive").style.display = 'none';
-            document.getElementById("alpha").style.display = 'none';
-            imgOn = false;
-        }
-        else {
-            document.getElementById("hoover").style.display = 'block';
-            imgOn = true;
-        }
-    }
-
-    function showBowers() {
-        if (imgOn) {
-            document.getElementById("bowers").style.display = 'none';
-            document.getElementById("hoover").style.display = 'none';
-            document.getElementById("bretheran").style.display = 'none';
-            document.getElementById("brown").style.display = 'none';
-            document.getElementById("young").style.display = 'none';
-            document.getElementById("chapeleast").style.display = 'none';
-            document.getElementById("esbenshade").style.display = 'none';
-            document.getElementById("chapelwest").style.display = 'none';
-            document.getElementById("hackmansouth").style.display = 'none';
-            document.getElementById("southfounders").style.display = 'none';
-            document.getElementById("hackman").style.display = 'none';
-            document.getElementById("myerwest").style.display = 'none';
-            document.getElementById("brinser").style.display = 'none';
-            document.getElementById("admissions").style.display = 'none';
-            document.getElementById("campussafety").style.display = 'none';
-            document.getElementById("alphavisitor").style.display = 'none';
-            document.getElementById("alphadrive").style.display = 'none';
-            document.getElementById("alpha").style.display = 'none';
-            imgOn = false;
-        }
-        else {
-            document.getElementById("bowers").style.display = 'block';
-            imgOn = true;
-        }
-    }
-
-    function showYoung() {
-        if (imgOn) {
-            document.getElementById("young").style.display = 'none';
-            document.getElementById("bowers").style.display = 'none';
-            document.getElementById("hoover").style.display = 'none';
-            document.getElementById("bretheran").style.display = 'none';
-            document.getElementById("brown").style.display = 'none';
-            document.getElementById("chapeleast").style.display = 'none';
-            document.getElementById("esbenshade").style.display = 'none';
-            document.getElementById("chapelwest").style.display = 'none';
-            document.getElementById("hackmansouth").style.display = 'none';
-            document.getElementById("southfounders").style.display = 'none';
-            document.getElementById("hackman").style.display = 'none';
-            document.getElementById("myerwest").style.display = 'none';
-            document.getElementById("brinser").style.display = 'none';
-            document.getElementById("admissions").style.display = 'none';
-            document.getElementById("campussafety").style.display = 'none';
-            document.getElementById("alphavisitor").style.display = 'none';
-            document.getElementById("alphadrive").style.display = 'none';
-            document.getElementById("alpha").style.display = 'none';
-            imgOn = false;
-        }
-        else {
-            document.getElementById("young").style.display = 'block';
-            imgOn = true;
-        }
-    }
-
-    function showChapelEast() {
-        if (imgOn) {
-            document.getElementById("young").style.display = 'none';
-            document.getElementById("bowers").style.display = 'none';
-            document.getElementById("hoover").style.display = 'none';
-            document.getElementById("bretheran").style.display = 'none';
-            document.getElementById("brown").style.display = 'none';
-            document.getElementById("chapeleast").style.display = 'none';
-            document.getElementById("esbenshade").style.display = 'none';
-            document.getElementById("chapelwest").style.display = 'none';
-            document.getElementById("hackmansouth").style.display = 'none';
-            document.getElementById("southfounders").style.display = 'none';
-            document.getElementById("hackman").style.display = 'none';
-            document.getElementById("myerwest").style.display = 'none';
-            document.getElementById("brinser").style.display = 'none';
-            document.getElementById("admissions").style.display = 'none';
-            document.getElementById("campussafety").style.display = 'none';
-            document.getElementById("alphavisitor").style.display = 'none';
-            document.getElementById("alphadrive").style.display = 'none';
-            document.getElementById("alpha").style.display = 'none';
-            imgOn = false;
-        }
-        else {
-            document.getElementById("chapeleast").style.display = 'block';
-            imgOn = true;
-        }
-    }
-
-    function showEsbenshade() {
-        if (imgOn) {
-            document.getElementById("young").style.display = 'none';
-            document.getElementById("bowers").style.display = 'none';
-            document.getElementById("hoover").style.display = 'none';
-            document.getElementById("bretheran").style.display = 'none';
-            document.getElementById("brown").style.display = 'none';
-            document.getElementById("chapeleast").style.display = 'none';
-            document.getElementById("esbenshade").style.display = 'none';
-            document.getElementById("chapelwest").style.display = 'none';
-            document.getElementById("hackmansouth").style.display = 'none';
-            document.getElementById("southfounders").style.display = 'none';
-            document.getElementById("hackman").style.display = 'none';
-            document.getElementById("myerwest").style.display = 'none';
-            document.getElementById("brinser").style.display = 'none';
-            document.getElementById("admissions").style.display = 'none';
-            document.getElementById("campussafety").style.display = 'none';
-            document.getElementById("alphavisitor").style.display = 'none';
-            document.getElementById("alphadrive").style.display = 'none';
-            document.getElementById("alpha").style.display = 'none';
-            imgOn = false;
-        }
-        else {
-            document.getElementById("esbenshade").style.display = 'block';
-            imgOn = true;
-        }
-    }
-
-    function showChapelWest() {
-        if (imgOn) {
-            document.getElementById("young").style.display = 'none';
-            document.getElementById("bowers").style.display = 'none';
-            document.getElementById("hoover").style.display = 'none';
-            document.getElementById("bretheran").style.display = 'none';
-            document.getElementById("brown").style.display = 'none';
-            document.getElementById("chapeleast").style.display = 'none';
-            document.getElementById("esbenshade").style.display = 'none';
-            document.getElementById("chapelwest").style.display = 'none';
-            document.getElementById("hackmansouth").style.display = 'none';
-            document.getElementById("southfounders").style.display = 'none';
-            document.getElementById("hackman").style.display = 'none';
-            document.getElementById("myerwest").style.display = 'none';
-            document.getElementById("brinser").style.display = 'none';
-            document.getElementById("admissions").style.display = 'none';
-            document.getElementById("campussafety").style.display = 'none';
-            document.getElementById("alphavisitor").style.display = 'none';
-            document.getElementById("alphadrive").style.display = 'none';
-            document.getElementById("alpha").style.display = 'none';
-            imgOn = false;
-        }
-        else {
-            document.getElementById("chapelwest").style.display = 'block';
-            imgOn = true;
-        }
-    }
-
-    function showHackman() {
-        if (imgOn) {
-            document.getElementById("young").style.display = 'none';
-            document.getElementById("bowers").style.display = 'none';
-            document.getElementById("hoover").style.display = 'none';
-            document.getElementById("bretheran").style.display = 'none';
-            document.getElementById("brown").style.display = 'none';
-            document.getElementById("chapeleast").style.display = 'none';
-            document.getElementById("esbenshade").style.display = 'none';
-            document.getElementById("chapelwest").style.display = 'none';
-            document.getElementById("hackman").style.display = 'none';
-            document.getElementById("hackmansouth").style.display = 'none';
-            document.getElementById("southfounders").style.display = 'none';
-            document.getElementById("myerwest").style.display = 'none';
-            document.getElementById("brinser").style.display = 'none';
-            document.getElementById("admissions").style.display = 'none';
-            document.getElementById("campussafety").style.display = 'none';
-            document.getElementById("alphavisitor").style.display = 'none';
-            document.getElementById("alphadrive").style.display = 'none';
-            document.getElementById("alpha").style.display = 'none';
-            imgOn = false;
-        }
-        else {
-            document.getElementById("hackman").style.display = 'block';
-            imgOn = true;
-        }
-    }
-
-    function showHackmanSouth() {
-        if (imgOn) {
-            document.getElementById("young").style.display = 'none';
-            document.getElementById("bowers").style.display = 'none';
-            document.getElementById("hoover").style.display = 'none';
-            document.getElementById("bretheran").style.display = 'none';
-            document.getElementById("brown").style.display = 'none';
-            document.getElementById("chapeleast").style.display = 'none';
-            document.getElementById("esbenshade").style.display = 'none';
-            document.getElementById("chapelwest").style.display = 'none';
-            document.getElementById("hackmansouth").style.display = 'none';
-            document.getElementById("southfounders").style.display = 'none';
-            document.getElementById("hackman").style.display = 'none';
-            document.getElementById("myerwest").style.display = 'none';
-            document.getElementById("brinser").style.display = 'none';
-            document.getElementById("admissions").style.display = 'none';
-            document.getElementById("campussafety").style.display = 'none';
-            document.getElementById("alphavisitor").style.display = 'none';
-            document.getElementById("alphadrive").style.display = 'none';
-            document.getElementById("alpha").style.display = 'none';
-            imgOn = false;
-        }
-        else {
-            document.getElementById("hackmansouth").style.display = 'block';
-            imgOn = true;
-        }
-    }
-
-    function showSouthFounders() {
-        if (imgOn) {
-            document.getElementById("young").style.display = 'none';
-            document.getElementById("bowers").style.display = 'none';
-            document.getElementById("hoover").style.display = 'none';
-            document.getElementById("bretheran").style.display = 'none';
-            document.getElementById("brown").style.display = 'none';
-            document.getElementById("chapeleast").style.display = 'none';
-            document.getElementById("esbenshade").style.display = 'none';
-            document.getElementById("chapelwest").style.display = 'none';
-            document.getElementById("hackmansouth").style.display = 'none';
-            document.getElementById("southfounders").style.display = 'none';
-            document.getElementById("hackman").style.display = 'none';
-            document.getElementById("myerwest").style.display = 'none';
-            document.getElementById("brinser").style.display = 'none';
-            document.getElementById("admissions").style.display = 'none';
-            document.getElementById("campussafety").style.display = 'none';
-            document.getElementById("alphavisitor").style.display = 'none';
-            document.getElementById("alphadrive").style.display = 'none';
-            document.getElementById("alpha").style.display = 'none';
-            imgOn = false;
-        }
-        else {
-            document.getElementById("southfounders").style.display = 'block';
-            imgOn = true;
-        }
-    }
-
-    function showMyerWest() {
-        if (imgOn) {
-            document.getElementById("young").style.display = 'none';
-            document.getElementById("bowers").style.display = 'none';
-            document.getElementById("hoover").style.display = 'none';
-            document.getElementById("bretheran").style.display = 'none';
-            document.getElementById("brown").style.display = 'none';
-            document.getElementById("chapeleast").style.display = 'none';
-            document.getElementById("esbenshade").style.display = 'none';
-            document.getElementById("chapelwest").style.display = 'none';
-            document.getElementById("hackmansouth").style.display = 'none';
-            document.getElementById("southfounders").style.display = 'none';
-            document.getElementById("hackman").style.display = 'none';
-            document.getElementById("myerwest").style.display = 'none';
-            document.getElementById("brinser").style.display = 'none';
-            document.getElementById("admissions").style.display = 'none';
-            document.getElementById("campussafety").style.display = 'none';
-            document.getElementById("alphavisitor").style.display = 'none';
-            document.getElementById("alphadrive").style.display = 'none';
-            document.getElementById("alpha").style.display = 'none';
-            imgOn = false;
-        }
-        else {
-            document.getElementById("myerwest").style.display = 'block';
-            imgOn = true;
-        }
-    }
-
-    function showBrinser() {
-        if (imgOn) {
-            document.getElementById("young").style.display = 'none';
-            document.getElementById("bowers").style.display = 'none';
-            document.getElementById("hoover").style.display = 'none';
-            document.getElementById("bretheran").style.display = 'none';
-            document.getElementById("brown").style.display = 'none';
-            document.getElementById("chapeleast").style.display = 'none';
-            document.getElementById("esbenshade").style.display = 'none';
-            document.getElementById("chapelwest").style.display = 'none';
-            document.getElementById("hackmansouth").style.display = 'none';
-            document.getElementById("southfounders").style.display = 'none';
-            document.getElementById("hackman").style.display = 'none';
-            document.getElementById("myerwest").style.display = 'none';
-            document.getElementById("brinser").style.display = 'none';
-            document.getElementById("admissions").style.display = 'none';
-            document.getElementById("campussafety").style.display = 'none';
-            document.getElementById("alphavisitor").style.display = 'none';
-            document.getElementById("alphadrive").style.display = 'none';
-            document.getElementById("alpha").style.display = 'none';
-            imgOn = false;
-        }
-        else {
-            document.getElementById("brinser").style.display = 'block';
-            imgOn = true;
-        }
-    }
-    function showAdmissions() {
-        if (imgOn) {
-            document.getElementById("young").style.display = 'none';
-            document.getElementById("bowers").style.display = 'none';
-            document.getElementById("hoover").style.display = 'none';
-            document.getElementById("bretheran").style.display = 'none';
-            document.getElementById("brown").style.display = 'none';
-            document.getElementById("chapeleast").style.display = 'none';
-            document.getElementById("esbenshade").style.display = 'none';
-            document.getElementById("chapelwest").style.display = 'none';
-            document.getElementById("hackmansouth").style.display = 'none';
-            document.getElementById("southfounders").style.display = 'none';
-            document.getElementById("hackman").style.display = 'none';
-            document.getElementById("myerwest").style.display = 'none';
-            document.getElementById("brinser").style.display = 'none';
-            document.getElementById("admissions").style.display = 'none';
-            document.getElementById("campussafety").style.display = 'none';
-            document.getElementById("alphavisitor").style.display = 'none';
-            document.getElementById("alphadrive").style.display = 'none';
-            document.getElementById("alpha").style.display = 'none';
-            imgOn = false;
-        }
-        else {
-            document.getElementById("admissions").style.display = 'block';
-            imgOn = true;
-        }
-    }
-    function showAlpha() {
-        if (imgOn) {
-            document.getElementById("young").style.display = 'none';
-            document.getElementById("bowers").style.display = 'none';
-            document.getElementById("hoover").style.display = 'none';
-            document.getElementById("bretheran").style.display = 'none';
-            document.getElementById("brown").style.display = 'none';
-            document.getElementById("chapeleast").style.display = 'none';
-            document.getElementById("esbenshade").style.display = 'none';
-            document.getElementById("chapelwest").style.display = 'none';
-            document.getElementById("hackmansouth").style.display = 'none';
-            document.getElementById("southfounders").style.display = 'none';
-            document.getElementById("hackman").style.display = 'none';
-            document.getElementById("myerwest").style.display = 'none';
-            document.getElementById("brinser").style.display = 'none';
-            document.getElementById("admissions").style.display = 'none';
-            document.getElementById("alpha").style.display = 'none';
-            document.getElementById("campussafety").style.display = 'none';
-            document.getElementById("alphavisitor").style.display = 'none';
-            document.getElementById("alphadrive").style.display = 'none';
-            imgOn = false;
-        }
-        else {
-            document.getElementById("alpha").style.display = 'block';
-            imgOn = true;
-        }
-    }
-    function showAlphaDrive() {
-        if (imgOn) {
-            document.getElementById("young").style.display = 'none';
-            document.getElementById("bowers").style.display = 'none';
-            document.getElementById("hoover").style.display = 'none';
-            document.getElementById("bretheran").style.display = 'none';
-            document.getElementById("brown").style.display = 'none';
-            document.getElementById("chapeleast").style.display = 'none';
-            document.getElementById("esbenshade").style.display = 'none';
-            document.getElementById("chapelwest").style.display = 'none';
-            document.getElementById("hackmansouth").style.display = 'none';
-            document.getElementById("southfounders").style.display = 'none';
-            document.getElementById("hackman").style.display = 'none';
-            document.getElementById("myerwest").style.display = 'none';
-            document.getElementById("brinser").style.display = 'none';
-            document.getElementById("admissions").style.display = 'none';
-            document.getElementById("alpha").style.display = 'none';
-            document.getElementById("alphadrive").style.display = 'none';
-            document.getElementById("admissions").style.display = 'none';
-            document.getElementById("campussafety").style.display = 'none';
-            document.getElementById("alphavisitor").style.display = 'none';
-            imgOn = false;
-        }
-        else {
-            document.getElementById("alphadrive").style.display = 'block';
-            imgOn = true;
-        }
-    }
-    function showAlphaVisitor() {
-        if (imgOn) {
-            document.getElementById("young").style.display = 'none';
-            document.getElementById("bowers").style.display = 'none';
-            document.getElementById("hoover").style.display = 'none';
-            document.getElementById("bretheran").style.display = 'none';
-            document.getElementById("brown").style.display = 'none';
-            document.getElementById("chapeleast").style.display = 'none';
-            document.getElementById("esbenshade").style.display = 'none';
-            document.getElementById("chapelwest").style.display = 'none';
-            document.getElementById("hackmansouth").style.display = 'none';
-            document.getElementById("southfounders").style.display = 'none';
-            document.getElementById("hackman").style.display = 'none';
-            document.getElementById("myerwest").style.display = 'none';
-            document.getElementById("brinser").style.display = 'none';
-            document.getElementById("admissions").style.display = 'none';
-            document.getElementById("alphavisitor").style.display = 'none';
-            document.getElementById("admissions").style.display = 'none';
-            document.getElementById("campussafety").style.display = 'none';
-            document.getElementById("alphadrive").style.display = 'none';
-            document.getElementById("alpha").style.display = 'none';
-            imgOn = false;
-        }
-        else {
-            document.getElementById("alphavisitor").style.display = 'block';
-            imgOn = true;
-        }
-    }
-    function showCampusSafety() {
-        if (imgOn) {
-            document.getElementById("young").style.display = 'none';
-            document.getElementById("bowers").style.display = 'none';
-            document.getElementById("hoover").style.display = 'none';
-            document.getElementById("bretheran").style.display = 'none';
-            document.getElementById("brown").style.display = 'none';
-            document.getElementById("chapeleast").style.display = 'none';
-            document.getElementById("esbenshade").style.display = 'none';
-            document.getElementById("chapelwest").style.display = 'none';
-            document.getElementById("hackmansouth").style.display = 'none';
-            document.getElementById("southfounders").style.display = 'none';
-            document.getElementById("hackman").style.display = 'none';
-            document.getElementById("myerwest").style.display = 'none';
-            document.getElementById("brinser").style.display = 'none';
-            document.getElementById("admissions").style.display = 'none';
-            document.getElementById("campussafety").style.display = 'none';
-            document.getElementById("alphavisitor").style.display = 'none';
-            document.getElementById("alphadrive").style.display = 'none';
-            document.getElementById("alpha").style.display = 'none';
-            imgOn = false;
-        }
-        else {
-            document.getElementById("campussafety").style.display = 'block';
-            imgOn = true;
-        }
-    }
-</script>
 
 <?php
 require_once "includes/footer.php";
