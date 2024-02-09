@@ -13,6 +13,8 @@ require_once "includes/header.php";
     <style>
         body {
             font-family: Arial, Helvetica, sans-serif;
+            background-color: rgba(0, 0, 0, 0.4);
+
         }
 
         /* The Modal (background) */
@@ -192,6 +194,9 @@ require_once "includes/header.php";
 
         <input type="radio" id="EV" name="EV" onclick="showEV(false);">
         <label for="EV">EV</label><br>
+
+        <img src="images/ETOWN_Footer_Logo.png" alt="Map" usemap="#campusMap" width="200" height="84"
+            style="position:relative">
     </div>
 </body>
 
@@ -495,7 +500,7 @@ require_once "includes/header.php";
 
 </html>
 <div class="map-container">
-    <img src="images/CollegeMap2.png" alt="Map" usemap="#campusMap" width="1400" height="965" style="position:relative">
+    <img src="images/CampusMap.png" alt="Map" usemap="#campusMap" width="1200" height="979" style="position:relative">
 </div>
 <!--Pin Locations-->
 
